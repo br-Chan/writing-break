@@ -63,20 +63,20 @@ export default async function(eleventyConfig) {
 		templateData: {
 			eleventyNavigation: {
 				key: "Feed",
-				order: 4
+				order: 2
 			}
 		},
 		collection: {
 			name: "posts",
-			limit: 10,
+			limit: 0,
 		},
 		metadata: {
 			language: "en",
-			title: "Blog Title",
-			subtitle: "This is a longer description about your blog.",
+			title: "Writing Break",
+			subtitle: "On a writing break.",
 			base: "https://example.com/",
 			author: {
-				name: "Your Name"
+				name: "br-Chan"
 			}
 		}
 	});
