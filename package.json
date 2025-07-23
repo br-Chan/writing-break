@@ -34,5 +34,6 @@
 	},
 	"dependencies": {
 		"@zachleat/heading-anchors": "^1.0.3"
-	}
+	},
+	"packageManager": "pnpm@10.13.1"
 }
