@@ -74,7 +74,7 @@ export default async function(eleventyConfig) {
 			language: "en",
 			title: "Writing Break",
 			subtitle: "On a writing break.",
-			base: "https://br-chan.github.io",
+			base: "https://br-chan.github.io/writing-break",
 			author: {
 				name: "br-Chan"
 			}

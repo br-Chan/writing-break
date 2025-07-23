@@ -1,6 +1,6 @@
 export default {
 	title: "Writing Break",
-	url: "https://br-chan.github.io",
+	url: "https://br-chan.github.io/writing-break",
 	language: "en",
 	description: "On a writing break.",
 	// author: {
