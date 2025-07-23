@@ -5,7 +5,7 @@ date: 2025-07-23 23:30:00
 tags: watch later
 ---
 
-<img src="./watch_later_playlist.png" alt="My watch later playlist; the cover image is an accurate depiction of the pain I will go through watching them all.">
+<img src="/1_watch_later_playlist.png" alt="My watch later playlist; the cover image is an accurate depiction of the pain I will go through watching them all.">
 
 ## 5000
 
