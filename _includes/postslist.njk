@@ -2,7 +2,9 @@
 {%- for post in postslist | reverse %}
 	<li class="postlist-item{% if post.url == url %} postlist-item-active{% endif %}">
 		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLLL yyyy") }}</time>
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("d LLLL yyyy") }}</time>
+		&nbsp;<a class="postlist-date" href="{{ post.url }}#start=---&length=6&after=open post to keep reading...">:Preview</a>
+
 	</li>
 {%- endfor %}
 </ol>

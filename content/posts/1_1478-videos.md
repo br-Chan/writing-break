@@ -11,9 +11,9 @@ tags: watch later
 
 is the maximum number of videos a playlist can have on YouTube. Once you hit 5000, you can't go any higher. This limit also applies for your Liked Songs and Watch Later playlist. That means technically I still have a ways to go - at 1478 videos in my watch later playlist, I'm not even a third of the way there. At least, that's what I tell myself before continuing to ignore the ever-growing amalgamation of video essays, Minecraft tutorials and viral clips.
 
-## 2018
+## 2017
 
-is the year I added my first video to the watch later playlist. In the 7 years that followed, I've been adding videos completely willy-nilly. That's 4 videos per week on average - again, almost doesn't sound half bad. Some of these videos I was genuinely interested in; others were ones that caught my curiosity that I didn't want to lose in the ever-passing stream of recommendations; and a couple I'm sure were purely accidental. Of course, a fair few videos must have been deleted or hidden (not enough, clearly).
+is the year I added my first video to the watch later playlist. In the 8 years that followed, I've been adding videos completely willy-nilly. That's 4 videos per week on average - again, almost doesn't sound half bad. Some of these videos I was genuinely interested in; others were ones that caught my curiosity that I didn't want to lose in the ever-passing stream of recommendations; and a couple I'm sure were purely accidental. Of course, a fair few videos must have been deleted or hidden (not enough, clearly).
 
 Whatever the case, I don't think I have ever gone into that playlist to watch any of the videos I've added. Not one single time. I certainly watch the playlist - watch in growing perturbation as the video count grows and grows and grows - but I don't recall even a single time that I had taken a video out of the playlist. That doesn't mean I haven't watched any of the videos - a solid chunk of them I ended up watching separately, somewhere on the home page or my subscription feed - leaving behind a bunch of impostors in my watch later playlist.
 

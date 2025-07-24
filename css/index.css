@@ -202,7 +202,7 @@ header {
 }
 .home-link {
 	flex-grow: 1;
-	font-size: 1em; /* 16px /16 */
+	font-size: 1.8em; /* 16px /16 */
 	font-weight: 700;
 }
 .home-link:link:not(:hover) {
