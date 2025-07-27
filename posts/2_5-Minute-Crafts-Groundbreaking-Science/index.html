@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>5-Minute Crafts&#39; Groundbreaking Science</title>
+		<meta name="description" content="Hopefully this is the last time I ever watch a 5-Minute Crafts video.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #e0e0e0;
+		--color-gray-50: #C0C0C0;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: #1493fb;
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: #a6a6f8;
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 40em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.links-nextprev {
+	display: flex;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0;
+}
+.links-nextprev > * {
+	flex-grow: 1;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body>
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item"><a href="/writing-break/">Home</a></li>
+					<li class="nav-item"><a href="/writing-break/feed/feed.xml">Feed</a></li>
+					<li class="nav-item"><a href="/writing-break/posts/">All posts</a></li>
+					<li class="nav-item"><a href="/writing-break/tags/">Tags</a></li>
+					<li class="nav-item"><a href="/writing-break/about/">About</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+<h1 id="5-minute-crafts-groundbreaking-science">5-Minute Crafts&#39; Groundbreaking Science</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2025-07-28">28 July 2025</time></li>
+	Tags:
+	<li><a href="/writing-break/tags/watch-later/" class="post-tag">watch-later</a></li>
+</ul>
+
+<p><i>Hopefully this is the last time I ever watch a 5-Minute Crafts video.</i></p>
+
+<p>This post is far longer than any human attention span can accommodate for. I will likely write a shorter version for brevity in the next post, so here's a <a href=".">:nutshell</a> if I have. In future posts, I will combine multiple videos into one post.</p>
+<p><strong>Video</strong> <a href="https://youtu.be/2lDosO03h1U?si=fStBudJIyvuklvFz">:HOW TO FIX ALL YOUR SLEEP PROBLEMS WITH SCIENCE</a></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Already watched?</strong></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td><strong>Should have watched sooner?</strong></td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><strong>Should you watch?</strong></td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>This first video truly tested my willpower. Maybe this was all a mistake. Maybe I should never have done this at all. Maybe I should stop while I still can.</p>
+<p>Nevertheless, I did the unthinkable and watched a 5-Minute Crafts video.</p>
+<picture><source type="image/avif" srcset="/writing-break/img/gcKJJDzI4W-647.avif 647w"><source type="image/webp" srcset="/writing-break/img/gcKJJDzI4W-647.webp 647w"><img loading="lazy" decoding="async" src="/writing-break/img/gcKJJDzI4W-647.png" alt="A pointless endeavour" width="647" height="644"></picture>
+<p>Before I begin, I want to explain that 5-Minute Crafts created a 9-minute video by merging a bunch of 1-minute videos into a single unholy whole. In other words, they're effectively a TikTok shorts compilation channel. This explains everything.</p>
+<p>What's more, while writing that last paragraph out I did a google search and came to the insane realisation that 5-Minute Crafts and TikTok <a href="#x-insane-realisation">:began in the same year</a>.</p>
+<h2 id="the-groundbreaking-science">The Groundbreaking Science</h2>
+<p>This video claims to be &quot;scientific&quot; (they have a grand total of zero sources), so as a true scientist I will test their theories and attempt some of their groundbreaking science. What follows is a compendium of all the (rather insane) tips that they give to improve your sleep or cure your bodily mortality via sleep. Buckle in.</p>
+<h3 id="x-insane-realisation">:x Insane realisation</h3>
+<p>The 5-Minute Crafts channel was registered on November 15 2016, while TikTok was launched in September 2016. Yes, that means TikTok predates 5-Minute Crafts. The timeline is fracturing.</p>
+<h3 id="defeat-insomnia-meditate-listening-to-classical-music">Defeat insomnia: meditate listening to classical music</h3>
+<p>Although I do listen to classical music, I don't do it for sleep. Some studies have been done on whether classical music can boost brainpower, but they weren't very scientific (like a certain YouTube video) and I don't believe in the <a href="https://en.wikipedia.org/wiki/Mozart_effect">:Mozart Effect</a> except as an incredibly good placebo.</p>
+<h3 id="defeat-insomnia-massage-your-ears-and-your-pinkies">Defeat insomnia: massage your ears and your pinkies</h3>
+<p>...what?</p>
+<p>Apparently this is something people do in massages, and that it relieves stress. I felt like an idiot trying this (why specifically the pinkies?!) and needless to say this will not become part of my nighttime routine.</p>
+<h3 id="defeat-insomnia-read-a-book">Defeat insomnia: read a book</h3>
+<p>That's genuinely a good idea - I should be reading instead of scientifically disproving a 5-Minute Crafts video.</p>
+<h3 id="defeat-insomnia-drink-a-glass-of-milk">Defeat insomnia: drink a glass of milk</h3>
+<p>No idea where this one's coming from.</p>
+<p>I have now tried this: I poured myself a half-cup of milk and drank it a little bit before bed. I don't think it helped sleep at all, but I hadn't drunk a pure glass of milk in some time and it was rather good. I would say that experiment failed successfully.</p>
+<h3 id="defeat-insomnia-catch-some-positive-emotions">Defeat insomnia: catch some positive emotions</h3>
+<p>I'm not doubting this one. But the clip they play along with it is legendary:</p>
+<picture><source type="image/avif" srcset="/writing-break/img/4RgFABBMsR-642.avif 642w"><source type="image/webp" srcset="/writing-break/img/4RgFABBMsR-642.webp 642w"><img loading="lazy" decoding="async" src="/writing-break/img/4RgFABBMsR-642.png" alt="Bubbles in bed" width="642" height="398"></picture>
+<h3 id="children-should-wake-up-before-8-30-teenagers-should-wake-up-at-10-11-am-adults-should-wake-up-10-am-on-the-dot">Children should wake up before 8:30. Teenagers should wake up at 10-11 AM. Adults should wake up 10 AM on the dot.</h3>
+<p>What's more, after providing these biblical facts, they nobly state that we should stop being constrained by human society and reject the unrealistic regimes of our work schedules. Apparently all these ultra-scientific values came from &quot;Oxford scientists&quot;, but I have not been able to find the source.</p>
+<h3 id="sleeping-for-20-minutes-at-lunchtime-turns-you-into-superman">Sleeping for 20 minutes at lunchtime turns you into Superman</h3>
+<p>I am barely exaggerating. Improved memory, brain function, energy, creativity, the list goes on. All from sleeping 20 minutes after lunch. Even if I wanted to bother testing this one, I can't fall asleep in 20 minutes, much less have an entire nap in that time.</p>
+<h3 id="children-should-always-sleep-in-the-dark">Children should always sleep in the dark</h3>
+<p>They again promote milk-drinking at night - the conspiracy unfolds.</p>
+<h3 id="give-up-coffee-and-smartphone-usage-before-sleep-and-exercise-every-morning">Give up coffee and smartphone-usage before sleep, and exercise every morning</h3>
+<p>This, along with a bunch of other recommendations about pillow placement and sleep routines, is a solid chunk of pretty good pieces of advice.</p>
+<h3 id="how-to-fall-asleep-in-just-1-minute">How to Fall Asleep in Just 1 Minute</h3>
+<p>And here is where I realised that I had actually watched this video before - years and years ago, in 2017 - and that this video was one of the impostors of my watch later playlist. Although I hadn't remembered watching the video (quite rightly), I <em>do</em> recall attempting the following step-by-step process to fall asleep in 1 minute:</p>
+<ol>
+<li>Breathe in through your nose for 4 seconds</li>
+<li>Hold your breath for 7 seconds</li>
+<li>Breathe out through your mouth for 8 seconds</li>
+<li>Repeat several times</li>
+</ol>
+<p>I remember trying this as a kid on multiple nights to no avail. But no, you cannot fall asleep in 1 minute after 3 very laboured breaths. Where 5-Minute Crafts came up with this I have no idea.</p>
+<h3 id="no-sleep-causes-poor-concentration-increased-appetite-anger-hallucinations-inarticulate-speech-weakened-immunity-brain-damage">No sleep causes: poor concentration, increased appetite, anger, hallucinations, inarticulate speech, weakened immunity, brain damage</h3>
+<p>Pretty nice of 5-Minute Crafts to make seemingly logical statements. Various sleep experiments have shown what exactly happens to humans when forbidden sleep. I'm not sure &quot;hallucination&quot; is the right term, however, but at least it's something.</p>
+<picture><source type="image/avif" srcset="/writing-break/img/w3q2scbbJb-520.avif 520w"><source type="image/webp" srcset="/writing-break/img/w3q2scbbJb-520.webp 520w"><img loading="lazy" decoding="async" src="/writing-break/img/w3q2scbbJb-520.png" alt="Ants never sleep" width="520" height="350"></picture>
+<h3 id="the-best-way-to-sleep-is-on-your-side">The best way to sleep is on your side</h3>
+<p>It looks like there's no scientifically proven correct position to sleep, and there's no best position for everybody.</p>
+<h3 id="warm-milk-with-honey-improves-your-sleep">Warm milk with honey improves your sleep</h3>
+<p>You've got to be kidding me.</p>
+<h3 id="what-happens-to-our-bodies-when-we-drink-coffee">What happens to our bodies when we drink coffee</h3>
+<ol>
+<li>10 mins: heart beat quickens, blood pressure increases</li>
+<li>20 mins: concentration improves, tiredness disappears</li>
+<li>30 mins: adrenaline rush, vision improves</li>
+<li>40 mins: you become Superman (not even exaggerating this time)</li>
+<li>4 hours: fats are broken up, stomach acid levels increase</li>
+<li>6 hours: you need the toilet</li>
+</ol>
+<p>Are we sure 5-Minute Crafts didn't have secret access to ChatGPT in 2017?</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>We made it. I don't think a single soul is going to read all this, and that's a good thing. No one should put themselves through this ordeal ever again.</p>
+<p>5-Minute Crafts' groundbreaking science was not groundbreaking (or science), but sometime sit wasn't flat out wrong. I was surprised by the informational tidbits that actually held truth in them. I thought it was rather respectable that they promoted sleeping on time and getting more sleep as much as they did.</p>
+<p>But it really depended on the TikTok short in question - some were definitely there just to tick the checkbox of &quot;it's science&quot;, regardless of if its usefulness or truthfulness. It goes without saying that the thumbnail was clickbait. But I can tell why younger me added this video to my watch later playlist, and then eventually watched it. The allure of fixing all your sleep problems in a 9-minute video is admittedly high, although reality isn't so glamourous as it appears.</p>
+<p>What's the moral of the story, then?</p>
+<p>I think we all know the answer to that one.</p>
+
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/writing-break/posts/1_1478-videos/">1478 Videos</a></li>
+</ul>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a></em>
+			</p>
+		</footer>
+
+		<!-- This page `/posts/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-07-27T23:19:35.912Z -->
+		<script type="module" src="/writing-break/dist/xbxy_EL6cU.js"></script>
+	</body>
+</html>
