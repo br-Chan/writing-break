@@ -24,12 +24,12 @@ Before I begin, I want to explain that 5-Minute Crafts created a 9-minute video 
 
 What's more, while writing that last paragraph out I did a google search and came to the insane realisation that 5-Minute Crafts and TikTok [:began in the same year](#x-insane-realisation).
 
+### :x Insane realisation
+The 5-Minute Crafts channel was registered on November 15 2016, while TikTok was launched in September 2016. Yes, that means TikTok predates 5-Minute Crafts. The timeline is fracturing.
+
 ## The Groundbreaking Science
 
 This video claims to be "scientific" (they have a grand total of zero sources), so as a true scientist I will test their theories and attempt some of their groundbreaking science. What follows is a compendium of all the (rather insane) tips that they give to improve your sleep or cure your bodily mortality via sleep. Buckle in.
-
-### :x Insane realisation
-The 5-Minute Crafts channel was registered on November 15 2016, while TikTok was launched in September 2016. Yes, that means TikTok predates 5-Minute Crafts. The timeline is fracturing.
 
 ### Defeat insomnia: meditate listening to classical music
 
@@ -113,7 +113,7 @@ Are we sure 5-Minute Crafts didn't have secret access to ChatGPT in 2017?
 
 We made it. I don't think a single soul is going to read all this, and that's a good thing. No one should put themselves through this ordeal ever again.
 
-5-Minute Crafts' groundbreaking science was not groundbreaking (or science), but sometime sit wasn't flat out wrong. I was surprised by the informational tidbits that actually held truth in them. I thought it was rather respectable that they promoted sleeping on time and getting more sleep as much as they did.
+5-Minute Crafts' groundbreaking science was not groundbreaking (or science), but sometimes it wasn't flat out wrong. I was surprised by the informational tidbits that actually held truth in them. I thought it was rather respectable that they promoted sleeping on time and getting more sleep as much as they did.
 
 But it really depended on the TikTok short in question - some were definitely there just to tick the checkbox of "it's science", regardless of if its usefulness or truthfulness. It goes without saying that the thumbnail was clickbait. But I can tell why younger me added this video to my watch later playlist, and then eventually watched it. The allure of fixing all your sleep problems in a 9-minute video is admittedly high, although reality isn't so glamourous as it appears.
 
