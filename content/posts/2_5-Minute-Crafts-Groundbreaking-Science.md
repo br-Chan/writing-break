@@ -5,7 +5,7 @@ date: 2025-07-28 09:36:00
 tags: watch-later
 ---
 
-This post is far longer than any human attention span can accommodate for. I will likely write a shorter version for brevity in the next post, so here's a [:nutshell]() if I have. In future posts, I will combine multiple videos into one post.
+This post is far longer than any human attention span can accommodate for. I will likely write a shorter version for brevity in the next post, so here's a [:nutshell](/posts/3/#HowToFixAllYourSleepProblemswithScience) if I have. In future posts, I will combine multiple videos into one post.
 
 **Video** [:HOW TO FIX ALL YOUR SLEEP PROBLEMS WITH SCIENCE](https://youtu.be/2lDosO03h1U?si=fStBudJIyvuklvFz)
 |                                   |     |
@@ -92,7 +92,7 @@ Pretty nice of 5-Minute Crafts to make seemingly logical statements. Various sle
 
 ### The best way to sleep is on your side
 
-It looks like there's no scientifically proven correct position to sleep, and there's no best position for everybody.
+I've done some quick research: it looks like there's no scientifically proven correct position to sleep, and there's no best position for everybody.
 
 ### Warm milk with honey improves your sleep
 
