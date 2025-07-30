@@ -11,9 +11,6 @@ importers:
       '@zachleat/heading-anchors':
         specifier: ^1.0.3
         version: 1.0.3
-      eleventy-plugin-reader-bar:
-        specifier: ^0.2.1
-        version: 0.2.1(@11ty/eleventy@3.1.2)
     devDependencies:
       '@11ty/eleventy':
         specifier: ^3.1.2
@@ -377,11 +374,6 @@ packages:
 
   ee-first@1.1.1:
     resolution: {integrity: sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow==}
-
-  eleventy-plugin-reader-bar@0.2.1:
-    resolution: {integrity: sha512-yXMZ28dBpJtxveO30e8dVgcv560hlOT9lv1TpuDRXDo/AksmFgjdhAalR8HADMIo4P8hmJzDYjc9kSg4KWKRqA==}
-    peerDependencies:
-      '@11ty/eleventy': '>=0.10'
 
   encodeurl@2.0.0:
     resolution: {integrity: sha512-Q0n9HRi4m6JuGIV1eFlmvJB7ZEVxu93IrMyiMsGC0lrMJMWzRgx6WGquyfQgZVb31vhGgXnfmPNNXmxnOkRBrg==}
@@ -1197,10 +1189,6 @@ snapshots:
   duplexer@0.1.1: {}
 
   ee-first@1.1.1: {}
-
-  eleventy-plugin-reader-bar@0.2.1(@11ty/eleventy@3.1.2):
-    dependencies:
-      '@11ty/eleventy': 3.1.2
 
   encodeurl@2.0.0: {}
 

@@ -18,7 +18,7 @@ layout: layouts/base.njk
 <p><i>{{ description }}</i></p>
 
 {{ content | safe }}
-{% readerBar "4px", "#dddddd", "green", "0px" %}
+<script>{% include "../readerBar.js" %}</script>
 
 {%- if collections.posts %}
 {%- set previousPost = collections.posts | getPreviousCollectionItem %}
