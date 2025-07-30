@@ -42,7 +42,7 @@ This video was a good watch and very informative. Right off the bat it was state
 
 I can't possibly transcribe the entire video, but I would highly recommend giving it a watch. They give proper reasonings for each of the 6 strategies, which is a welcome relief. They also have free posters:
 
-<img src="/img/3_studyskillsPoster.png" alt="Study Skills Poster" />
+<img src="/img/3_studySkillsPoster.png" alt="Study Skills Poster" />
 
 ### :x Personal Note
 As a personal note, the Concrete examples part is in contrast to "first principles thinking", which in my interpretation favours the core fundamentals of an idea rather than focusing on anecotal examples. I suppose they're both sides of the same coin - maybe examples can be used to hook onto the concepts, and then you can dive into the first principles to more fully understand it. No real idea, honestly.
