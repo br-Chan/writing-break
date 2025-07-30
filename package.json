@@ -33,7 +33,8 @@
 		"zod-validation-error": "^3.5.2"
 	},
 	"dependencies": {
-		"@zachleat/heading-anchors": "^1.0.3"
+		"@zachleat/heading-anchors": "^1.0.3",
+		"eleventy-plugin-reader-bar": "^0.2.1"
 	},
 	"packageManager": "pnpm@10.13.1"
 }

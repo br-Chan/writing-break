@@ -1,6 +1,7 @@
 export default {
 	tags: [
-		"posts"
+		"posts",
+		"watch-later",
 	],
 	"layout": "layouts/post.njk",
 };

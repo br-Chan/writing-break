@@ -2,7 +2,7 @@
 title: 5-Minute Crafts' Groundbreaking Science
 description: Hopefully this is the last time I ever watch a 5-Minute Crafts video.
 date: 2025-07-28 09:36:00
-tags: watch-later
+tags:
 ---
 
 This post is far longer than any human attention span can accommodate for. I will likely write a shorter version for brevity in the next post, so here's a [:nutshell](/posts/3/#HowToFixAllYourSleepProblemswithScience) if I have. In future posts, I will combine multiple videos into one post.

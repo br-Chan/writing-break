@@ -2,7 +2,7 @@
 title: 1478 Videos
 description: So it begins.
 date: 2025-07-23 23:30:00
-tags: watch-later
+tags:
 ---
 
 <img src="/img/1_watchLaterPlaylist.png" alt="My watch later playlist; the cover image is an accurate depiction of the pain I will go through watching them all.">

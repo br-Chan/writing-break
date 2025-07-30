@@ -2,7 +2,7 @@
 title: Study Tips, Cuphead and a Russian Missile Silo
 description: '"Help me man!" ~ Tanel'
 date: 2025-07-30 21:33:00
-tags: watch-later
+tags:
 ---
 
 I'll begin with a summary of the first video of my watch later playlist for completion's sake, a longer version of which can be found in the previous post. Then, the thrill of the chase begins as I watch the next few videos in my playlist.
