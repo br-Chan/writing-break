@@ -225,41 +225,37 @@ class HeadingAnchors extends HTMLElement {
 HeadingAnchors.register();
 
 export { HeadingAnchors }
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 250) {
-      upBtn.style.opacity = 1;
-      upBtn.style.pointerEvents = 'auto';     
-    }
-    else {
-      upBtn.style.opacity = 0;
-      upBtn.style.pointerEvents = 'none';
-    }
-  })
+const readerBarBg = document.createElement('div');
+readerBarBg.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #dddddd;
+    z-index: 9998;
+`;
+document.body.appendChild(readerBarBg)
 
-  upBtn.addEventListener('click', () => {
-    let start = document.querySelector('.reader-bar-start')
-    start.scrollIntoView({behavior: "smooth"})
-  })
-let winH = window.innerHeight;
-    const content = document.querySelector('.reader-bar-start');
+const readerBar = document.createElement('div');
+readerBar.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: #39e233;
+    z-index: 9999;
+    transition: width 0.1s ease;
+`;
+document.body.appendChild(readerBar);
 
-    let contentH = content.offsetHeight;
-    let contentS = contentH - winH;
-    let readerBar = document.getElementById('readerBar');
-    window.addEventListener('load', () => {
-      document.addEventListener ('scroll', updateBar);
-    })
-    window.addEventListener('resize', redefine)
-
-    function redefine() {
-      winH = window.innerHeight;
-      contentH = content.offsetHeight;
-      contentS = contentH - winH;
-      updateBar();
-    }
-
-    function updateBar() {
-      const pagePos = window.scrollY; 
-      const updatedBar = pagePos * 100 / contentS;
-      readerBar.style.width = updatedBar + "%";
-    }
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const scrollableHeight = documentHeight - windowHeight;
+    const scrollPercentage = Math.min(100, (scrollTop / scrollableHeight) * 100);
+    
+    readerBar.style.width = scrollPercentage + '%';
+});
