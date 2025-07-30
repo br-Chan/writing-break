@@ -5,7 +5,7 @@ date: 2025-07-28 09:36:00
 tags:
 ---
 
-This post is far longer than any human attention span can accommodate for. I will likely write a shorter version for brevity in the next post, so here's a [:nutshell](/posts/3/#HowToFixAllYourSleepProblemswithScience) if I have. In future posts, I will combine multiple videos into one post.
+This post is far longer than any human attention span can accommodate for. I will likely write a shorter version for brevity in the next post, so here's a [:nutshell](/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/#HowtoFixAllYourSleepProblemswithScience) if I have. In future posts, I will combine multiple videos into one post.
 
 **Video** [:HOW TO FIX ALL YOUR SLEEP PROBLEMS WITH SCIENCE](https://youtu.be/2lDosO03h1U?si=fStBudJIyvuklvFz)
 |                                   |     |
