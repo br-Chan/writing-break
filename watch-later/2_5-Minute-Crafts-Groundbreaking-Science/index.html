@@ -70,7 +70,7 @@ html {
 	overflow-y: scroll;
 }
 body {
-	max-width: 40em;
+	max-width: 50em;
 }
 
 /* https://www.a11yproject.com/posts/how-to-hide-content/ */
@@ -475,29 +475,41 @@ pre[class*="language-diff-"] {
 	margin-right: calc(-1 * var(--eleventy-code-padding));
 	text-decoration: none; /* override del, ins, mark defaults */
 	color: inherit; /* override del, ins, mark defaults */
-}</style>
+}
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }</style>
 		
 	</head>
 	<body>
 		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
 
-		<header>
-			<a href="/writing-break/" class="home-link">Writing Break</a>
-			<nav>
-				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
-				<ul class="nav">
-					<li class="nav-item"><a href="/writing-break/">Home</a></li>
-					<li class="nav-item"><a href="/writing-break/feed/feed.xml">Feed</a></li>
-					<li class="nav-item"><a href="/writing-break/posts/">All posts</a></li>
-					<li class="nav-item"><a href="/writing-break/tags/">Tags</a></li>
-					<li class="nav-item"><a href="/writing-break/about/">About</a></li>
-				</ul>
-			</nav>
-		</header>
+		<div class="reader-bar-start">
+			<header>
+				<a href="/writing-break/" class="home-link">Writing Break</a>
+				<nav>
+					<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+					<ul class="nav">
+						<li class="nav-item"><a href="/writing-break/">Home</a></li>
+						<li class="nav-item"><a href="/writing-break/feed/feed.xml">Feed</a></li>
+						<li class="nav-item"><a href="/writing-break/posts/">All Posts</a></li>
+						<li class="nav-item"><a href="/writing-break/tags/">Tags</a></li>
+						<li class="nav-item"><a href="/writing-break/about/">About</a></li>
+					</ul>
+				</nav>
+			</header>
 
-		<main id="main">
-			<heading-anchors>
-				
+			<main id="main">
+				<heading-anchors>
+					
 
 
 <h1 id="5-minute-crafts-groundbreaking-science">5-Minute Crafts&#39; Groundbreaking Science</h1>
@@ -597,24 +609,42 @@ pre[class*="language-diff-"] {
 <p>What's the moral of the story, then?</p>
 <p>I think we all know the answer to that one.</p>
 
-<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/writing-break/posts/1_1478-videos/">1478 Videos</a></li><li class="links-nextprev-next">Next →<br><a href="/writing-break/posts/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a></li>
+
+  <!-- up button -->
+  <div>
+    <button id="upBtn" aria-label="go to top" style="position:fixed; width:32px; height:32px; border-radius:50%; border:none; background-color:black; right:32px; bottom:32px; color:white; focus:outline-none; cursor:pointer; transition-duration:500ms; opacity:0; pointer-events:none;"><i class="arrow up"></i></button>
+  </div>
+  
+  
+
+  
+
+  <!-- reader bar -->
+  <div id="readerBarContainer" style="height:4px;width:100%;background-color:#dddddd;position:fixed;top:0px;left:0;z-index:100;transition:0.2s;">
+    <div id="readerBar" style="height:4px;width:0;background-color:green;position:fixed;top:0px;left:0;z-index:200;transition:0.2s;"></div>
+  </div>
+
+  
+  
+<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous<br> <a href="/writing-break/watch-later/1_1478-videos/">1478 Videos</a></li><li class="links-nextprev-next">Next →<br><a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a></li>
 </ul>
+				</heading-anchors>
+			</main>
 
-			</heading-anchors>
-		</main>
+			<footer>
+				<p>
+					<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+					<br>
+					<em>
+						Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+						and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+					</em>
+				</p>
+			</footer>
+		</div>
 
-		<footer>
-			<p>
-				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
-				<br>
-				<em>
-					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
-					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
-				</em>
-			</p>
-		</footer>
-
-		<!-- This page `/posts/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-07-30T09:33:50.379Z -->
-		<script type="module" src="/writing-break/dist/xbxy_EL6cU.js"></script>
+		
+		<!-- This page `/watch-later/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-07-30T10:24:24.648Z -->
+		<script type="module" src="/writing-break/dist/B8zkL2rMqu.js"></script>
 	</body>
 </html>
