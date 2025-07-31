@@ -1,7 +1,7 @@
 ---
 title: To Eat a Peanut
 description:
-date: 2025-07-31 00:00:00
+date: 2025-07-31 11:16:00
 tags:
 ---
 
@@ -25,9 +25,11 @@ The pudgy fingers released him. Cold air parted before him as he fell. Perry fel
 
 The tongue was wet. He landed upon it as massive jaws snapped shut, snipping off the last light he would ever see. The tongue twitched and immediately it curled around him, smothered him, tightened its grip. Saliva poured over him, a billion needles stabbing into his skin. But he was tough - he would not go without a fight.
 
-Then the tongue let go and tossed him up, and the teeth, those pearly whites, grabbed him. Nausea set in. What were they doing to him? What were they _all_ doing to him? And it was only then that he realised that those jaws were pressing down on him. The teeth were squeezing him.
+Then the tongue let go and tossed him up, and the teeth, those pearly whites, grabbed him. Nausea bounced around within his nutty soul. What he saw now was yet another Machine - but a biological one. Everything had its place - the saliva, the tongue, the teeth, the tunnel - but what were they all for? What were they doing to him? What were they _all_ doing to him?
 
-Perry fought against the strain. Acid burned down his face. The teeth squeezed and squeezed and squeezed. He could feel it - his insides slipping, his skin cracking, the teeth breaking him open-
+And it was only then that he realised that those jaws were pressing down on him.
+
+The teeth were squeezing him! Perry fought against the strain. Acid burned down his face. The teeth squeezed and squeezed and squeezed. He could feel it - his insides slipping, his skin cracking, the teeth breaking him open-
 
 CRACK!!
 

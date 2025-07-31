@@ -21,12 +21,69 @@ layout: layouts/base.njk
 <script>{% include "../readerBar.js" %}</script>
 
 {%- if collections.posts %}
-{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-{%- set nextPost = collections.posts | getNextCollectionItem %}
-{%- if nextPost or previousPost %}
-<ul class="links-nextprev">
-	{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
-	{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
-</ul>
+	{%- set previousPost = collections.posts | getPreviousCollectionItem %}
+	{%- set nextPost = collections.posts | getNextCollectionItem %}
+
+	{# Next/prev in a certain tag #}
+	{%- for tag in tags | filterTagList %}
+		{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
+		{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
+		{%- set showPreviousTagged = previousTagged and previousTagged !== previousPost %}
+		{%- set showNextTagged = nextTagged and nextTagged !== nextPost %}
+		{%- if showNextTagged or showPreviousTagged %}
+			<ul class="links-nextprev">
+				{%- if showPreviousTagged %}<li class="links-nextprev-prev">← Previous in {{ tag }}<br> <a href="{{ previousTagged.url }}">{{ previousTagged.data.title }}</a></li>{% endif %}
+				{%- if showNextTagged %}<li class="links-nextprev-next">Next in {{ tag  }} →<br><a href="{{ nextTagged.url }}">{{ nextTagged.data.title }}</a></li>{% endif %}
+			</ul>
+		{%- endif %}
+	{%- endfor %}
+
+	{# Next/prev in all posts #}
+	{%- if nextPost or previousPost %}
+		<ul class="links-nextprev">
+			{%- if previousPost %}
+				<li class="links-nextprev-prev">
+					{%- for tag in tags | filterTagList %}
+						{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
+						{%- if previousTagged and previousTagged == previousPost %}← Previous in {{ tag }}<br>{%- endif %}
+					{%- endfor %}
+					← Previous<br>
+					<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+				</li>
+			{% endif %}
+			{%- if nextPost %}
+				<li class="links-nextprev-next">
+					{%- for tag in tags | filterTagList %}
+						{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
+						{%- if nextTagged and nextTagged == nextPost %}Next in {{ tag }} →<br>{%- endif %}
+					{%- endfor %}
+					Next →<br>
+					<a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+				</li>
+			{% endif %}
+		</ul>
+	{%- endif %}
 {%- endif %}
-{%- endif %}
+
+	{# {%- set previousPost = collections.posts | getPreviousCollectionItem %}
+	{%- set nextPost = collections.posts | getNextCollectionItem %}
+
+	{# Next/prev in a certain tag #}
+	{# {%- for tag in tags | filterTagList %}
+		{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
+		{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
+		{%- if nextTagged or previousTagged %}
+			<ul class="links-nextprev">
+				{%- if previousTagged  %}<li class="links-nextprev-prev">← Previous in {{ tag }}<br> <a href="{{ previousTagged.url }}">{{ previousTagged.data.title }}</a></li>{% endif %}
+				{%- if nextTagged %}<li class="links-nextprev-next">Next in {{ tag  }} →<br><a href="{{ nextTagged.url }}">{{ nextTagged.data.title }}</a></li>{% endif %}
+			</ul>
+		{%- endif %}
+	{%- endfor %} #}
+
+	{# Next/prev in all posts #}
+	{# {%- if nextPost or previousPost %}
+		<ul class="links-nextprev">
+			{%- if previousPost %}<li class="links-nextprev-prev">← Previous<br> <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a></li>{% endif %}
+			{%- if nextPost %}<li class="links-nextprev-next">Next →<br><a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a></li>{% endif %}
+		</ul>
+	{%- endif %} #}
