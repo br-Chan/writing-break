@@ -157,13 +157,16 @@ header {
 	z-index: 999;
 }
 
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
 .links-nextprev {
 	display: flex;
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
+	padding: 0 0;
 }
 .links-nextprev > * {
 	flex-grow: 1;
@@ -486,11 +489,21 @@ pre[class*="language-diff-"] {
 			<nav>
 				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
 				<ul class="nav">
-					<li class="nav-item"><a href="/writing-break/">Home</a></li>
-					<li class="nav-item"><a href="/writing-break/feed/feed.xml">Feed</a></li>
-					<li class="nav-item"><a href="/writing-break/posts/">All Posts</a></li>
-					<li class="nav-item"><a href="/writing-break/tags/">Tags</a></li>
-					<li class="nav-item"><a href="/writing-break/about/">About</a></li>
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
 				</ul>
 			</nav>
 		</header>
@@ -534,7 +547,7 @@ pre[class*="language-diff-"] {
 <h2 id="insert-name-of-this-post">&lt; insert name of this post &gt;</h2>
 
 
-
+	<div class="links-bordertop"></div>
 	
 
 	
@@ -542,6 +555,11 @@ pre[class*="language-diff-"] {
 				<li class="links-nextprev-prev">
 					← Previous<br>
 					<a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a>
+				</li>
+			
+				<li class="links-nextprev-next">
+					Next →<br>
+					<a href="/writing-break/watch-later/4_TheBlackToyotaOfGondor/">The Black Toyota of Gondor</a>
 				</li>
 			
 		</ul>
@@ -560,12 +578,12 @@ pre[class*="language-diff-"] {
 				<br>
 				<em>
 					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
-					and enhanced with <a href="https://ncase.me/nutshell">Nutshell</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
 				</em>
 			</p>
 		</footer>
 		
-		<!-- This page `/stories/1_crap/` was built on 2025-07-31T04:57:33.497Z -->
+		<!-- This page `/stories/1_crap/` was built on 2025-08-04T11:56:50.516Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>
