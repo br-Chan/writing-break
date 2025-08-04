@@ -144,13 +144,16 @@ header {
 	z-index: 999;
 }
 
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
 .links-nextprev {
 	display: flex;
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
-	border-top: 1px dashed var(--color-gray-20);
-	padding: 1em 0;
+	padding: 0 0;
 }
 .links-nextprev > * {
 	flex-grow: 1;

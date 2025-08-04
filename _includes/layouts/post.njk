@@ -23,7 +23,7 @@ layout: layouts/base.njk
 {%- if collections.posts %}
 	{%- set previousPost = collections.posts | getPreviousCollectionItem %}
 	{%- set nextPost = collections.posts | getNextCollectionItem %}
-
+	<div class="links-bordertop"></div>
 	{# Next/prev in a certain tag #}
 	{%- for tag in tags | filterTagList %}
 		{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
