@@ -101,7 +101,7 @@ My favourite comment went along the lines of, "Ahh, Minas Tirith. Famous for its
 | **Should have watched sooner?**   | Yes |
 | **Should you watch?**             | Maybe |
 
-I hadn't listened to Panic at the Disco in a long while (except for House of Memories, which has been twiddling its thumbs lonely-like in my Spotify playlists). But watching this video made me realise how many great songs I should be listening to more often. And again, the transitions between songs are impeccable. It goes on for a long time though - 12 minutes.
+I hadn't listened to Panic at the Disco in a long while (except for House of Memories and High Hopes, which have been twiddling their thumbs all lonely-like in my Spotify playlists). But watching this video made me realise how many great songs I should be listening to more often. And again, the transitions between songs are impeccable. It goes on for a long time though - 12 minutes.
 
 ## 6 videos in this post
 

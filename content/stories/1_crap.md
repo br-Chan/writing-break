@@ -3,6 +3,7 @@ title: To Eat a Peanut
 description:
 date: 2025-07-31 11:16:00
 tags:
+noToc: true
 ---
 
 To eat or not to eat? That is the question.
@@ -47,4 +48,4 @@ Into that deep, deep tunnel.
 
 Down and down he went. He could feel nothing and everything. He was no more, and yet his journey was only beginning. Where would he go now, and what would he become?
 
-## < insert name of this post >
+## To be continued in Issue #501: To Digest a Peanut (feat: Eddie the E. coli)

@@ -15,9 +15,11 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 
+{%- if not noToc %}
 <aside>
 	{{ content | toc | safe }}
 </aside>
+{%- endif%}
 
 <p><i>{{ description }}</i></p>
 
