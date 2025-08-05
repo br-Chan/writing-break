@@ -3,6 +3,9 @@ import { feedPlugin } from "@11ty/eleventy-plugin-rss";
 import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import pluginTOC from "eleventy-plugin-nesting-toc";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
 
 import pluginFilters from "./_config/filters.js";
 
@@ -102,6 +105,14 @@ export default async function(eleventyConfig) {
 		},
 	});
 
+	eleventyConfig.setLibrary("md",
+		markdownIt({
+			html: true,
+			linkify: true,
+			typographer: true,
+		}).use(markdownItAnchor, {})
+	);
+
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
 
@@ -114,6 +125,16 @@ export default async function(eleventyConfig) {
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
+
+	const defaults = {
+		tags: ['h2'], // Which heading tags are selected (headings must each have an ID attribute)
+		ignoredElements: [],  // Elements to ignore when constructing the label for every header (useful for ignoring permalinks, must be selectors)
+		wrapper: 'nav',       // Element to put around the root `ol`
+		wrapperClass: 'toc',  // Class for the element around the root `ol`
+		headingText: 'Table of Contents',      // Optional text to show in heading above the wrapper element
+		headingTag: 'h3'      // Heading tag when showing heading above the wrapper element
+	}
+	eleventyConfig.addPlugin(pluginTOC, defaults);
 
 	// Features to make your build faster (when you need them)
 

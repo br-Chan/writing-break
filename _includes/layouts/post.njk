@@ -15,6 +15,10 @@ layout: layouts/base.njk
 	{%- endfor %}
 </ul>
 
+<aside>
+	{{ content | toc | safe }}
+</aside>
+
 <p><i>{{ description }}</i></p>
 
 {{ content | safe }}

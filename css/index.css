@@ -144,6 +144,11 @@ header {
 	z-index: 999;
 }
 
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
 .links-bordertop {
 	border-top: 1px dashed var(--color-gray-20);
 	padding: 1em 0 0 0;
@@ -294,6 +299,7 @@ header {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	margin-bottom: 1rem;
 }
 .post-metadata time {
 	margin-right: 1em;
