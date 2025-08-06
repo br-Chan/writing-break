@@ -153,15 +153,19 @@ header {
 	border-top: 1px dashed var(--color-gray-20);
 	padding: 1em 0 0 0;
 }
+.links-nextprevwrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
 .links-nextprev {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
 	padding: 0 0;
-}
-.links-nextprev > * {
-	flex-grow: 1;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .links-nextprev-next {
 	text-align: right;

@@ -102,12 +102,12 @@ You've got to be kidding me.
 
 1. 10 mins: heart beat quickens, blood pressure increases
 2. 20 mins: concentration improves, tiredness disappears
-3. 30 mins: adrenaline rush, vision improves
+3. 30 mins: adrenaline rush, vision improves (??!)
 4. 40 mins: you become Superman (not even exaggerating this time)
 5. 4 hours: fats are broken up, stomach acid levels increase
 6. 6 hours: you need the toilet
 
-Are we sure 5-Minute Crafts didn't have secret access to ChatGPT in 2017?
+Are we sure 5-Minute Crafts didn't have secret access to ChatGPT in 2017? Something about this clip seemed so off.
 
 ## Conclusion
 

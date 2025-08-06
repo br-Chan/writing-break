@@ -48,4 +48,6 @@ Into that deep, deep tunnel.
 
 Down and down he went. He could feel nothing and everything. He was no more, and yet his journey was only beginning. Where would he go now, and what would he become?
 
-## To be continued in Issue #501: To Digest a Peanut (feat: Eddie the E. coli)
+## To be continued in Issue #501: To Digest a Peanut
+
+Featuring Ed the E. coli

@@ -105,6 +105,6 @@ I hadn't listened to Panic at the Disco in a long while (except for House of Mem
 
 ## 6 videos in this post
 
-And with me still adding videos to the other end of the queue, I have 1470 videos left to trawl through. That's 245 posts to go, and if I get through 1 post a week (a hopeless ideal) I'll be done in 35 weeks, just under the human gestation period.
+And with me still adding videos to the other end of the queue, I have 1470 videos left to trawl through. That's 245 posts to go, and if I get through 1 post a week (a hopeless ideal) I'll be done in 35 weeks, which for context is just under the human gestation period.
 
 I'm making good progress, then.

@@ -3,6 +3,7 @@ title: 1478 Videos
 description: So it begins.
 date: 2025-07-23 23:30:00
 tags:
+noToc: true
 ---
 
 <img src="/img/1_watchLaterPlaylist.png" alt="My watch later playlist; the cover image is an accurate depiction of the pain I will go through watching them all.">
@@ -13,7 +14,7 @@ is the maximum number of videos a playlist can have on YouTube. Once you hit 500
 
 ## 2017
 
-is the year I added my first video to the watch later playlist. In the 8 years that followed, I've been adding videos completely willy-nilly. That's 4 videos per week on average - again, almost doesn't sound half bad. Some of these videos I was genuinely interested in; others were ones that caught my curiosity that I didn't want to lose in the ever-passing stream of recommendations; and a couple I'm sure were purely accidental. Of course, a fair few videos must have been deleted or hidden (not enough, clearly).
+is the year I added my first video to the watch later playlist. In the 8 years that followed, I've been adding videos completely willy-nilly. That's 4 videos per week on average - again, almost doesn't sound half bad. Some of these videos I was genuinely interested in; others were ones that caught my curiosity that I didn't want to lose in the ever-passing stream of recommendations; and a couple I'm sure were purely accidental. Of course, a fair few videos must have been deleted or hidden by the channels who'd uploaded them (not enough, clearly).
 
 Whatever the case, I don't think I have ever gone into that playlist to watch any of the videos I've added. Not one single time. I certainly watch the playlist - watch in growing perturbation as the video count grows and grows and grows - but I don't recall even a single time that I had taken a video out of the playlist. That doesn't mean I haven't watched any of the videos - a solid chunk of them I ended up watching separately, somewhere on the home page or my subscription feed - leaving behind a bunch of impostors in my watch later playlist.
 
