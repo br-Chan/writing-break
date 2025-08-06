@@ -166,15 +166,19 @@ header {
 	border-top: 1px dashed var(--color-gray-20);
 	padding: 1em 0 0 0;
 }
+.links-nextprevwrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
 .links-nextprev {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
 	padding: 0 0;
-}
-.links-nextprev > * {
-	flex-grow: 1;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .links-nextprev-next {
 	text-align: right;
@@ -757,29 +761,28 @@ pre[class*="language-diff-"] {
 </table>
 <p>I hadn’t listened to Panic at the Disco in a long while (except for House of Memories and High Hopes, which have been twiddling their thumbs all lonely-like in my Spotify playlists). But watching this video made me realise how many great songs I should be listening to more often. And again, the transitions between songs are impeccable. It goes on for a long time though - 12 minutes.</p>
 <h2 id="6-videos-in-this-post" tabindex="-1">6 videos in this post</h2>
-<p>And with me still adding videos to the other end of the queue, I have 1470 videos left to trawl through. That’s 245 posts to go, and if I get through 1 post a week (a hopeless ideal) I’ll be done in 35 weeks, just under the human gestation period.</p>
+<p>And with me still adding videos to the other end of the queue, I have 1470 videos left to trawl through. That’s 245 posts to go, and if I get through 1 post a week (a hopeless ideal) I’ll be done in 35 weeks, which for context is just under the human gestation period.</p>
 <p>I’m making good progress, then.</p>
 
 
 	<div class="links-bordertop"></div>
-	
-			<ul class="links-nextprev"><li class="links-nextprev-prev">← Previous in watch-later<br> <a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a></li>
-			</ul>
 
-	
+	<div class="links-nextprevwrapper">
 		<ul class="links-nextprev">
+					<li class="links-nextprev-prev">
+						← Previous in watch-later
+						<br>
+						<a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a>
+					</li>
 				<li class="links-nextprev-prev">
 					← Previous<br>
 					<a href="/writing-break/stories/1_crap/">To Eat a Peanut</a>
 				</li>
-			
 		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
 
-	
-	
-
-	
-	
 			</heading-anchors>
 		</main>
 
@@ -794,7 +797,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 		
-		<!-- This page `/watch-later/4_TheBlackToyotaOfGondor/` was built on 2025-08-05T11:46:56.891Z -->
+		<!-- This page `/watch-later/4_TheBlackToyotaOfGondor/` was built on 2025-08-06T00:07:49.247Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>

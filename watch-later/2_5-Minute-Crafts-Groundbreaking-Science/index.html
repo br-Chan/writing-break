@@ -166,15 +166,19 @@ header {
 	border-top: 1px dashed var(--color-gray-20);
 	padding: 1em 0 0 0;
 }
+.links-nextprevwrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
 .links-nextprev {
 	display: flex;
+	flex-direction: column;
 	justify-content: space-between;
 	gap: .5em 1em;
 	list-style: "";
 	padding: 0 0;
-}
-.links-nextprev > * {
-	flex-grow: 1;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .links-nextprev-next {
 	text-align: right;
@@ -616,12 +620,12 @@ pre[class*="language-diff-"] {
 <ol>
 <li>10 mins: heart beat quickens, blood pressure increases</li>
 <li>20 mins: concentration improves, tiredness disappears</li>
-<li>30 mins: adrenaline rush, vision improves</li>
+<li>30 mins: adrenaline rush, vision improves (??!)</li>
 <li>40 mins: you become Superman (not even exaggerating this time)</li>
 <li>4 hours: fats are broken up, stomach acid levels increase</li>
 <li>6 hours: you need the toilet</li>
 </ol>
-<p>Are we sure 5-Minute Crafts didn’t have secret access to ChatGPT in 2017?</p>
+<p>Are we sure 5-Minute Crafts didn’t have secret access to ChatGPT in 2017? Something about this clip seemed so off.</p>
 <h2 id="conclusion" tabindex="-1">Conclusion</h2>
 <p>We made it. I don’t think a single soul is going to read all this, and that’s a good thing. No one should put themselves through this ordeal ever again.</p>
 <p>5-Minute Crafts’ groundbreaking science was not groundbreaking (or science), but sometimes it wasn’t flat out wrong. I was surprised by the informational tidbits that actually held truth in them. I thought it was rather respectable that they promoted sleeping on time and getting more sleep as much as they did.</p>
@@ -631,27 +635,23 @@ pre[class*="language-diff-"] {
 
 
 	<div class="links-bordertop"></div>
-	
 
-	
+	<div class="links-nextprevwrapper">
 		<ul class="links-nextprev">
 				<li class="links-nextprev-prev">← Previous in watch-later<br>
 					← Previous<br>
 					<a href="/writing-break/watch-later/1_1478-videos/">1478 Videos</a>
 				</li>
-			
+		</ul>
+		<ul class="links-nextprev">
 				<li class="links-nextprev-next">Next in watch-later →<br>
 					Next →<br>
 					<a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a>
 				</li>
 			
 		</ul>
+	</div>
 
-	
-	
-
-	
-	
 			</heading-anchors>
 		</main>
 
@@ -666,7 +666,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 		
-		<!-- This page `/watch-later/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-08-05T11:46:56.891Z -->
+		<!-- This page `/watch-later/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-08-06T00:07:49.246Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>
