@@ -131,7 +131,7 @@ export default async function(eleventyConfig) {
 		ignoredElements: [],  // Elements to ignore when constructing the label for every header (useful for ignoring permalinks, must be selectors)
 		wrapper: 'nav',       // Element to put around the root `ol`
 		wrapperClass: 'toc',  // Class for the element around the root `ol`
-		headingText: 'Table of Contents',      // Optional text to show in heading above the wrapper element
+		// headingText: 'Table of Contents',      // Optional text to show in heading above the wrapper element
 		headingTag: 'h3'      // Heading tag when showing heading above the wrapper element
 	}
 	eleventyConfig.addPlugin(pluginTOC, defaults);

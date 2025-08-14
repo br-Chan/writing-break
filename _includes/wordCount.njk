@@ -1,0 +1,9 @@
+{%- set regExpCode = r/<pre class=(.|\n)*?<\/pre>/gm %}
+{%- set fixedContent = content | replace(regExpCode, "") | striptags %}
+{%- set wordCount = fixedContent | wordcount %}
+{%- set readingRate = 200 %}
+{%- set readingTime = (wordCount/readingRate) | round %}
+{%- if readingTime < 1 %}{%- set readingTime = 1%}{%- endif %}
+<p>
+    {{ wordCount | numCommas }} words • Reading time: {{ readingTime }} minute{% if readingTime > 1 %}s{% endif %}
+</p>

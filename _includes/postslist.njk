@@ -5,9 +5,9 @@
 		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("d LLLL yyyy") }}</time>
 		&nbsp;·&nbsp;{%- for tag in post.data.tags | filterTagList %}
 			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-			<a href="{{ tagUrl }}" class="postlist-date">{{ tag }}</a>{%- if not loop.last %}, {% endif %}
+			<a href="{{ tagUrl }}" class="postlist-date">{{ tag }}</a>{%- if not loop.last %},&nbsp;{% endif %}
 		{%- endfor %}
-		&nbsp;·&nbsp;<a class="postlist-date" href="{{ post.url }}#start=---&length=6&after=open%20post%20to%20keep%20reading...">:Preview</a>
+		&nbsp;·&nbsp;<a class="postlist-date" href="{{ post.url }}#start=content:&length=6&after=open%20post%20to%20keep%20reading...">:Preview</a>
 	</li>
 {%- endfor %}
 </ol>

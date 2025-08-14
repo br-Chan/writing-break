@@ -4,80 +4,35 @@ layout: layouts/base.njk
 {# Only include the syntax highlighter CSS on blog posts, included with the CSS per-page bundle #}
 <style>{% include "node_modules/prismjs/themes/prism-okaidia.css" %}</style>
 <style>{% include "css/prism-diff.css" %}</style>
-<h1>{{ title }}</h1>
 
-<ul class="post-metadata">
-	<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
-	Tags:
-	{%- for tag in tags | filterTagList %}
-		{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-		<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
-	{%- endfor %}
-</ul>
+<div class="precontent">
+	<h1>{{ title }}</h1>
 
-{%- if not noToc %}
-<aside>
-	{{ content | toc | safe }}
-</aside>
-{%- endif%}
+	<ul class="post-metadata">
+		<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></li>
+		Tags:
+		{%- for tag in tags | filterTagList %}
+			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+			<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a>{%- if not loop.last %}, {% endif %}</li>
+		{%- endfor %}
+	</ul>
 
-<p><i>{{ description }}</i></p>
+	{% include "../wordCount.njk" %}
+
+	{%- if not noToc %}
+	<a href="#table-of-contents">:Table of Contents</a>
+	{%- endif%}
+
+	<p><i>{{ description }}</i></p>
+
+	<h3>:xTable of Contents</h3>
+	<p>{{ content | toc | safe }}</p>
+</div>
+
+<p class="contentstart"><i>content:</i></p>
 
 {{ content | safe }}
+
 <script>{% include "../readerBar.js" %}</script>
 
-{%- if collections.posts %}
-	<div class="links-bordertop"></div>
-
-	<div class="links-nextprevwrapper">
-		{%- set previousPost = collections.posts | getPreviousCollectionItem %}
-		<ul class="links-nextprev">
-			{%- for tag in tags | filterTagList %}
-				{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
-				{%- set showPreviousTagged = previousTagged and previousTagged !== previousPost %}
-				{%- if showPreviousTagged %}
-					<li class="links-nextprev-prev">
-						← Previous in {{ tag }}
-						<br>
-						<a href="{{ previousTagged.url }}">{{ previousTagged.data.title }}</a>
-					</li>
-				{%- endif %}
-			{%- endfor %}
-			{%- if previousPost %}
-				<li class="links-nextprev-prev">
-					{%- for tag in tags | filterTagList %}
-						{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
-						{%- if previousTagged and previousTagged == previousPost %}← Previous in {{ tag }}<br>{%- endif %}
-					{%- endfor %}
-					← Previous<br>
-					<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-				</li>
-			{%- endif %}
-		</ul>
-
-		{%- set nextPost = collections.posts | getNextCollectionItem %}
-		<ul class="links-nextprev">
-			{%- for tag in tags | filterTagList %}
-			{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
-			{%- set showNextTagged = nextTagged and nextTagged !== nextPost %}
-				{%- if showNextTagged %}
-					<li class="links-nextprev-next">
-						Next in {{ tag  }} →
-						<br>
-						<a href="{{ nextTagged.url }}">{{ nextTagged.data.title }}</a>
-					</li>
-				{% endif %}
-			{%- endfor %}
-			{%- if nextPost %}
-				<li class="links-nextprev-next">
-					{%- for tag in tags | filterTagList %}
-						{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
-						{%- if nextTagged and nextTagged == nextPost %}Next in {{ tag }} →<br>{%- endif %}
-					{%- endfor %}
-					Next →<br>
-					<a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-				</li>
-			{% endif %}
-		</ul>
-	</div>
-{%- endif %}
+{% include "../nextPrevLinks.njk" %}

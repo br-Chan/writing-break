@@ -8,8 +8,6 @@ const eleventyNavigation = {
 
 <p>I've configured to have each post auto-tagged to a specific category/categories. I can also add tags manually on a per-post basis.</p>
 
-<p>Current categories: watch-later, stories</p>
-
 <ul>
 {% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
 	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}

@@ -303,9 +303,17 @@ header {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	margin-bottom: 1rem;
+	/* margin-bottom: 1rem; */
 }
 .post-metadata time {
 	margin-right: 1em;
 }
 
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
