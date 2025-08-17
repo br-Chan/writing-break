@@ -6,7 +6,7 @@ tags:
 noToc: true
 ---
 
-<img src="/img/1_watchLaterPlaylist.png" alt="My watch later playlist; the cover image is an accurate depiction of the pain I will go through watching them all.">
+<img src="/watch-later/img/1_watchLaterPlaylist.png" alt="My watch later playlist; the cover image is an accurate depiction of the pain I will go through watching them all.">
 
 ## 5000
 

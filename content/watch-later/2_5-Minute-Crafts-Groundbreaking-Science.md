@@ -18,7 +18,7 @@ This first video truly tested my willpower. Maybe this was all a mistake. Maybe 
 
 Nevertheless, I did the unthinkable and watched a 5-Minute Crafts video.
 
-<img src="/img/2_howToDefeatInsomnia.png" alt="A pointless endeavour" />
+<img src="/watch-later/img/2_howToDefeatInsomnia.png" alt="A pointless endeavour" />
 
 Before I begin, I want to explain that 5-Minute Crafts created a 9-minute video by merging a bunch of 1-minute videos into a single unholy whole. In other words, they're effectively a TikTok shorts compilation channel. This explains everything.
 
@@ -55,7 +55,7 @@ I have now tried this: I poured myself a half-cup of milk and drank it a little 
 
 I'm not doubting this one. But the clip they play along with it is legendary:
 
-<img src="/img/2_bubbles.png" alt="Bubbles in bed" />
+<img src="/watch-later/img/2_bubbles.png" alt="Bubbles in bed" />
 
 ### Children should wake up before 8:30. Teenagers should wake up at 10-11 AM. Adults should wake up 10 AM on the dot.
 
@@ -88,7 +88,7 @@ I remember trying this as a kid on multiple nights to no avail. But no, you cann
 
 Pretty nice of 5-Minute Crafts to make seemingly logical statements. Various sleep experiments have shown what exactly happens to humans when forbidden sleep. I'm not sure "hallucination" is the right term, however, but at least it's something.
 
-<img src="/img/2_ants.png" alt="Ants never sleep" />
+<img src="/watch-later/img/2_ants.png" alt="Ants never sleep" />
 
 ### The best way to sleep is on your side
 

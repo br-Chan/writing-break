@@ -7,7 +7,7 @@ tags:
 
 ## Darts vs Gliders - Paper Airplane Battle
 
-<img src="/img/5_planes.png" alt="Darts vs Gliders" />
+<img src="/watch-later/img/5_planes.png" alt="Darts vs Gliders" />
 
 [:Video](https://www.youtube.com/watch?v=W__Avls6jZY) by Foldable Flight
 |                                   |     |
@@ -75,7 +75,7 @@ I don't recall if this was the video I used to learn how to solve the Pyraminx, 
 
 The channel was still called "It's Okay to be Smart" when they uploaded this video. I still remember the YouTube post explaining why they were changing the name to just "Be Smart". At the time, I found it to be a rather more aggressive name - as if they were holding you at gunpoint yelling, "[:that baby better learn today!](https://youtu.be/LV35TwX_xps?si=NOPlCktBx8ofpvjB)"
 
-<img src="/img/5_beSmartName.png" alt="Instagram post about Be Smart's name change" />
+<img src="/watch-later/img/5_beSmartName.png" alt="Instagram post about Be Smart's name change" />
 
 But in retrospect the name change was justified. Fittingly for this conversation, the end screen plays a preview of a video about how vaccines work.
 
@@ -98,7 +98,7 @@ This man is insane. The s at the end of "Tarantulas" is doing some incredible he
 He does a lot of hand-acting - watch the first minute and you'll see what I mean - which compensates him not showing his face. He does make a good show out of a fairly tedious chore, and it was a pretty good watch (when watching on x1.75 speed).
 
 #ImProudOfMyself for watching to to the end
-<img src="/img/5_imProudOfMyself.png" alt="I'm proud of myself hashtag" />
+<img src="/watch-later/img/5_imProudOfMyself.png" alt="I'm proud of myself hashtag" />
 
 ## The Hobbit: World War II
 
@@ -114,6 +114,6 @@ I've watched this video a couple times over the past few years. It's just put to
 
 This is a must-watch - it's a trailer mashup between The Battle of the Five Armies (The Hobbit) and some World War II movie and it's almost seamless. Some of the edits are so subtle and blink-and-you'll-miss-it:
 
-<img src="/img/5_elvesWithGuns.png" alt="Lord of the Guns" />
+<img src="/watch-later/img/5_elvesWithGuns.png" alt="Lord of the Guns" />
 
 Seven videos this time, although more than a week since the last post.

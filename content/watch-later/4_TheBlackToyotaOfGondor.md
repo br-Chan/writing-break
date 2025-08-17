@@ -36,7 +36,7 @@ The only catch is that lacking the centres causes a problem called "parity", a s
 
 ## 7 Things To Help You Not Get Bored Of Your Minecraft World
 
-<img src="/img/4_boredMinecraft.png" alt="Key moments in the video" />
+<img src="/watch-later/img/4_boredMinecraft.png" alt="Key moments in the video" />
 
 
 [:Video](https://www.youtube.com/watch?v=1BrY1Ezes8g) by Tizztom
@@ -87,7 +87,7 @@ It takes a lot of skill to transition from one song to completely different song
 
 A typical size comparison video starting from the smallest, the One Ring, to the monstrosity that is Barad-dur. A nice watch, but many comments drew intense attention to the car used for visual scale in Minas Tirith:
 
-<img src="/img/4_minasTirithToyota.png" alt="Minas Tirith Toyota" />
+<img src="/watch-later/img/4_minasTirithToyota.png" alt="Minas Tirith Toyota" />
 
 My favourite comment went along the lines of, "Ahh, Minas Tirith. Famous for its black Toyota by the Tree."
 
