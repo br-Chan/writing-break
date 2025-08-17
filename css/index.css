@@ -155,6 +155,7 @@ header {
 }
 .links-nextprevwrapper {
 	display: grid;
+	gap: .5em;
 	grid-template-columns: 1fr 1fr;
 }
 .links-nextprev {
@@ -167,8 +168,25 @@ header {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
 .links-nextprev-next {
 	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: black;
+}
+.links-nextprev a:hover {
+    color: black;
 }
 
 table {

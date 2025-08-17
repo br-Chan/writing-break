@@ -8,22 +8,26 @@
 				{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
 				{%- set showPreviousTagged = previousTagged and previousTagged !== previousPost %}
 				{%- if showPreviousTagged %}
-					<li class="links-nextprev-prev">
-						← Previous in {{ tag }}
+					<a class="links-nextprev-prev" href="{{ previousTagged.url }}">
+						<b>← Previous in {{ tag }}</b>
 						<br>
-						<a href="{{ previousTagged.url }}">{{ previousTagged.data.title }}</a>
-					</li>
+						<span href="{{ previousTagged.url }}">{{ previousTagged.data.title }}</span>
+					</a>
 				{%- endif %}
 			{%- endfor %}
 			{%- if previousPost %}
-				<li class="links-nextprev-prev">
+				<a class="links-nextprev-prev" href="{{ previousPost.url }}">
 					{%- for tag in tags | filterTagList %}
 						{%- set previousTagged = collections[ tag ] | getPreviousCollectionItem %}
-						{%- if previousTagged and previousTagged == previousPost %}← Previous in {{ tag }}<br>{%- endif %}
+						{%- if previousTagged and previousTagged == previousPost %}
+							<b>← Previous in {{ tag }}</b>
+							<br>
+						{%- endif %}
 					{%- endfor %}
-					← Previous<br>
-					<a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-				</li>
+					<b>← Previous</b>
+					<br>
+					<span>{{ previousPost.data.title }}</span>
+				</a>
 			{%- endif %}
 		</ul>
 
@@ -33,22 +37,26 @@
 			{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
 			{%- set showNextTagged = nextTagged and nextTagged !== nextPost %}
 				{%- if showNextTagged %}
-					<li class="links-nextprev-next">
-						Next in {{ tag  }} →
+					<a class="links-nextprev-next" href="{{ nextTagged.url }}">
+						<b>Next in {{ tag  }} →</b>
 						<br>
-						<a href="{{ nextTagged.url }}">{{ nextTagged.data.title }}</a>
-					</li>
+						<span>{{ nextTagged.data.title }}</span>
+					</a>
 				{% endif %}
 			{%- endfor %}
 			{%- if nextPost %}
-				<li class="links-nextprev-next">
+				<a class="links-nextprev-next" href="{{ nextPost.url }}">
 					{%- for tag in tags | filterTagList %}
 						{%- set nextTagged = collections[ tag ] | getNextCollectionItem %}
-						{%- if nextTagged and nextTagged == nextPost %}Next in {{ tag }} →<br>{%- endif %}
+						{%- if nextTagged and nextTagged == nextPost %}
+							<b>Next in {{ tag }} →</b>
+							<br>
+						{%- endif %}
 					{%- endfor %}
-					Next →<br>
-					<a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-				</li>
+					<b>Next →</b>
+					<br>
+					<span>{{ nextPost.data.title }}</span>
+				</a>
 			{% endif %}
 		</ul>
 	</div>
