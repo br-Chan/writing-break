@@ -168,6 +168,7 @@ header {
 }
 .links-nextprevwrapper {
 	display: grid;
+	gap: .5em;
 	grid-template-columns: 1fr 1fr;
 }
 .links-nextprev {
@@ -180,8 +181,25 @@ header {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
 .links-nextprev-next {
 	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: black;
+}
+.links-nextprev a:hover {
+    color: black;
 }
 
 table {
@@ -546,7 +564,10 @@ pre[class*="language-diff-"] {
 <p>
     1,182 words • Reading time: 6 minutes
 </p>
-	<a href="#table-of-contents">:Table of Contents</a>
+
+	
+	
+	
 
 	<p><i>Hopefully this is the last time I ever watch a 5-Minute Crafts video.</i></p>
 
@@ -660,16 +681,22 @@ pre[class*="language-diff-"] {
 
 	<div class="links-nextprevwrapper">
 		<ul class="links-nextprev">
-				<li class="links-nextprev-prev">← Previous in watch-later<br>
-					← Previous<br>
-					<a href="/writing-break/watch-later/1_1478-videos/">1478 Videos</a>
-				</li>
+				<a class="links-nextprev-prev" href="/writing-break/watch-later/1_1478-videos/">
+							<b>← Previous in watch-later</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>1478 Videos</span>
+				</a>
 		</ul>
 		<ul class="links-nextprev">
-				<li class="links-nextprev-next">Next in watch-later →<br>
-					Next →<br>
-					<a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a>
-				</li>
+				<a class="links-nextprev-next" href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">
+							<b>Next in watch-later →</b>
+							<br>
+					<b>Next →</b>
+					<br>
+					<span>Study Tips, Cuphead and a Russian Missile Silo</span>
+				</a>
 			
 		</ul>
 	</div>
@@ -688,7 +715,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 		
-		<!-- This page `/watch-later/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-08-14T11:34:43.500Z -->
+		<!-- This page `/watch-later/2_5-Minute-Crafts-Groundbreaking-Science/` was built on 2025-08-17T09:04:31.568Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>

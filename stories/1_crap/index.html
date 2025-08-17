@@ -168,6 +168,7 @@ header {
 }
 .links-nextprevwrapper {
 	display: grid;
+	gap: .5em;
 	grid-template-columns: 1fr 1fr;
 }
 .links-nextprev {
@@ -180,8 +181,25 @@ header {
 	margin-top: 0;
 	margin-bottom: 0;
 }
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
 .links-nextprev-next {
 	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: black;
+}
+.links-nextprev a:hover {
+    color: black;
 }
 
 table {
@@ -547,6 +565,10 @@ pre[class*="language-diff-"] {
     778 words • Reading time: 4 minutes
 </p>
 
+	
+	
+	
+
 	<p><i></i></p>
 
 	<h3 id="xtable-of-contents">:xTable of Contents</h3>
@@ -599,16 +621,18 @@ pre[class*="language-diff-"] {
 
 	<div class="links-nextprevwrapper">
 		<ul class="links-nextprev">
-				<li class="links-nextprev-prev">
-					← Previous<br>
-					<a href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">Study Tips, Cuphead and a Russian Missile Silo</a>
-				</li>
+				<a class="links-nextprev-prev" href="/writing-break/watch-later/3_Study-Tips-Cuphead-And-A-Russian-Missile-Silo/">
+					<b>← Previous</b>
+					<br>
+					<span>Study Tips, Cuphead and a Russian Missile Silo</span>
+				</a>
 		</ul>
 		<ul class="links-nextprev">
-				<li class="links-nextprev-next">
-					Next →<br>
-					<a href="/writing-break/watch-later/4_TheBlackToyotaOfGondor/">The Black Toyota of Gondor</a>
-				</li>
+				<a class="links-nextprev-next" href="/writing-break/watch-later/4_TheBlackToyotaOfGondor/">
+					<b>Next →</b>
+					<br>
+					<span>The Black Toyota of Gondor</span>
+				</a>
 			
 		</ul>
 	</div>
@@ -627,7 +651,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 		
-		<!-- This page `/stories/1_crap/` was built on 2025-08-14T11:34:43.499Z -->
+		<!-- This page `/stories/1_crap/` was built on 2025-08-17T09:04:31.567Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>
