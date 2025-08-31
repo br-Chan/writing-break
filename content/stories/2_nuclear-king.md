@@ -1,7 +1,7 @@
 ---
 title: Nuclear King
 description: This is a revised version of a story I wrote for an English test paper in 2020.
-date: 2025-08-31 17:00:00
+date: 2025-08-31 18:10:00
 tags:
 noToc: true
 ---
