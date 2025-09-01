@@ -1,5 +1,6 @@
 export default {
 	tags: [
+		"posts",
 		"stories",
 		"4612",
 	],
