@@ -127,6 +127,21 @@ a[href]:active {
 	color: var(--text-color-link-active);
 }
 
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
 main,
 footer {
 	padding: 1rem;
@@ -386,7 +401,15 @@ header {
 <h1 id="all-posts">All Posts</h1>
 
 
-<ol reversed="" class="postlist" style="--postlist-index: 9">
+<ol reversed="" class="postlist" style="--postlist-index: 10">
+	<li class="postlist-item">
+		<a href="/writing-break/4612/2_an-introduction-to-multiverses/" class="postlist-link">AN INTRODUCTION TO MULTIVERSES</a>
+		<time class="postlist-date" datetime="2025-09-02">2 September 2025</time>
+		&nbsp;·&nbsp;
+			<a href="/writing-break/tags/stories/" class="postlist-date">stories</a>,&nbsp;
+			<a href="/writing-break/tags/4612/" class="postlist-date">4612</a>
+		&nbsp;·&nbsp;<a class="postlist-date" href="/writing-break/4612/2_an-introduction-to-multiverses/#start=content:&length=6&after=open%20post%20to%20keep%20reading...">:Preview</a>
+	</li>
 	<li class="postlist-item">
 		<a href="/writing-break/4612/1_hello/" class="postlist-link">Hello?</a>
 		<time class="postlist-date" datetime="2025-09-01">1 September 2025</time>
@@ -462,7 +485,7 @@ header {
 			</p>
 		</footer>
 		
-		<!-- This page `/posts/` was built on 2025-09-01T11:49:27.012Z -->
+		<!-- This page `/posts/` was built on 2025-09-02T10:32:17.229Z -->
 		<script type="module" src="/writing-break/dist/xbxy_EL6cU.js"></script>
 	</body>
 </html>
