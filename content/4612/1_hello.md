@@ -1,6 +1,6 @@
 ---
 title: Hello?
-description: This is a revised version of a story from July 6th 2020.
+description: This is a revised version of a story from July 5th 2020.
 date: 2025-09-01 23:48:00
 tags:
 noToc: true
@@ -40,4 +40,4 @@ He scrunches up into a tight ball and closes his eyes, which changes nothing. He
 
 *Musical Inspiration (kind of): Bohemian Rhapsody intro + ballad.*
 <br>
-*I originally wrote this on July 6th 2020. I realise it's quite hard to uncringify something but I have done my best.*
+*I originally wrote this on July 5th 2020. I realise it's quite hard to uncringify something but I have done my best.*
