@@ -238,6 +238,10 @@ pre:not([class*="language-"]) {
 code {
 	word-break: break-all;
 }
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
 
 /* Header */
 header {
