@@ -98,7 +98,7 @@ But Cadoc paid neither of them heed as he rushed in pursuit.
 
 <br>
 
-The kid was a dart - his headstart would be unsurmountable. Cadoc took note of where he was going: a break in the trees near the river, his gateway to safety. Once in the undergrowth of the forest he'd be gone forever.
+The kid was a dart - his head start would be unsurmountable. Cadoc took note of where he was going: a break in the trees near the river, his gateway to safety. Once in the undergrowth of the forest he'd be gone forever.
 
 The General barked and the stamping of boots on mud began to sound behind Cadoc. The grizzled soldiers of The Orrient were quicker than a child could ever be, but Cadoc could tell that they'd barely reach him before he'd disappear into the forest.
 

@@ -1,5 +1,5 @@
 ---
-title: Siezed
+title: Seized
 description: This is a revised version of a story from 4 June 2021.
 date: 2025-09-07 18:54:00
 tags:
