@@ -77,31 +77,6 @@
 	</url>
 	
 	<url>
-		<loc>https://br-chan.github.io/writing-break/about/</loc>
-		<lastmod>2025-09-10</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://br-chan.github.io/writing-break/</loc>
-		<lastmod>2025-09-10</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://br-chan.github.io/writing-break/posts/</loc>
-		<lastmod>2025-09-10</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://br-chan.github.io/writing-break/tags/</loc>
-		<lastmod>2025-09-10</lastmod>
-	</url>
-	
-	<url>
-		<loc>https://br-chan.github.io/writing-break/feed/feed.xml</loc>
-		<lastmod>2025-09-10</lastmod>
-	</url>
-	
-	<url>
 		<loc>https://br-chan.github.io/writing-break/4612/8_fire/</loc>
 		<lastmod>2025-09-10</lastmod>
 	</url>
@@ -109,5 +84,35 @@
 	<url>
 		<loc>https://br-chan.github.io/writing-break/4612/9_first-contact/</loc>
 		<lastmod>2025-09-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://br-chan.github.io/writing-break/about/</loc>
+		<lastmod>2025-09-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://br-chan.github.io/writing-break/</loc>
+		<lastmod>2025-09-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://br-chan.github.io/writing-break/posts/</loc>
+		<lastmod>2025-09-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://br-chan.github.io/writing-break/tags/</loc>
+		<lastmod>2025-09-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://br-chan.github.io/writing-break/feed/feed.xml</loc>
+		<lastmod>2025-09-11</lastmod>
+	</url>
+	
+	<url>
+		<loc>https://br-chan.github.io/writing-break/4612/10_two/</loc>
+		<lastmod>2025-09-12</lastmod>
 	</url>
 </urlset>
