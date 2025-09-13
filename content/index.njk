@@ -19,14 +19,15 @@ const numberOfLatestPostsToShow = 5;
 	<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in the list of <a href="posts.njk">all posts</a>.</p>
 {% endif %}
 
+{# <p>Categories: TODO</p> #}
+
 {# {% set mostRecent = collections.posts | first %} #}
 {# <p>Read the <a href={{ mostRecent.url }}>:Latest Post</a>!</p> #}
 
 {# List every content page in the project #}
-{#
-<ul>
+{# <ul>
 	{%- for entry in collections.all %}
 	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
 	{%- endfor %}
-</ul>
-#}
+</ul> #}
+
