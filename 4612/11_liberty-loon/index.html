@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Liberty Loon</title>
+		<meta name="description" content="This is a revised version of a story from 1 Jan 2022.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="liberty-loon">Liberty Loon</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2025-09-13">13 September 2025</time></li>
+		Tags:
+			<li><a href="/writing-break/tags/stories/" class="post-tag">stories</a>, </li>
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    2,415 words • Reading time: 12 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>This is a revised version of a story from 1 Jan 2022.</i></p>
+
+	
+	<p></p>
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>“<em>There is a place, said Liberty Loon, where freedom is for all…</em>”</p>
+<p>The voices of the Void are singing again.</p>
+<p>The Lonely Human wrings his hands in silent rage, with a simmering urge to do harm. There hasn’t been a single second in this abominable hellhole without a pip or a peep <em>somewhere</em> keeping him awake. A dissonant, out-of-tune song is just about the last straw. He blocks his ears, but of course it doesn’t help - the sounds echo their way into his ears like wriggling worms.</p>
+<p>“<em>And so we followed, 'cross mountains and rivers, at the Liberty’s call…</em>”</p>
+<p>The Lonely Human rubs his face, dry and stiff. It broils inside him - he is awake and asleep at the same time. His mind is a half-open lid on a rusty tin can, and the words of the song bounce around inside like a jellybean. He can’t tell if the song is getting louder or if it’s just a trick of the Void.</p>
+<p>“<em>O, we love our lovers, hate our haters, let the lollygags lie…</em>”</p>
+<p>A slow-growing latent horror has been growing, growing ever since he woke up in the Void: how long has he been here? Once, he had a pretty good idea. But the longer he spends here, the more uncertain he grows. He can’t remember when he last <em>slept</em>. He only wavers in and out of a kind of waking dream. Has it been weeks? Months? <em>Years?</em> Before long, he won’t know at all…</p>
+<p>“<em>We love our lovers, hate our haters, and pra-</em> oh, hullo, friend! What are you doing out here?”</p>
+<p>The Lonely Human turns round in confusion, then leans back in shock. Drifting placidly towards him is a man - a living, breathing human man. He is thin and lithe, but very, very real.</p>
+<p>“Hullo?” the stranger’s sandy eyebrows furrow. “Are you alive or dead? I can’t tell.”</p>
+<p>His startlingly white buttoned top is complemented by a dashing blue blazer. The cream breeches running down his legs are all but spotless, lined with dozens of pockets. His custume puts the Human’s own clothing to shame - dirty and crusted over. Running down the stranger’s body is an enormously long red sash that glints in the darkness and twirls about himself like… Like an inky tentacle.</p>
+<p>The Lonely Human bolts, hands waving in a futile attempt to get away. That shapeshifting creature was back!</p>
+<p>“Oh! What’s wrong, what’s wrong?” The man swoops in and the two of you clash into each other.</p>
+<p>His clothes feel solid and normal. In fact, they feel <em>too</em> normal. Soft and just a little fuzzy, as if freshly laundered. Immaculate. To say the least, this wasn’t the same creature as before.</p>
+<p>“I, how-” the Human’s disbelief and ungainly dry throat defy his voice.</p>
+<p>“Oh, you’re thirsty!” says the stranger. “Here, have some Azure.” His hands dive into one of the pockets on his breeches and thrusts out a weird slimy mass of… Something blue.</p>
+<p>“Wh- what’s that-” he splutters, but his parched windpipe gives in an he grabs the gooey mess; not caring if it’s a poison or some venom of the Void, he pushes it into his mouth.</p>
+<p>It’s… Good. Surprisingly sweet, refreshingly sour and remarkably thirst-quenching. The Azure slides evenly past his tongue, and within seconds all that’s left is a tranquil, tangy aftertaste.</p>
+<p>“How is it?” the stranger asks, an ultra-wide grin on his face.</p>
+<p>“Is there any more?” The Human’s voice is smooth as butter now. “Where does it come from? Who are you?”</p>
+<p>“I’m afraid I don’t have much left, used most of it all up feeding that black monster that looked like m’wife.” Another smile, somehow even wider. “M’name’s Barlibur, Barlibur Loon. All m’friends call me Barlibur, but people just call me Loon. What’s yours, what’s yours?”</p>
+<p>“Loon?”</p>
+<p>“Yes, it’s the bird. I said, what’s <em>your</em> name?”</p>
+<p>“My name…” The Lonely Human falters. “I don’t remember.”</p>
+<p>“Ah, don’cha worry, don’cha worry,” Barlibur cackles, slapping a hand on the Human’s back, “Happens to the best of us. Me, I don’t remember where I got all this Azure from, but wherever I got it from musta been <em>quite</em> the paradise.”</p>
+<p>He leans in close and stares right into the Human’s eyes with almost contagious mirth. “It’s been so long since I’ve had a friend. <em>So  long.</em>”</p>
+<p>“Thank you, but… Could you, get off me please?”</p>
+<p>“But we’re <em>friends</em>!” he laughs. “We friends have to stick together, we do, like molasses.” Barlibur squeezes all the harder, trying for a hug. “Let’s talk - I haven’t had a good conversation in… Months? Years? Decades? Boy, sure been a while.” More laughter.</p>
+<p>The two of them drift awkwardly for a few moments. The Lonely Human wishes he were more lonely.</p>
+<p>“Go on, ask me a question!”</p>
+<p>“Where did you come from?” the Lonely Human asks. “How did you get here? What is this place? How do I get out?”</p>
+<p>“Oh, calm down you ol’ bugger,” Barlibur guffaws, and he grates his bony knuckles over the Lonely Human’s head (to his great displeasure). “One at a time, one at a time. I came from… Well that’s something else I don’t quite recall. But I’m a leader o’ some sort, just look at this outfit! Look at this scarf betwixt m’neck”–he twirls his sash round and round the both of you–“and look at this cloak, and m’lucky boot. Last I 'member, I was a leader of a whole nation! What a big role, is’nit?” He punches the Human in the shoulder, giggling. “I led a revolution. We wanted a place, y’see, a place where freedom was for all. And so they followed…” He trails off. “Well, you’ve heard the song, no need to repeat since we’re peas in a pod now. Well, what about you? where do you hail from, m’friend?”</p>
+<p>“I told you,” the Lonely Human retorts, “I don’t remember. And you didn’t finish answering my questions.”</p>
+<p>“Come now, m’friend, that’s no way to talk!” Barlibur barks a new, queer, high-pitched laugh, slapping his newfound friend’s back with every wheeze. “I haven’t a clue what this place is, but I can tell you I’ve been very, <em>very</em>, VERY, <code>very</code>, very lonely. The monster that looked like m’wife was the first thing alive I’d met in <em>ages</em>. 'cept you of course.” He boops him on the nose. “Kept trying to swallow me, so I made 'im swallow Azure instead.”</p>
+<p>“Monster? The shapeshifting one? The one with… The tentacles?”</p>
+<p>“That’s the one! Wanted to be friends but once he was done with me he tossed me right in this direction! Did you see 'im look like m’wife? Big salmon, gorgeous dorsal fins.”</p>
+<p><em>Oh joy, He really is a lunatic.</em></p>
+<br>
+<hr>
+<br>
+<p>It’s been long enough now.</p>
+<p>“Look, Barlibur.” The Lonely Human tries to put a friendly hand on his shoulder.  “It’s been great, great talking to you, but I really must…”</p>
+<p>The supposed revolutionary reveals a toothy, blue-stained smile. “Oh, I can turn round while you do it, that’s fine.”</p>
+<p>He blinks twice. “Do what?”</p>
+<p>“Relieve yourself, of course! That’s the worst problem we’re gonna have while we’re together: uRiNaTiNg.”</p>
+<p><em>Okay, that’s it.</em> The Lonely Human elbows Barlibur’s side, wedging him off as best he can. “Get off me. Get off!”</p>
+<p>“What? What do you mean?” Barlibur is stuck like a barnicle.</p>
+<p>“I can’t stand you.”</p>
+<p>“Of course we’re not standing, we’re floating! Can’t remember the last time I last stood on something…”</p>
+<p>At last, he manages to drag Barlibur’s pale arm off his back - progress. “Get out of here, return to your own patch of darkness. Leave me be!”</p>
+<p>“But…” Barlibur shakes his head in sullen confusion. “What do you mean? We’re friends!”</p>
+<p>“I’m not your friend,” he spits. “We never were! Now scat!”</p>
+<p>“What do you <em>mean</em>? We’re <em>friends</em>!” Barlibur pulls on the Human’s arm longingly, a lopsided grin now consuming his entire face. “Aren’t we? You called me Barlibur! All m’friends call me Barlibur!”</p>
+<p>“Then get out of here, <em>Loon</em>. Get out!”</p>
+<p>At once, Barlibur’s wide grin contorts into deep, dark scowl. The intensity of its perversion reminds him almost of the shapeshifting creature of the Void.</p>
+<p>“I always hated that name,” Barlibur growls, quite contrary to the kind, warm Barlibur just a minute prior. “The double meaning. ‘It’s the bird,’ I told everyone. ‘It’s the bird!’ But they never called me Barlibur, no one. They never <em>listened</em>, no one <em>listened</em>.”</p>
+<p>The Lonely Human pushes with both hands upon Barlibur’s chest. He doesn’t budge.</p>
+<p>“Stay with me please!” Barlibur tugs on his sleeve. “STAY WITH ME!”</p>
+<p>“STOP!” the Lonely Human shrieks. “Get away from me. You useless Loon!” He glowers at the Loon with fiery ferocity. “You’re no better than them. No better than that creature, no better than all the wretched voices of the Void. No better than those monsters.”</p>
+<p>Then, a sudden voice comes upon the Lonely Human, a fey voice in his mind.</p>
+<p><em>“We’re not monsters,”</em> it whispers, <em>“just avengers with no purpose…”</em> And then it is gone.</p>
+<p>That was not a voice of the Void, he was sure of it. Where did it come from?</p>
+<p>The Lonely Human examines Barlibur again. That brilliant clothing, that unfaded, stupendously long sash. That wide, wide smile he wore. All the fanfare and praise. Too lively. Too real.</p>
+<p>He takes a deep breath in, a deep breath out. “Listen. Listen, Barlibur.”</p>
+<p>“Yes?” Barlibur looks up, wide-eyed and wet-eyed.</p>
+<p>“Do you remember really being a leader of a nation?”</p>
+<p>“What?”</p>
+<p>“Do you remember really having any friends at all?”</p>
+<p>“<em>What?</em>”</p>
+<p>Barlibur seems to shimmer. At first he thought Barlibur would disappear completely, and that he had somehow hallucinated the Loon altogether. But no, he remains as solid and stupid as ever. But his clothes dim, their shine fading away. The great big sash around them shrinks and shrinks, its vast freedom waning into a stubby little loop of fabric. His blazer folds itself into a tatty, threadbare cloak, and that brilliant button-up top degrades into a grubby singlet that hugs Barlibur’s skin. And his skin itself was now ebbing, pale arms growing paler and skinnier, his face receding like a shadow into his skull. His eyes bulge out, red and leery. From the man, the true loon is revealed. In fact, he doesn’t quite look like a man now at all. His hands are now claws upon leathery arms, his legs now bent and out of shape like that of a bird’s. His hair, once handsome, now gone completely, revealing a bald, warty head.</p>
+<p>Barlibur notices the Human’s reaction. “What’s that look on your face…?” Then he realises, crestfallen. “Oh. The Azure. You’re seeing through it.”</p>
+<p>Barlibur hadn’t changed at all - the Human’s perception of him had.</p>
+<p>Barlibur hangs his head. “I never figured out how the Azure does it. And now I’m all run out…”</p>
+<br>
+<hr>
+<br>
+<p>The two of them drift in silence, the Human taking in this unsettling revelation. But he is not horrified, not in the way he was horrified of the creature that had tried to eat him. Barlibur was <em>not</em> a monster - he just wanted a friend.</p>
+<p>The Human’s words are soft. “Barlibur, I’m sorry. I really am. But I cannot be latched to you forever and ever. I don’t want this. Do you understand? I don’t want this.”</p>
+<p>Barlibur stares blankly. Would he finally let go?</p>
+<p>No. His face twists into one of pain and rage. “How could you do this to me? To <em>me</em>?! After all I’ve done! I’ve given you Azure, I’ve given you kinship-”</p>
+<p>“I’m sorry, I really am, but-”</p>
+<p>“Sorry doesn’t cut it!” With both claws he grabs the Lonely Human’s neck and squeezes. “Take it back! Say we’ll be friends, from now unto infinity!”</p>
+<p>He pulls in vain on Barlibur’s outstretched arms, but his supply of Azure seems to have kept him strong while his appearance was rot. His mind snatches an urgent fragment of inspiration. He nabs the rucksack upon his back and dives his hands into it while Barlibur continues to strangle him. With elation he finds it, and with his last ounce of strength he draws it out of the bag.</p>
+<p>The Tablet of 4612 glistens brighter than the loftiest star in the universes. It soars in his hands like a tome of wisdom upon worlds. Barlibur lets go and his eyes glimmer in awe as they reflect the numbers etched upon the tablet’s surface. They glow green, blue, white and black.</p>
+<p>With a hefty swing the Lonely Human strikes Barlibur with the force of a thousand suns. Rays of energy streak across the shadowy sky, brightening them for miles around.</p>
+<p>Barlibur reels away from the biblical strike, cast into another trajectory, another fate. “NOOOO! Come back! I’m sorry I hurt you! I’m sorry I screamed at you! I’ll- I’ll give you more Azure, I’ll give you m’lucky boot, I’ll sing, I’ll do anything! I’ll…”</p>
+<p>On and on he pleads, but they fall upon deaf ears. He tumbles further and further away, until he can barely be seen nor heard.</p>
+<p>The Lonely Human stashes away the now dimmed tablet and slings the rucksack round his back. Alone again. A part of him feels empty, recently vacated by Barlibur. But, far in the distance, he can hear Barlibur Loon sing again that little song of his…</p>
+<br>
+<p><em>“There is a place,” said Liberty Loon</em><br>
+<em>“Where freedom is for all”</em><br>
+<em>And so we followed 'cross mountains and rivers</em><br>
+<em>At the Liberty’s call</em><br>
+<em>O, we love our lovers, hate our haters</em><br>
+<em>Let the lollygags lie</em><br>
+<em>We love our lovers, hate our haters</em><br>
+<em>And praise the Liberty Loon</em><br></p>
+<br>
+<p>Then the voices of the Void sing no more.</p>
+<p><br><br></p>
+<hr>
+<p><em>This is a revised version of a story from 1 Jan 2022.</em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/4612/10_two/">
+							<b>← Previous in stories</b>
+							<br>
+							<b>← Previous in 4612</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>2</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/11_liberty-loon/` was built on 2025-09-13T00:51:03.462Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
