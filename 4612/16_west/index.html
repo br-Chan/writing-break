@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>West</title>
+		<meta name="description" content="This is a revised version of a story from 4 Aug 2022.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="west">West</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2025-09-16">16 September 2025</time></li>
+		Tags:
+			<li><a href="/writing-break/tags/stories/" class="post-tag">stories</a>, </li>
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    2,124 words • Reading time: 11 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>This is a revised version of a story from 4 Aug 2022.</i></p>
+
+	
+	<p></p>
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>“F-fancy a drink?”</p>
+<p>Atro looked up with worn annoyance. It was the voice of one of his fellow outlaws, he couldn’t tell who. He didn’t bother to turn round or stand up. Last night had been a long, sleepless affair that ended in a cold, misty morning. Of course, it wasn’t really mist. Bleeding down the riverside was a slow convoy of week-old wood smoke.</p>
+<p>“No,” was Atro’s flat reply. “Did you come here all the way from camp just to bring me water?”</p>
+<p>“What? No.” Atro heard the light crunching of red leaves behind him – and a snicker. “I-I was talking about you. Sitting here with all this water…” The voice trailed off. “Nevermind.”</p>
+<p>Atro returned to watching the river trudge by. He genuinely considered taking a sip, parched as he was. But now something dark passed by, a dirty log perhaps; as it floated by in his mind it tainted the whole river with a ravenous, nauseating muck. That was not a log.</p>
+<p>“What are you looking at?”</p>
+<p>Atro hadn’t noticed that the boy had sat down by his side; his nearness was uncomfortable. “What’s your name again?”</p>
+<p>The boy’s S-shaped neck quivered like a flamingo as he swallowed. “Michael Bradbury.”</p>
+<p>Atro examined him. He was an outlaw in nothing but name: a young, scruffy look was about him, as though he’d just come home from the local schoolhouse. Michael was a new recruit; he was one of the few who excelled in literacy, so they had made him the scribe for the band.</p>
+<p>“Go back to camp, Bradbury.”</p>
+<p>Bradbury stood up, but fidgeted on the spot. “Well, uh, Firsk wanted me to tell you that… He’s coming. Like, <em>coming</em> coming. Not-in-the-nice-way kind of coming.”</p>
+<p>Atro’s heart froze. His breathing came to a halt. “He’s awake already?” He felt a <a href="https://br-chan.github.io/writing-break/4612/6_siezed/">Trouble Moment</a> rise from within, but he quelled it with a shake of his head. Not today.</p>
+<p>“Yes. He’s, ah, as happy as he was last night.” Bradbury’s clean leather sandals played ungainly music with the stones of the river bank.</p>
+<p>Firsk was coming. Atro knew this moment would come, when their silent pact would be broken. They had promised each other what they’d do, after their parents had been hung. Atro would kill General Stacy, and Firsk would gather an army worthy enough to bring even the Emperor pause. Both those things happened on Christmas day – their Christmas gifts. And 7 days later, they were at last at a crossroads on what to do with the band of outlaws that they had formed. The lengthy discussion last night had not ended well – perhaps a bit murdery – and thus Atro had spent the night by this ford in the river. Now Firsk was coming to continue that exchange and, judging from his character, end it in the only way he knew best.</p>
+<p>“You, you’re the scribe, right?” Atro began, and waited for Bradbury to nod. “Do you mind if you stay here a moment? I need…” He didn’t know what he needed.</p>
+<p>Bradbury promptly sat down again. “Of course. What do you, ah, need help with?”</p>
+<p>Atro tried to focus on the river again, but he noticed another log floating down the river, mud oozing out of its cracks and crevices. “I need… Something to say to Firsk.”</p>
+<p>A chuckle. Atro shot Bradbury a look, and the mirth ceased quick. “I, ah, I… S-sorry, I wasn’t expecting you to ask for something so… Ah, benign.”</p>
+<p>“<em>Benign?</em>”</p>
+<p>“Well, you’re the right-hand man of the Christmas Killers!” said Bradbury, using their new name in forced reverence. “I believe you’d be- ah, I would be nowhere near as confident as you. No one here talks back to Firsk like you do.”</p>
+<p>“I know that, Bradbury,” Atro growled, his hands shivering a bit for a reason he knew not. “But things have changed. I’m stepping down and I’m leaving. For good.”</p>
+<p>“What?! But why? You and Firsk started this thing together, you can’t just <em>leave</em>! And you’re on a wanted poster now, we all are!”</p>
+<p>Atro’s fists gouged holes into the bank, impatient. &quot;I’ve made up my mind, all I need from you is your head and your words for me to say to Firsk.&quot;Atro looked down at the waves lapping at his crimson sandals. “To persuade him to… See me off. I’m ready to go, I have all that is mine.”</p>
+<p>Bradbury nodded with growing quickness. “Alright, I can do that.” He frowned at Atro’s wording. “You said ‘all that is yours’? You didn’t take the Estoponite crystals with you, did you? You’d be stupid to…”</p>
+<p>Atro felt a smirk coming on, feeling the valuable crystals he’d taken packed neatly in his rucksack on his back. He turned his face away, but Bradbury caught his smile and he broke into a grin. “You’re an idiot.”</p>
+<p>“Finders, keepers.”</p>
+<p>“Firsk was <em>furious</em> at the notion of you keeping them just because you stole them. And- and you’re leaving with them, for goodness sake! You can’t just steal the band’s most valuable treasure! What do you even need them for?”</p>
+<p>Atro was about to respond, when yet another log drifted into view. His chuckle stopped half-formed in his throat, and he swallowed it back down. “I’ve said all I’ve had to say about those crystals. Finders, keepers. I don’t need you telling me anything about them, too.” His hands were a-shivering again, and he had to clench them tight to stop the jitter of his fingers.</p>
+<p>“I- I wasn’t planning on it.”</p>
+<p>“Good. Now…” The whirling smoke passed through, distracting him; the thought of Firsk barging out of the trees, sword flying, snapped him back to focus. “The thing. Help me. What I should say. Now.”</p>
+<p>Bradbury’s forehead creased and his tone returned to the careful, timid one. “Well, ah… W-why don’t you want to be right-hand man? I mean – I don’t know what you lot have been through the past year. I just don’t want to taken away by the army, that’s why <em>I’m</em> here. Why do you <em>not</em> want to be here?”</p>
+<p>“Stop asking me questions, Bradbury!” Atro snapped, spittle suddenly flung into the water around. “Just get to the stupid point. When the hell is Firsk coming? Tell, tell me how I should talk to him, tell me what I should do, I…”</p>
+<p>“Hey, I just need more information. I don’t even know <em>why</em> you’re leaving, how would you expect me to…” Bradbury seemed to notice something was wrong. “Are you okay…?”</p>
+<p>Atro stared down at his hands, and found that his fingers were shivering again in that odd fashion. Carefully, he raised one to rub an itchy eye. It came back wet. His ears were ringing all of a sudden, and his once-frozen heart now hammered relentlessly. He coughed, short of breath.</p>
+<p>“Atro?”</p>
+<p>“…I’m fine. I am, I am trying to be as straight as possible with you. I’ve given you an order, just, just carry it out!”</p>
+<p>A fourth log entered view. A big one, with a frail branch that snapped off as it passed.</p>
+<p>Silence from Bradbury, then, “Do you have something else to say? …Not to Firsk? About what happened at Thindburg last week?”</p>
+<p>Atro seized up, his mental gates straining against the pressure within. But Bradbury had removed the capstone. He heard those red leaves crunch like broken bones, saw those logs pass by like rotting bodies, saw the smoke waft through like pent-up guilt and the waves flood across like rippling regret.</p>
+<p>Then the gates broke asunder. Countless tears welled up and poured forth, like two great bleeding wounds. He bowed over, using his sinful palms to plug his eyes, to no avail. He scrunched into a tight ball and closed his eyes, which changed nothing. He tried to speak, but only a single sob emanated from his throat as it constricted.</p>
+<p>He shivered all over, sobbing. Months of bottled up pain and trauma: the loss of his home, the loss of his parents, and everything else that pounded his head again and again and again – culminating in the killing of General Stacy. But Stacy’s words still resonated in his mind, days after he was already dead. Stacy’s death had brought Atro no joy, no catharsis. Nothing.</p>
+<p>He sobbed all the harder.</p>
+<br>
+<hr>
+<br>
+<p>He didn’t know how long he’d sat there while Bradbury sat beside him, but at length he felt a warm arm across his shoulders. “You don’t have to say anything if, if you don’t want to. I think I understand.”</p>
+<p>Atro, tentatively, slid his head out of his grief. His hands remained stuck to his knees in a constant state of shuddering shock. The tears flowed like wine in the Tinkerer’s Tavern. His cheeks were raw and clammy, his chin wet and sodden.</p>
+<p>His voice came out warbly and thin. “I said I’m fine.” But he wanted to tell him, tell him everything. If only anything more could make its way out through the ruins of the barriers of his mind.</p>
+<p>The warm arm left Atro’s shoulders, leaving only a cold, sad feeling. “Did you do it? Stacy, I mean.”</p>
+<p>Atro opened his mouth to respond, but he choked on the words as he sobbed again. His drenched sleeves could no longer absorb the mess that flooded his face.</p>
+<p>“Yes.”</p>
+<p>“…Okay.” And Michael said nothing more.</p>
+<p>Atro stretched his fingers. He took a deep unsteady breath. Trying not to think, he took another breath, deeper and smoother. Bit by bit he unravelled himself, and his knees unseized and relaxed. The latent debris in his mind were carted away.</p>
+<p>“My parents were-”</p>
+<p>“I don’t have all the answers,” Michael said, unknowingly interrupting Atro’s soft voice. “But I want you to know that you aren’t alone. We are here. I am here.” He started cracking his knuckles, one by one. “And even without us, there are so many more people out there that will meet you, maybe learn who you are and what you are, and perhaps forgive you. In time, you might look back and find…” Michael drifted off, all knuckles cracked, then chuckled mirthlessly. “I’m just saying nonsense, aren’t I? I’m <em>younger</em> than you, experienced nothing like you have. I don’t fight. What have I to say, really?”</p>
+<p>Atro did not reply. He tried to stand, but for now he felt comfortably resigned to sitting on the river bank, watching the last of the smoke drift on through. For now.</p>
+<br>
+<hr>
+<br>
+<p>A voice called out from the depths of the forest. “Atro! Where the hell are you? Didn’t <em>kill</em> Bradbury, did you?!”</p>
+<p>Firsk was coming. Time had run out.</p>
+<p>“This is it.” Michael jumped to his feet, and dragged Atro up to his. “You want my words? Here they are: <em>run</em>. Take the crystals. You can use them to buy you passage west across the sea to the Colonial Lands. They’ll never find you there.”</p>
+<p>Atro wiped his face dry. He felt a twinge of embarassment now, to have cried in front of this boy. It made him feel good – good to feel something else for once.</p>
+<p>“What are <em>you</em> going to do? You can’t just go back to him after-”</p>
+<p>“Sure I can.” Michael tried for a final smile. “I, I never even found you. Searched the riverside for ages and found no trace of you. Must’ve forded the river hours ago. Long gone.”</p>
+<p>Atro could only stare at Michael in awe. He didn’t even know what to begin to say to him.</p>
+<p>Again, the burly voice of Firsk boomed from the forest, closer this time, and Atro knew he had to run. Michael gave a firm nod, and Atro stepped into the river and waded across.</p>
+<p>The river only got waist-deep. Atro quickly forded the river, but once he turned round he was too late. He saw nothing of Michael Bradbury – he’d gone, ready to tell his lie to Firsk and delay him as much as possible. The fallen leaves, which he had sworn were red, formed a surprisingly green carpet across the forest floor.</p>
+<p>There were no more thoughts left in Atro’s mind. He soldiered forward and into the morning light.</p>
+<p><em>West.</em></p>
+<p><br><br></p>
+<hr>
+<p><em>This is a revised version of a story from 4 Aug 2022.</em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/4612/15_memento-mori/">
+							<b>← Previous in stories</b>
+							<br>
+							<b>← Previous in 4612</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>Memento Mori</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/16_west/` was built on 2025-09-16T12:13:43.756Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
