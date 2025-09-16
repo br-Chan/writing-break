@@ -84,7 +84,11 @@ Silence from Bradbury, then, "Do you have something else to say? ...Not to Firsk
 
 Atro seized up, his mental gates straining against the pressure within. But Bradbury had removed the capstone. He heard those red leaves crunch like broken bones, saw those logs pass by like rotting bodies, saw the smoke waft through like pent-up guilt and the waves flood across like rippling regret.
 
-Then the gates broke asunder. Countless tears welled up and poured forth, like two great bleeding wounds. He bowed over, using his sinful palms to plug his eyes, to no avail. He scrunched into a tight ball and closed his eyes, which changed nothing. He tried to speak, but only a single sob emanated from his throat as it constricted and now he shivered all over.
+Then the gates broke asunder. Countless tears welled up and poured forth, like two great bleeding wounds. He bowed over, using his sinful palms to plug his eyes, to no avail. He scrunched into a tight ball and closed his eyes, which changed nothing. He tried to speak, but only a single sob emanated from his throat as it constricted.
+
+He shivered all over, sobbing. Months of bottled up pain and trauma: the loss of his home, the loss of his parents, and everything else that pounded his head again and again and again -- culminating in the killing of General Stacy. But Stacy's words still resonated in his mind, days after he was already dead. Stacy's death had brought Atro no joy, no catharsis. Nothing.
+
+He sobbed all the harder.
 
 <br>
 
@@ -96,41 +100,37 @@ He didn't know how long he'd sat there while Bradbury sat beside him, but at len
 
 Atro, tentatively, slid his head out of his grief. His hands remained stuck to his knees in a constant state of shuddering shock. The tears flowed like wine in the Tinkerer's Tavern. His cheeks were raw and clammy, his chin wet and sodden.
 
-His voice came out warbly and thin. "I said I'm fine." But he wanted to tell him, tell him everything. Nothing more could make its way out through the ruins of the barriers of his mind.
+His voice came out warbly and thin. "I said I'm fine." But he wanted to tell him, tell him everything. If only anything more could make its way out through the ruins of the barriers of his mind.
 
-The warm arm left Atro's shoulders, leaving only a cold, sad feeling.
+The warm arm left Atro's shoulders, leaving only a cold, sad feeling. "Did you do it? Stacy, I mean."
 
-"Did you do it?" Michael asked. "Stacy, I mean."
-
-Atro opened his mouth to respond, but he choked on the words as he sobbed and gasped again. His drenched sleeves could no longer absorb the mess that flooded his face.
+Atro opened his mouth to respond, but he choked on the words as he sobbed again. His drenched sleeves could no longer absorb the mess that flooded his face.
 
 "Yes."
 
-"How many else?"
-
-"It doesn't matter," Atro tried to snap, but the words came out in a jumbled mumble.
-
-"What?"
-
-His fingers had stopped shaking, but his voice had not. "One other."
-
-"...Okay."
+"...Okay." And Michael said nothing more.
 
 Atro stretched his fingers. He took a deep unsteady breath. Trying not to think, he took another breath, deeper and smoother. Bit by bit he unravelled himself, and his knees unseized and relaxed. The latent debris in his mind were carted away.
 
 "My parents were-"
 
-"I odn't have all the answers," Michael said, unknowingly interrupting Atro's soft voice. "But I want you to know that you aren't alone. We are here. I am here." He started cracking his knuckles, one by one. "And even without us, there are so many more people out there that will meet you, maybe learn who you are and what you are, and perhaps forgive you. In time, you might look back and find..." Michael drifted off, all knuckles cracked, then chuckled mirthlessly. "I'm just saying nonsense, aren't I? I'm *younger* than you, experienced nothing like you have. I don't fight. What have I to say, really?"
+"I don't have all the answers," Michael said, unknowingly interrupting Atro's soft voice. "But I want you to know that you aren't alone. We are here. I am here." He started cracking his knuckles, one by one. "And even without us, there are so many more people out there that will meet you, maybe learn who you are and what you are, and perhaps forgive you. In time, you might look back and find..." Michael drifted off, all knuckles cracked, then chuckled mirthlessly. "I'm just saying nonsense, aren't I? I'm *younger* than you, experienced nothing like you have. I don't fight. What have I to say, really?"
 
 Atro did not reply. He tried to stand, but for now he felt comfortably resigned to sitting on the river bank, watching the last of the smoke drift on through. For now.
 
-But, inevitably, a voice called out from the depths of the forest. "Atro! Where the hell are you? Didn't *kill* Bradbury, did you?!"
+<br>
+
+---
+
+<br>
+
+A voice called out from the depths of the forest. "Atro! Where the hell are you? Didn't *kill* Bradbury, did you?!"
 
 Firsk was coming. Time had run out.
 
-"This is it." Michael jumped to his feet, and dragged Atro up to his. "You want my words? Here they are: *run*. Take the crystals, you can use them to buy you passage west across the sea to the Colonial Lands. They'll never find you there."
+"This is it." Michael jumped to his feet, and dragged Atro up to his. "You want my words? Here they are: *run*. Take the crystals. You can use them to buy you passage west across the sea to the Colonial Lands. They'll never find you there."
 
-Atro wiped his face dry. He felt a twinge of embarassment now, to have cried in front of this wimp of a boy. It made him feel good.
+Atro wiped his face dry. He felt a twinge of embarassment now, to have cried in front of this boy. It made him feel good -- good to feel something else for once.
 
 "What are *you* going to do? You can't just go back to him after-"
 
@@ -140,7 +140,11 @@ Atro could only stare at Michael in awe. He didn't even know what to begin to sa
 
 Again, the burly voice of Firsk boomed from the forest, closer this time, and Atro knew he had to run. Michael gave a firm nod, and Atro stepped into the river and waded across.
 
-The river only got waist-deep. Atro had reached the other side, but he turned round too late. He saw nothing of Michael Bradbury -- he'd gone, ready to tell his lie to Firsk and delay him as much as possible. The fallen leaves, which he had sworn were red, formed a surprisingly green carpet across the forest floor.
+The river only got waist-deep. Atro quickly forded the river, but once he turned round he was too late. He saw nothing of Michael Bradbury -- he'd gone, ready to tell his lie to Firsk and delay him as much as possible. The fallen leaves, which he had sworn were red, formed a surprisingly green carpet across the forest floor.
+
+There were no more thoughts left in Atro's mind. He soldiered forward and into the morning light.
+
+*West.*
 
 <br><br>
 
