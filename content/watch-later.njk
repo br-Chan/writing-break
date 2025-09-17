@@ -1,0 +1,13 @@
+{# ---js
+const eleventyNavigation = {
+	key: "Watch Later",
+	order: 4
+};
+--- #}
+<h1>Watch Later</h1>
+
+<p>A long-running documentation of my quest to watch all the videos in my YouTube watch later playlist. I may not survive the journey.</p>
+
+<h2>Posts</h2>
+{% set postslist = collections["watch-later"] %}
+{% include "compactpostslist.njk" %}
