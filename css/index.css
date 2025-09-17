@@ -323,6 +323,13 @@ header {
 	font-weight: bold;
 }
 
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
 /* Tags */
 .post-tag {
 	display: inline-flex;
