@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Separate Currents</title>
+		<meta name="description" content="This is a revised version of a story from 10 Sep 2022.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="separate-currents">Separate Currents</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2025-09-19">19 September 2025</time></li>
+		Tags:
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    2,460 words • Reading time: 12 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>This is a revised version of a story from 10 Sep 2022.</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>TODO: proofread and edit!</p>
+<hr>
+<p>1 million, 452 thousand and 922 seconds.</p>
+<p>Dark is the night. But it isn’t just the night of the Void’s obstinate twilight; it is the night of my harrowing choice. For here I must choose a path at a fork in my road.</p>
+<p>Ahead of me lies a great beyond that lasts forever: the trash river that I have found myself floating down. Only it isn’t trash, not anymore – I treasure these things around me, in a deluded sort of way, and surely they treasure me back. The flocks of discs have long passed me by, and the old boulder has been far overtaken. That’s’ fine, I’ve met new friends already: a snaky wire, a pair of wooden shoes, a cascade of puzzle pieces clogging the river. They’re lost – perhaps for as long as I – but they’ve found solace in the mindless current.</p>
+<p>For leagues uncounted this path may go, forever on and on, perhaps back to the place where it began; then it may restart the cycle in a great journey of infinity. But it will not be one devoid of feeling; even now I have my friends – the things that were lost from reality or memory by dust or fire – to accompany me forever, never dying and never fading. And there will be a <em>certainty</em> in that: I can lie back and do nothing, and go down this path and be at peace forevermore. It will be a forever-cruise of pleasure.</p>
+<p>Thenthere is the other choice; the one of great risk but perhaps greater reward. Shining and sheening is the Orb, ever-present like a pin in the eye’s mind. I imagine the myriad of things it might bring me, and championing all those fantasies is the promise of <em>Escape</em>. It only makes sense: it is the only bright light I have ever seen in the Void aside from my own Tablet, of course it must be! It is now the brightest it has ever been – but now completely to my right rather than in front of me. The river is bypassing it, meandering around it almost deliberately.</p>
+<p>I long for it. I <em>yearn</em> it. But now the Orb’s rays seem to mock me.</p>
+<p><em>“Does thee want to join us?”</em> they purr. <em>“Then leave thy river’s embrace! Leave the comfort of thy certainty and take the leap of faith!”</em></p>
+<p>I want to take that leap. I really do.</p>
+<p>But my heart beats in protest. <em>What if,</em> it warns, <em>the Orb is useless? What if it’s a trap? What if you reach the Orb, and its bright light disappears the moment you touch it. Then you shall have wasted the paradise of the forever-cruise for a fruitless, lustful endeavour. You shall have returned to square one, over 1 million seconds ago – you shall have returned to the mewling infant you were when you awoke here. Don’t you remember what happens when you yearn, when blind infatuation overcomes caution? And what if infatuation grows like a tumour into your head as you overthink, sucking your reason dry? Or maybe you really have forgotten.</em></p>
+<p>Have I forgotten? Of course I have – my earliest memory was of this darkness, clutching my ears as a beach of rough noises and voices poured into my head, even as they do now. But why is my hand now grimacing in half-forgotten pain? Why is my other clutching my frail rucksack, within which four muted lights search for their way out, calling for blood and atoms?</p>
+<p>Shards of memories flitter and flatter down from their neurotic cages, sneaking through the widening cracks. They beseech me:</p>
+<p><em>What happens when you yearn? Your home in ashes. Your kin in nooses. Your inheritance shod with cobblestones and blood. Friends made, friends betrayed. Then west, west, west, west. And at the end of it all, what then? You became the friend, you became betrayed.</em></p>
+<p><em>And here you are now.</em></p>
+<p>I look about myself again. Each of my friends here in the river have a story to tell, memories to share. We’ve all come together from separate currents into a matrimonial union that transcends space and time. When we leave each other, I shall meet new friends and start all over again. I will never tired of listening to the stories of my friends. Maybe I will start to listen to the stories of the voices of the Void, too. Let them fill my head with their dreams, even their nightmares, and become one with the Void.</p>
+<p>For the first time in my waking memory, I ease into a joyous feeling beyond all euphoria – <em>satisfaction</em>. My forever-cruise. What for would one risk losing this beautiful existence for a mere werelight in the corner? Here I am weightless, wantless, needless. I need not even breathe. Here I am not Lonely. Here I have <em>friends</em>.</p>
+<p><em>Friends, from now unto infinity!</em></p>
+<p>My mind shudders to a halt. Barlibur. I had not begun to sound like him, had I?</p>
+<p>What have I been thinking? Trash? As <em>friends</em>?</p>
+<p>Another wave of scattered memories break free from their purgatory, showering me in confusing flashes and visions. They whisper thus:</p>
+<p><em>A final promise, and a sword in the sand. The one true home you found at last. Lost it you did, but the fault was not yours. Defender of People, and Bane of Worlds: life once you had, and fall is not forever.</em></p>
+<p>My mind churns in confusion. I’m giddy and groggy, as if waking up and falling asleep simultaneously. I bathe in liquid fever. Gears turn within my skull, and the best cryptographers of my brain work ceaselessly to put together the pieces that had come sprinkling in.</p>
+<p>I turn my gaze back to the Orb, and find its light to be less mocking than I had perceived it to be – pity, perhaps, it has. Hope.</p>
+<p>I give my answer: <em>Certainty begone, I’ll take that leap of faith.</em></p>
+<p>I scan my surroundings, the river in which I wallow, and realise their true purpose; these drifting things are <em>not</em> my friends. They are tools for my escape. One of these could be used to change my trajectory, as I’d once done to poor Barlibur.</p>
+<p>I paddle with my arms and legs, trying to swim. I could do this forever – I don’t get tired – but I move no further than if I hadn’t been moving. I grab whatever I can reach around me – sticks and stones, springs and sprinkles. I thrust them out of my hands to push my myself in the other direction. Nothing happens. Pushing myself off a big object would go far, quite literally. But in growing dismay, I find nothing to be hefty enough. Where was that old boulder when I needed it?</p>
+<p>Perhaps it was never meant to be; all of us lost beings would cross mountains and rivers in this Void but never find freedom. I am to be stuck in this forever-cruise after all.</p>
+<br>
+<hr>
+<br>
+<p>Its my ears instead that come to my aid.</p>
+<p>“Hola, Mama! You haven’t heard from me in a while.”</p>
+<p>The sheepish voice of a girl, faint and far away – and in a language I can understand. It is not a voice of the Void, however, of that I’m sure; it echoes from behind me, farther up the river channel.</p>
+<p>“It’s been a week and a half since that ceremony. A week and a half since I, heh, destroyed the portal home.”</p>
+<p>It’s not an organic voice, at least not directly so. Based on my prior luck with living creatures out here, I don’t know whether to be dismayed or relieved. Even from so far away, I can tell the voice is too grainy, with too much static; detecting static has become my innate skill. It’s a recording of sound only.</p>
+<p>My eyes scour the blackness for its source, and before long I spot far up the twilight river a thin brown <em>thing</em>, long like a noodle. It is growing fast. What in the worlds is it? Being so far away, I figure that thing would be quite massive up close. If I pushed myself off it, perhaps it would be large enough to send me in the direction of the Orb?</p>
+<p>It’s better than nothing.</p>
+<p>Keeping my eyes fixed on the approaching thing, I bend my legs from their foetal position. I get to work stretching my rusty muscles. I’d have to aim correctly, and try vault myself off of whatever that noodle was. I can’t risk missing the mark and plunging away from both the river and the Orb.</p>
+<p>The recording of the girl’s voice continues. I don’t pay too much attention, but it’s definitely coming from the noodle that is now fast approaching. I hear her talk of magic and fire, of choices and tragedy. Something of that ilk. As I ready myself for launch and as the girl continues her speech, the noodle renders into more of a thick line of brown paint. The black canvas of its background becomes ever wider and more grim, like an impossibly large mouth. If I miss this jump…</p>
+<p>My heart speaks up again, if only to quiver all the harder.</p>
+<p>At some point the girl stops speaking, the static fading. Not five seconds later the voice starts up again, “Hola, Mama!..” The crackly din plays out just as it did before.</p>
+<p>The image of the approaching noodle gives way to a massive ropelike structure, full of lines and whorls. It’s close enough now to see the dull reflections of its surface. With keen fascination, I realise it’s an animal. Likely dead, seeing how stiff and unmoving it is. Although that’s hardly a good metric for whether something is alive out here – I was likely just as unmoving while I’d been ‘dead’.</p>
+<p>Approaching me is a massive serpent, with a disproportionately sized mouth and an abominably long tail. Queerest of all, its cross-section is vaguely triangular. It lacks scales; instead, a smooth brown hide stretches up the creature’s slender body like wet clothing, cutting off at an unhinged, gaping mouth.</p>
+<p>Its two jaws are long and curved, very much like a pair of tongs. I see no teeth or tongue inside. Instead, fleshy yellow tendrils protrude from crimson gums, sprawling and twisting like smaller versions of the greater serpent. I count eight tentacles in all their slimy and slippery glory. I can’t tell if they are an integral part of the thing or some form of parasite that ultimately killed it off; either way sicknes me. Two of the appendages, near the snout, are grossly longer than their inner cousins. They glint under the light of the Orb, twitching at it.</p>
+<p>Not going to be leaping from that end of the creature, then.</p>
+<p>Within the serpent’s hidden throat, or even deeper yet, the muffled voice recording continues unabated. At length it finishes a second time, and not long after starts again. The snake is getting awfully close now, close enough to smell its awful, unquenchable stench of decay. It hits me like a boulder. I wave my hands in front of my nose, trying to shake off the putrid scent of rot, but it is in vain. A soiled, smoky smell electrifies my nostrils. In fact, it smells just like the doorframe that a million seconds ago had nearly hit me as it had tumbled down the river. Meanwhile, the rot paralyses my face, freezing it in a painful grimace. I cannot even bring myself to sneeze.</p>
+<p><em>Very</em> close now; close enough to see the intricate designs on its back, the spiralling dead eyes planted upon its face, the wooden figurine of an owl lodged in its mouth. The creature sends river debris flying in all directions as it barrels on through. I look on in growing perturbance as I realise how big it really is – enough to swallow a beast twice my size. My legs forget how to jump. My body is locked in place, leaving my heart free to do as it wills.</p>
+<p>and in that moment of chaos my heart makes a last ditch attempt to change my mind. It leaps into my throat and into my brain, and claws apart the last few jail bars entrapping my memories. I cry aloud as they sprint into the world of remembrance, rejoicing at last in the light. My head is now awash with the cacophany of the shards of my life before the Void, and they bind me like stone. The smell of the serpent, the abounding fear in my head and the screaming voices of the Void seek to drown me. The serpent is seconds away from reaching me.</p>
+<p>I cry out in desperation, “Forget that, forget that!”</p>
+<p>Like magic, it all ebbs. The memories, the stench, my fear, Everything implodes as my voice encapsulates them again into an even stronger, muddier prison. My heart flees back to where it belongs, the torture chambers of my chest. My one chance of remembering who I was is dashed.</p>
+<p>The only thing I remember now is how to leap.</p>
+<p>The serpent’s skin is as cold and hard as ground. For a moment I see cobblestones and blood, before the vision sinks under the mud.</p>
+<p>Then away I go, hurtling away from my forever-cruise. My aim could not have been better; I fly like a dart, the Orb my bullseye.</p>
+<p><em>The choice has been made. My leap has been taken. Nothing can alter that, save the rewinding of time.</em></p>
+<p>I look back to watch the twilight river. The serpent off which I’d vaulted myself, despite its mass, now careens off-course and away from the river, off on a separate current. It will be the last I see of it.</p>
+<p>The girl’s grainy voice, trapped inside the slithery confines, comes to an abrupt halt. I think I hear someone call out from within, but it’s too far away now to know for sure.</p>
+<p>My eyes goad me back to the front, at my new destination. The rays of the Orb laugh in delight, and I can’t help but laugh as well. My chest aches from the action. Tears slide out of my eyes, tickling my  nose. The echoing noise of my laughter envelopes the Void, shading the blackness into a lighter grey.</p>
+<p><br><br></p>
+<hr>
+<p><em>This is a revised version of a story from 10 Sep 2022. Too tired to proofread this one after completing the full revision, will have to get to this one later and update it.</em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/4612/18_twilight-in-wind/">
+							<b>← Previous in 4612</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>Twilight in Wind</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/19_separate-currents/` was built on 2025-09-19T11:43:48.541Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
