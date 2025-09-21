@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Do You Remember?</title>
+		<meta name="description" content="The Lonely Human of the Void finally reaches his conclusion, for good or for ill. This is a revised version of a story from 21 Sep 2022.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 1em;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="do-you-remember">Do You Remember?</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2025-09-21">21 September 2025</time></li>
+		Tags:
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    3,114 words • Reading time: 16 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>The Lonely Human of the Void finally reaches his conclusion, for good or for ill. This is a revised version of a story from 21 Sep 2022.</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>The end had come.</p>
+<p>Endless black and endless white, with the Lonely Human wedged in between. The Orb had become so tantalisingly near. The rays of light had blossomed and expanded to fill his entire vision. Meanwhile, the receding Void behind him fought for dominance over its arch-enemy. The light did not blind him, and the Void did not scare him. All of life now was the dark and the light. The two sides wrestled with each other, the noisy abyss against the silent white, and all the Lonely Human could do was watch. Nothing beside remained, save for shards of ice and brittle stones.</p>
+<p>If he squinted at the wall of light, he could pick out the little pinprick at the centre of it all, his bullseye. His long journey of pain, loss, isolation and, above all else, the immense weight of Nothingness, was approaching its true end. That Orb was his ticket out of here. He was basing his hope on nothing but that – hope. If the Orb was the key to the other side of the Void, he was <em>free</em>.</p>
+<p>If not, if his greatest hope was for naught, then he would turn round forever and embrace the Void completely. He would sink to the final lacuna at the bottom of all existence and dwell there forevermore. His last memories would be of a withered, decaying mind on its last, spindly legs. Then they, too, would fade, and his lifeless body would join the billions and trillions of other lost things, gone forevermore.</p>
+<p>Still <a href="https://br-chan.github.io/writing-break/4612/18_twilight-in-wind/">he counted the seconds</a>. The Lonely Human’s inner consciousness informed him that he had reached exactly 7 million seconds. <em>7 million</em>. The number failed to reach comprehension. And yet still the number ticked up, as precise as a timepiece lodged in his brain: 7 million and 9, 7 million and 10, 7 million and 11… It had been 7 million seconds since he had been reborn amidst the sound of static. Soon, he would find out if that rebirth had mattered at all.</p>
+<p>The noises and voices of the Void, meanwhile, had not ceased. The noises had in fact been heightened to match the sizzling stalemate of black and white. Whirring machines that handled like dreams; shimmering spells in perfect circles; muttered good mornings through whispery smoke; final blessings in darkened caves… They went on and on, the sounds melding together into a brewed cacophony of melodies. They ran together as one. It was a music so tangible he could taste it: engine grime, acrid rain, dried blood and draconic sweat. They felt close enough to touch, too far to see; perhaps never to be seen ever again. Or yet to be seen at all.</p>
+<p>The end had come.</p>
+<br>
+<hr>
+<br>
+<p>Movement in his peripheral vision. The Lonely Human turned to find that a living creature, as rare as they were, had approached him without even a peep. He had eight legs, but not like those of a spider; they were thick and stubby, staggered about his rotund body and folded into a vague interpretation of a squat. But, like a spider, his skin was black and flecked with rough hairs. A pair of hands lay relaxed across his enormous stomach. A long neck like that of a young giraffe sprouted from the front of his body, ending with a long face – as alien as he was, he look at peace, a smile on his thin lips. The queerest of all was that he was wearing what could only be described as dark formal clothing: a suit and blazer, tailored to fit his cauldron of a belly; massive brown pants that were tight around all eight of his legs; and similarly coloured shoes, whose contours were asymmetrical but not ungainly.</p>
+<p>He looked like a funeral-goer, a Mourner.</p>
+<p>The Human should have felt surprise, or confusion. Instead, a calm washed over him, and the tsunami of sounds all around him passed him by. The quaint tinkling of a piano or xylophone started to play, somewhere out there in the Void. The Mourner met his eyes and smiled warmly. He patted one of his coat pockets and slipped out a little white box. Opening it, he drew out a thin paper cylinder and handed it to him.</p>
+<p>The Human rolled it between his fingers, unsure of what to do with it. It smelled of something foreign, even in such a place as the Void, so he passed it back to the Mourner. Nodding in acceptance, the Mourner put away the box. He retrieved an even smaller item from his pocket. With a flick of a spindly finger, orange light burst from the object, flickering and wavering. A fire. The Human hadn’t seen a fire burn in… He couldn’t recall.</p>
+<p>The Mourner deftly placed the end of the paper cylinder between his lips, and held the flame close to the other end with mechanical accuracy; the paper alit, and the Mourner shut off the flame. He took a deep, slow breath. He removed the cylinder to exhale, and a cloud of smoke billowed from his mouth, trailing behind them. It had a lung-filling smell, sweet and invigorating to the core. The Mourner placed a hand on the Human’s shoulder, like old friends meeting after many a year, and sat by his side as they enjoyed the smoke.</p>
+<p>He had a feeling he knew why the Mourner had come.</p>
+<p>The Human didn’t know how much time they spent together in silence. He could have referred to his inner clock, but the tranquility filling his mind slowed his impulses. He breathed deep and slow, then slower still. His ears slept comfortably to the piano’s tune. The smell and taste of a long-forgotten spice enveloped his psyche. His hand drifted to the Mourner’s hand and clutched the smooth but aged skin. His vision blurred as his eyes glazed over, watching the monochrome beauty of the Void and the Orb. He was so close to the Orb now, so close to the end…</p>
+<br>
+<hr>
+<br>
+<p>Something shivered and quivered inside him, as if a tight cord wrapped around his entire being had loosened. Then suddenly it snapped, and out of the murky cavern of his body crept his <em>soul</em>. It lit up, like the Mourner’s fire, then engulfed the Human’s body with its flame. Memories reclaimed the Human’s mind, and nothing now could stop their ravenous march. They came in splintered fragments, puzzle pieces trickling out of an hourglass and fitting perfectly into each other. Papa and Mama and his cottage home. The beautiful Wheat Fields. The coming of the army, and his escape. And on, and on, and on, the memories flickered down and into place. Not enough to tell the whole picture, but…</p>
+<p>“I remember.”</p>
+<p>The Mourner removed his paper cylinder – a cigarette, he remembered now – from his mouth. “I apologise, what did you say?” His voice was as smooth as the tail of smoke behind him.</p>
+<p>“I… <em>Remember</em>.” The Human shook his head, casting away vertigo as the memories flooded his eyes. “I remember how I got here. I remember a promise I’d made. I remember where I came from. I remember who I am.”</p>
+<p>The Mourner stretched his legs, all eight of them dancing and twirling below his bulk. “What is your name?”</p>
+<p>At last, it came to him. “Atro.”</p>
+<p>“That is a nice name.”</p>
+<p>“But… I remember more.” A headache now, shards of recollection poking his head in awkward places. “I remember who I killed. <em>Whom</em> I killed. I remember the lies I told. I remember that my promise was broken almost the moment I’d made it. I remember all that I have gone through in this Void. I am Atro no longer.”</p>
+<p>The Mourner took the Human’s trembling hand, stroking it until it cooled and lay limp again. “Then who are you now?”</p>
+<p>“I don’t know,” was the spitted reply, and he withdrew his hand.</p>
+<p>He remembered something else – there was something he could think, or say. And it would make him <em>forget</em> all this, with the same kind of magic that was making him count up the seconds with profound accuracy. He could say the words, and make him forget again – reset himself, and make him ask “<a href="https://br-chan.github.io/writing-break/4612/1_hello/">Hello?</a>” in the Void all over again.</p>
+<p>But he was too afraid now to say the words.</p>
+<br>
+<hr>
+<br>
+<p>The Orb was now so close that the light had overcome the dark; the battle was won at last, and nothing now could undo it. The Human peered through the light and saw at last what the Orb, his saviour from the dark and dreary, really was.</p>
+<p>“It’s a <em>lantern</em>,” he said. “It, it’s just a light encased in glass. It’s <em>nothing</em>.” Deep stones began to crush him within. “All this time, it was just…?”</p>
+<p>But the Mourner said, “Not quite. Can you see what it is placed upon? There is a door.” And it was as if a curtain had lifted, and the deafening light cast aside. The Orb was attached to a door, large enough to fit both the Human and Mourner side by side. Purple rust grew through its hinges. On one side was a doorknob, wrinkled with rust into a massive pomegranate. Hammered grey walls stretched upwards, downwards, left and right – beyond where the eye could see. The Mourner’s smoke shrouded their shining horizon. It was the wall of a massive metal ship, or building, or <em>something</em>.</p>
+<p>The Mourner pointed beside the door. “It says it is a BED.”</p>
+<p>The Human squinted at the fine print on a faded poster. At first it was all gibberish, but then the poster seemed to shimmer and the text rendered into readable letters:</p>
+<blockquote>
+<p>Customer name: <code>Alec</code><br>
+Identification: <code>6GTb5yDRNvM...DPMluEVUqS0</code></p>
+<h2 id="b.e.d-of-safekeeping" tabindex="-1">B.E.D Of Safekeeping</h2>
+<p><em>The Unknowable Ban Eylen presents: the <strong>Ban Eylen’s Dimensions!</strong> Ever wished you had a universe so small it could fit in your pocket? Ever wished you had a universe you could drive about like a transversal van? Wish no longer! Ban Eylen has all your pocket dimensional needs covered. It’s the first ever commercially viable suite of synthetic universes since the downfall of the Fediverse!</em></p>
+<p><em>Each B.E.D is synthesised from an infant verse, and then customised to suit your needs. Need a place to store your goods and possessions? Try the B.E.Ds Of Safekeeping or the Pocket B.E.Ds. Need to house a family or civilisation? The B.E.D Of Living is calling your name. Every B.E.D comes with solid walls around the universe pre-installed, and entryways can be configured on the fly!</em></p>
+<p><em>Hooked? Get in touch with the Unknowable Ban Eylen and grab your own <strong>Ban Eylen’s Dimension</strong> now!</em></p>
+<p><em>🎵 The Unknowable Ban Eylen – you don’t know Ban Eylen, but Ban Eylen knows you! 🎵</em></p>
+</blockquote>
+<p>Rereading from the top, the Human asked, “What’s Alec?”</p>
+<p>“I suppose in your language it is a name. Like Atro, your own name.”</p>
+<p>“That’s not my name,” the Human snapped. “Not anymore.” The soul in his body pulsated, then was resolute. “I’ll take that name. Alec. I am Alec.”</p>
+<p>“Very well. I will not stop you.” The Mourner gestured to the doorknob. “Will you open the door?”</p>
+<p>Alec swallowed, and rubbed his palms together until they were rife with sweat. He reached out; the knob creaked and struggled before it finally relented, and the great door yawned open. At once the wall of light swung away, the Orb that was affixed to the door now behind shadow. But they were not plunged into darkness again; the door was open, and a new light ventured through.</p>
+<p>From the low ceiling hung antique lightbulbs, swaying gently to an unseen current. Two rows of steel shelves ran down the room and away from the door, into obscurity. Shadowy items and infernal devices filled each shelf to the point of overflow. No doubt there would be more shelves arranged endlessly to the right and left, just out of view.</p>
+<p>Grappling the door, Alec brought his feet over the ledge. Bloodstained sandals gripped the floor, and his grimy pants caught against the corner. He heaved himself forward, and the moment he crossed the threshold he collapsed. <em>Collapsed</em>. He lay motionless in pure shock; he had completely forgotten gravity. This room somehow had it. It made him laugh as he hugged the cold, hard floor. 7 million seconds and he finally felt <em>normal</em>.</p>
+<p>“Hey come on, my friend.” Alec edged around, raising an arm to grab the Mourner. “I’ll help you in-”</p>
+<p>But the Mourner had gone, just as swiftly as he’d appeared. All that remained to show that the Mourner had been there at all was his cigarette, twirling away like a tiny dancer.</p>
+<br>
+<hr>
+<br>
+<p>Still on the floor, Alec looked around and beheld the rows and rows of shelves that crowded the room. And this was but a single floor of what must be a multi-storied structure. Imagining its enormity made his head buzz. He had to see more. He tried to stand, but found himself terribly unable. Gravity was tiring.</p>
+<p>The door shut with a slam, shutting off the Void. Suddenly lights flashed all around: black, white, blue and green. His head began to throb, like something was pinching and twisting a little bit of his brain.</p>
+<p><em>What’s going on?</em></p>
+<p>A realisation. Tearing off his rucksack, he burrowed in and found the source of the blinding colours.</p>
+<p>The Tablet of 4612. Its lights were going off like an alarm clock. Its familiar numbers glowed in their respective colours: the 4 was black, blacker than the outside Void; the 6 was white, whiter than the rays of the Orb; the 1 glowed blue, bluer than the clearest skies of imagination; and the 2 glowed green, but it glows only for the ending. His memories were coming together again, and he was remembering more and more about what this thing really was. How he’d got it. Why he was here in the first place.</p>
+<p>Silent tendrils of energy sizzled through the tablet like magnetic javelins, and slithered up and down the stony surface with compounding vigour. It began to vibrate now, and it took all his strength to keep it from bouncing out of his hands.</p>
+<p><em>Something about this room had activated this thing,</em> he thought numbly, racking his spotty memory. <em>What had that poster outside said? This is a synthetic universe. A whole universe in a box. This Tablet hadn’t done anything like this out in the Void – only when it entered this place. But what will it do now?</em></p>
+<p>He didn’t know. Didn’t remember.</p>
+<p>A great coldness seeped out of the Tablet. No amount of cheerful light could quell the animalistic feeling of dread that crept into Alec’s spine. No amount of time spent out in the Void could prepare Alec for what he was feeling now: the fear of having tasted a lick of freedom only to be sent out there again. The fear of letting the Tablet do something catastrophic. The fear held him still, paralysing him. He tried to raise an arm to open the door, but found that there was no knob on the inside. He pushed against the door, but it wouldn’t budge. He was trapped in here with this Tablet.</p>
+<p>A vision entered his mind – the Tablet exploding. The shelves toppling like dominoes into oblivion. The entire structure, this B.E.D, disintegrating under the weight of the Tablet’s expulsion of energy. It was a vision so vivid that tears sprouted in Alec’s eyes as he choked, unable to breathe. It was a premonition. This Tablet – this weapon – shook and squirmed in Alec’s arms, ready to carry out its purpose. It was over. All this was for naught. All he wanted now was to scrunch up into a tight ball and close his eyes.</p>
+<p>A fleeting promise, one he’d made in this very Void, came to him then: <em>I will get myself out of here. No matter how many voices fill my head, no matter how long I stay trapped here, I will get out of here.</em></p>
+<p>Alec focused, breathing deep and slow. He remembered how he’d felt when the Mourner had been by his side, and let all emotion melt out of him. The last voice of despair filling his head was his own, and now he silenced it.</p>
+<p><em>There is something else the Tablet can do.</em></p>
+<p>He murmured to the Tablet, “Destruction is not your only purpose. Do you remember?” The crackling power in the Tablet continued to grow in spite of his whisperings; it would keep growing, until it reached its very limit, and Alec didn’t want that to happen. He knew what would happen if it did.</p>
+<p>He gripped the Tablet as if to break it asunder, and his soul screamed his promise. He didn’t try to stop the vibrations – only control them, maintain them. He forced them into submission. Right now its infinite power was to be used for destruction. Perhaps he could use it for something else.</p>
+<p>All the while, he could feel something ebb. The memories he’d unlocked just moments ago were now leaving his broken mind again, the party over. Papa and Mama, fading. All the deaths he’d caused, gone. The mysterious promise he’d broken, dissipating. In a way he was happy – he could not regret what he’d forget.</p>
+<p>He let those puzzle pieces scatter themselves. Emboldened, he poured all his might and intent into the Tablet, and his soul screamed all the louder.</p>
+<p>At last, the Tablet of 4612 heeded his call and a burst of iridescence showered his body. A deep rumble emanated from within the Tablet, as if hidden gears were locking into final positions. Something latched onto his soul and he felt a tugging on his entire being, pulling him far and away.</p>
+<p>Suddenly he knew he was leaving; leaving this accursed Void, for better or worse, once and for all. Alec cast one last look at his surroundings, now receding as the Tablet’s rainbow burst around him.</p>
+<p>One of his promises, at least, would be fulfilled.</p>
+<p><br><br></p>
+<hr>
+<p><em>The 21st entry in the series, posted on the 21st night of September, and it’s called Do You Remember? <a href="https://www.youtube.com/watch?v=Gs069dndIYk">:No, it’s just a coincidence</a>.</em><br>
+<em>I would like to thank <a href="https://scp-wiki.wikidot.com/scp-4999">SCP-4999</a> for providing the basis of the Mourner.</em><br>
+<em>This is a revised version of a story written on 21 Sep 2022, exactly 3 years ago.</em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/4612/20_ahh/">
+							<b>← Previous in 4612</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>AHH!</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/21_do-you-remember/` was built on 2025-09-21T08:17:54.703Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
