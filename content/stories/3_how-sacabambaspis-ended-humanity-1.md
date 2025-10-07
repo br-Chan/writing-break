@@ -26,7 +26,7 @@ The last specimen of Sacabambaspis was stuffed and displayed in the British Muse
 
 ## El Dorado is Real, and it is a Fish
 
-The extinct *[Sacabambaspis janvieri](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=r7SFO9sAAAAJ&citation_for_view=r7SFO9sAAAAJ:Y5dfb0dijaUC)* was first described in 1986, based on fossils found near the village of Sacabamba, Bolivia. After further discoveries in the late 1980s and 1990s, striking similarities were noted between the fossil specimens and the Guatavita Fish in the British Museum. This sparked massive controversy and debate within the Palaeontology field -- was the Guatavita Fish real after all? Lake Guatavita was searched hundreds of times by both professionals and amateurs, during a period known as the "Second Search for El Dorado". For the next 5 years, the media scrambled to get ahold of any news from Colombia about evidence of Sacabambaspis.
+The extinct *[Sacabambaspis janvieri](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=r7SFO9sAAAAJ&citation_for_view=r7SFO9sAAAAJ:Y5dfb0dijaUC)* was first described in 1986, based on fossils found near the village of Sacabamba, Bolivia. After further discoveries in the late 1980s and 1990s, striking similarities were noted between the fossil specimens and the Guatavita Fish in the British Museum. This sparked massive controversy and debate within the palaeontology field -- was the Guatavita Fish real after all? Lake Guatavita was searched hundreds of times by both professionals and amateurs, during a period known as the "Second Search for El Dorado". For the next 5 years, the media scrambled to get ahold of any news from Colombia about evidence of Sacabambaspis.
 
 At last, in 2006, a Colombian local discovered a hidden underwater cave in the lake bed of Lake Guatavita, in which a small population of living Sacabambaspis was found. This find rocked both the palaeontological and mainstream worlds: the Guatavita Fish was not a hoax, and its kind had survived the drainage of the lake.
 
@@ -34,9 +34,9 @@ This modern species was named *Sacabambaspis eldorado* by palaeontologist [Alain
 
 > When the Coelocanth was discovered off the coast of South Africa, it was hailed the most remarkable example of a Lazarus taxon. Before its discovery it had been believed to have gone extinct 66 million years ago. This discovery of Sacabambaspis comes *400 million years* after its supposed extinction. The fact that a complex organism such as this was able to *persist* for hundreds of millions of years is an evolutionary marvel beyond reckoning. El Dorado is real, and it is a fish.
 
-Immediately, conservation efforts began to protect the Sacabambaspis. The Colombian government cordoned off the entire lake and global agencies streamed in. Conservation groups across the globe worked ceaselessly to breed the ancient fish. UNESCO labelled the lake a World Heritage Site. The World Wide Fund for Nature temporarily changed its logo from a panda to a Sacabambaspis in celebration of the discovery.
-
 ## Things to Come
+
+Immediately, conservation efforts began to protect the Sacabambaspis. The Colombian government cordoned off the entire lake and global agencies streamed in. Conservation groups across the globe worked ceaselessly to breed the ancient fish. UNESCO labelled the lake a World Heritage Site. The World Wide Fund for Nature temporarily changed its logo from a panda to a Sacabambaspis in celebration of the discovery.
 
 Despite the fantastical miracle of the Sacabambaspis, some expected it would just be another flash fire news story. Before long, the world would turn its head towards the next item of intrigue. The Sacabambaspis would become just another face on the long-running campaign against the extinction crisis and climate change.
 
