@@ -208,11 +208,13 @@ header {
 }
 
 table {
+	border-collapse: collapse;
 	margin: 1em 0;
 }
 table td,
 table th {
-	padding-right: 1em;
+	padding-right: 3em;
+	border: 1px solid;
 }
 
 pre,
