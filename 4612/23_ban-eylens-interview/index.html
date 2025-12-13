@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ban Eylen&#39;s Interview</title>
+		<meta name="description" content="Read now for the low low price of $999999 (per word)!">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 3em;
+	border: 1px solid;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	margin-right: 1em;
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="ban-eylens-interview">Ban Eylen&#39;s Interview</h1>
+
+	<ul class="post-metadata">
+		<li><time datetime="2025-12-14">14 December 2025</time></li>
+		Tags:
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    2,832 words • Reading time: 14 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>Read now for the low low price of $999999 (per word)!</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>I shuffle into the empty room, and I feel it – a change. The thin air is charged and ready to burn. Tiny weights seem to pull on every atom of my body in different directions. Something seeks to drag me apart into trembling plasma. I almost drop my notes. I steady myself against the wall.</p>
+<p>I feel a gaze – really, really feel it, cold and angry – knife into my back and soak into my body.</p>
+<p>The Unknowable Ban Eylen is watching me.</p>
+<p>“At last,” he says, and the air whistles and eddies at his voice. “Are you the dotard interviewer for this sordid affair?”</p>
+<p>I don’t dare turn round. The words almost don’t come out of me. “Y-yes…”</p>
+<p>Famed entrepreneur and Omniversal super-superstar Ban Eylen has never before agreed to sit down for an interview in all his millenias-long life. Why he’d agreed to one now, and with our news agency, is unclear. It goes without saying that our agency shot up to superstardom overnight – we would be the ones who would finally unveil all of Ban Eylen’s multi-quintillion dollar secrets. Days and days of preparation have led to this moment: quadrillions of fans vying for their questions to be answered, millions of shareholders asking for the next big economic prediction, and hundreds of hours putting together a golden list of questions for the great Ban Eylen. It’s all led to this moment. No do-overs. No missteps.</p>
+<p>And I’m already botching it.</p>
+<p>I hold my breath and turn around. He sits upon a… Chair? Table? Throne? I can’t seem to place the object in my mind. Is he sitting at all? I strain my eyes upon Ban Eylen’s body, but it’s all a blur. The surrounding room is as clear to me as ever, but he is a <em>blank</em>. I try to focus on any one feature of his face – but then it seems as though he doesn’t have a face at all. I observe the way he moves, the way he speaks, but it all shimmers and changes before my eyes and ears.</p>
+<p>“Well?” he admonishes. “Are you going to sit down? I’ve got <em>things</em> to get back to. Make this quick.”</p>
+<p>And suddenly he <em>is</em> sitting down, quite relaxed on a simple stone chair, gesturing to an identical one across from him.</p>
+<p>I take a deep breath, try to remember everything I was to say, that I’d rehearsed to infinity. But I take the seat, drowning in perspiration, and can’t remember a thing. “I-I… Greetings, good sir.”</p>
+<p>“Don’t <em>sir</em> me, dotard,” Ban Eylen reverberates. “Am I a sir to you? Look at me.”</p>
+<p>I take a look at him (her? them? it?). I see a swirling visage of infinites, every pixel of his body swarming in chaotic fizzbuzz. Not one bit of him distinct, not one trace of him truly there. He could be in this room, or he could be far and away, on the other side of the Omniverse.</p>
+<p>“And the way this is going,” Ban Eylen simmers, “I might as well be far and away making <em>better</em> use of my time.” He utters a grumbling growl, and my vision flickers and wavers in funny shades as he does so. “You have three questions, dotard – and I’ll answer them all truthfully. Then we’ll be <em>done</em> with this.”</p>
+<p>I don’t know how to protest. My eyes flick down to my notes; the list has <em>hundreds</em> of questions. I have to pick three?</p>
+<p>I can feel Ban Eylen’s gaze upon me, but I don’t dare look back directly. I’ve heard the stories – stories of people who go mad spending too much time with the entrepreneur. Stories of people succumbing to cosmic horror in <em>seconds</em>. I’ve already been in his presence a minute. How much longer do I have?</p>
+<p>This is the founder of a brand that stretches across all the Multiverses. <em>Everyone</em> knows his jingle: <a href="https://br-chan.github.io/writing-break/4612/21_do-you-remember/#BEDOfSafekeeping">:“You don’t know Ban Eylen, but Ban Eylen knows you!”</a> His corporations fund behemoths of retail and commerce. His products are ubiquitous:  Ban Eylen’s OmniAir, Ban Eylen’s Bots, Ban Eylen’s Dimensions, Ban Eylen’s Wonder-gears, even Niwar Noodles… He’s the ruler of everything, second only to the Omniverse Organisation itself or the unknowns beyond. What do I ask a ruler of everything?</p>
+<p>“Who… Are you?”</p>
+<p>Ban Eylen’s head cocks back and he sighs, disappointed. “Well, <em>dotard</em>, I’m <em>🎵 The Unknowable Ban-</em>”</p>
+<p>“No-” I interrupt, and my soul skips a beat. “Who are you <em>really</em>?”</p>
+<p>Ban Eylen whips his head back up. His body seethes. Oh, why did I do that? I can feel all his thought now bent unto me, a deep breath before the plunge. Is this how I die? For daring to play cheek with a godly celebrity?</p>
+<p>10 seconds pass. Ban Eylen’s net worth increases by a million times my own in the interim.</p>
+<p>At last, he stifles a laugh. “Ha! Now <em>there’s</em> a question. Not a dotard after all.”</p>
+<p>Ban Eylen leans forward again, a smirk on his imaginary mouth. “Have you ever felt a presence in the air when alone? Have you ever felt a room-filling aura in the deep sanctums of your mind? Have you ever felt a sensation of trepidation ripple through your very bones, as if a person - of grand and great omnipotence - is watching your every move? Observing the minutiae of your emotions? Peering through the very molecules of your body and grasping at the pulsating soul within?”</p>
+<p>I sit frozen. I don’t know whether my thoughts are my own or of some other mindless design.</p>
+<p>Then the room tremors in tenor as he barks a laugh. “Well, if you are, you’re very paranoid.”</p>
+<p>Ban Eylen leans back again, eyes boring hole(s) into my flimsy notes, expectantly. I contemplate asking for clarification.</p>
+<p>“Go on, interviewier, next question. I’m quite excited now. You know how glad I am you’re not just another dotard? That you’re not just a meek little mouse? Go on.”</p>
+<p>My dissociation dissipates, and my eyes pick out a question on the list.</p>
+<p>“Which… of your business endeavours… have changed the Omniverse the most?”</p>
+<p>The whirling nothing that is Ban Eylen grows into thoughtful quiet.</p>
+<p>Ear-popping anxiety surges through my limbs as I stutter, “Could you… Share your thoughts as you think? For the interview.”</p>
+<p>“How refreshingly direct.” The whirling nothing becomes whirling everything. “Wow, I should go out more. Everybody I’ve talked to for the past hundred years have been yes-men and sweatshop workers. Since you’re so brave, let me ask <em>you</em> a question: what do <em>you</em> think I’ve done that has changed our worlds the most?”</p>
+<p>“I-” My mouth goes dry. “I, well. I. Well, Niwar Noodles are-”</p>
+<p>“Oh, not the space ramen!” Ban Eylen waves a hand, spinning my eyeballs into a frenzy. “I didn’t even create that. I just invested in it and advertised it and came up with all their good marketing decisions. And I get half their profit, but still: even if I hadn’t done all that, <em>someone</em> was going to do it. It’s mass-producable multiversal travel food, how basal can you get? So what did <em>I</em> change there?”</p>
+<p>“…”</p>
+<p>“The answer is <em>Nothing</em>. So no – I’m hijacking your question, because the way I see it, the only changes I could possibly have made in the worlds are the changes that <em>no one else could have made</em>.”</p>
+<p>“That would still be… A lot… You’ve done a lot.”</p>
+<p>“You’re well on your way to being a yes-man.” Another bark of laughter. It’s a lot clearer this time; I can almost hear someone – not a messy conglomeration of someones – behind all the chaos and snow. “There are many things I am known for: My OmniAir, My Bots, My Dimensions, My Wonder-gears. Each idea from my very own mind, my very own being. Each one has its own unique flair that none other can replicate. I say this not with the falsetto of advertising, because it’s the truth. But all of these are <em>replicable</em>. All of these can be <em>done</em> by other limbs and minds.”</p>
+<p>He leans in close, dragging the chair with him. We gaze into each other’s eyes. I can see his eyes now. Three of them, twisting and twirling about his face, and orbiting it like electrons in the Classical Atom. They flicker as they move, and every millisecond they change: blue and kind; green and fierce; black and all-knowing; yellow and mellow. Each time a new eye.</p>
+<p>“The greatest of my business endeavours, the one that has changed the worlds the most… Is <em>me</em>. I put <em>my name</em> in all the products I deem fit for it, and everyone goes <em>wild</em> for it. They’ll call this interview <em>Ban Eylen’s Interview</em>, if it ever gets released to the public. I’ve found the one thing that no one in all the worlds has found.”</p>
+<p>“And what is that?”</p>
+<p>“Is that your third question?” He cocks his head left. “Are you sure you want to ask that? I found the one thing no one else has found, and I don’t think anyone else ever will. Are you sure you want to know? Do you want to <em>risk</em> what it will do to your <em>mind?</em>”</p>
+<p>He grins and his face jiggles, multicoloured teeth popping in and out of view. He cocks his head further and further and further until it’s upside down, his eyes dancing in a circle around his mouth.</p>
+<p>“Do you want to know what makes me <em>Unknowable?</em>”</p>
+<p>“No.”</p>
+<p>A sizzling <em>bang</em>, and Ban Eylen scoots all the way back again. “Good answer, interviewer.”</p>
+<p>He’s back to his abnormally normal self. I stare at him still, but his presence remains hazy and indistinct.</p>
+<p>I don’t like this. I don’t care if this is turning out to be a shoddy interview. I want to get out of here.</p>
+<p>I ask as my final question. “What more do you want to achieve in your lifetime?”</p>
+<p>“I don’t like that question. Ask another.”</p>
+<p>I frown and rifle through my notes. “Wha-”</p>
+<p>“I changed my mind. I’ll answer it.” Ban Eylen stretches and shimmers. “Do you know why I do what I do?”</p>
+<p>“No.”</p>
+<p>“Well on your way to being a no-man. Well, I do what I do because I have a purpose in life. And that purpose is not to make the most change in the worlds or make people love me.” He smirks. “That one’s a side-purpose. But what I <em>truly want</em> – is to <em>speed things up.</em>”</p>
+<p>“What does-”</p>
+<p>&quot;Shush, you’ve run out of questions. The paradigm of all the multiverses is that only two things ever happen: <em>everything</em>, or <em>nothing</em>. Either the chaos of infinity renders into random noise where nothing happens; or they oscillate together and surge into a tsunami, and everything goes. And it’s all subjective – nothing for you might be everything for me, and vice versa. What I want is to get things going faster: if everything is happening, I want nothing to happen; if nothing is happening, I want everything to.</p>
+<p>“It’s why I promoted your beloved Niwar Noodles: you people weren’t travelling anywhere, so I gave them space ramen to sustain them. It’s why I created the OmniAir that we’re breathing right now: no one could breathe alien air, so I made an air that <em>all</em> people could share. To advance as a culture in the Omniversal Life, we need to be <em>one and the same</em>, <em>completely</em> on the same page. Forget melting pots of societies and multicultural realms – we need a <em>monoculture!</em> I hate this trend of <em>adaptors</em> and <em>translators</em> to make things work. Gas bottles and translating devices and personal transversal vans. I hate them all! It breeds complacency… But it has its uses, I admit. That’s why I created the B.E.Ds: I wondered if people would stoop so low as to <em>buy themselves</em> a personal universe, so I tore down the Fediverse and birthed an ensuite of marketable verses.”</p>
+<p>“Tore down the what?”</p>
+<p>&quot;The- you really don’t know that? The Fediverse! System of synthetic universes that was a whole waste of space and pushed an agenda  I found quite distateful. I paid the Fediverse a lot to use their infrastructure for my R&amp;D. I cranked out <em>millions</em> of B.E.Ds, oh it was glorious. Too bad I screwed up the Fediverse’s equilibrium. Overloaded their systems. One day the Fediverse just… Flipped inside out and imploded. No survivors. All their tech gone forever.</p>
+<p>“It left a big Void in the process, and it’s still there all the way out at past the Superior Brim. Truly funny business, that <a href="https://br-chan.github.io/writing-break/4612/1_hello/">Void</a>. A lot of junk from the Fediverse was left behind, floating in there. Apparently you can still hear all the people, too; something about how quick the implosion was, because all their last sounds and voices survived and started bouncing back and forth in there for the rest of time. I should start running tours out there. I could hire a couple transversal vans and slap my name on them, I’m sure I could coax in some unsuspecting backpackers.”</p>
+<p>Ban Eylen blinks a couple times. “Oh, you got me rambling. No one <em>ever</em> makes me ramble in public. Good on you, interviewer, I should hire you someday.”</p>
+<p>Quite the contrary. “How many people lived in the Fediverse?”</p>
+<p>“Ha – too many to count. Unknowable.”</p>
+<p>I feel a lump in my throat; it tells me to run. The way Ban Eylen talked about how all those people died – how nonchalant he spoke.</p>
+<p>“Such a shame,” I venture, “all those people who died…”</p>
+<p>“What? It was hilarious!” A third bark of laughter, and how clear it is now, dirty and insane. “I’m so glad they <em>did</em> die, because then I was able to market the B.E.Ds as limited edition without competition! And oh, how the masses paid me! Do you know how much money I’ve made selling B.E.Ds? Maybe I should change my answer to the second question – <em>this</em> was my favourite business endeavour. That’s what you asked, right?”</p>
+<p>I don’t even remember anymore. I start to edge out of my seat. “Thank you for your time, Ban Eylen. This, this has been an honour. I’m sure our readers will be very excited to learn the things you’ve told me today. They’ll be excited to know more about you.”</p>
+<p>“Huh? What did you say? <em>Know more about</em>- no, no, no.” Ban Eylen slumps, the blurriness sagging. “You didn’t really <em>learn</em> anything from this, did you?”</p>
+<p>I try to stand up. I find myself unable.</p>
+<p>“Don’t you remember what I’ve been trying to drill into all your pliable little heads from birth? No one will <em>know more</em> about me. You don’t <em>know</em> Ban Eylen, and you never ever will. But Ban Eylen-” for the first time in our meeting he stands, and the cloud of de-focus expands and billows into a stormcloud- “Ban Eylen knows <em>you</em>. I know <em>all of you</em>. I know what you all <em>want</em>, and I can’t help but <em>give it to you</em>.”</p>
+<p>“I want to get out of here.” I strain against my seat, but I’m stuck. “I want to get out!”</p>
+<p>I drop my notes and they disappear. Ban Eylen’s body sucks up my surroundings and consumes the room. I’m stuck to this chair, I’m stuck in this room. I’m stuck with Him, this Omni terror. I’m stuck. I’m stuck. I’m stuck. I’m stuck.</p>
+<p>“I think I rambled too much. I don’t think anyone still <em>knows</em> what I did to the Fediverse. I couldn’t let <em>that</em> secret come out, so I silenced everyone who knew; and my propaganda system is <em>terribly</em> efficient. So you know what?” Ban Eylen strides closer, each step rending a hole in my vision, sending spasms into my neurons. “I think I’m going to tell you. I’m going to tell you why I’m <em>Unknowable.</em>”</p>
+<p>“No! Get me out! GET ME OUT! HELP! <em>HELP!</em>”</p>
+<p>The last thing I see is Ban Eylen’s smile. A smile that widens and widens until the ends meet and merge and multiply, warping his face into a twirling kaleidoscope of flesh and muscle, pixels and numbers, words and letters.</p>
+<p>“Just a dotard after all,” he murmurs. Then he leans in, and my whole world becomes a writhing screen of flashing lights and flickering noise.</p>
+<p>He opens his mouth(s) again to speak.</p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+					<a class="links-nextprev-prev" href="/writing-break/4612/22_a-game-of-oracular-riddles/">
+						<b>← Previous in 4612</b>
+						<br>
+						<span href="/4612/22_a-game-of-oracular-riddles/">a game of oracular riddles</span>
+					</a>
+				<a class="links-nextprev-prev" href="/writing-break/stories/4_jenny-joplin/">
+					<b>← Previous</b>
+					<br>
+					<span>Jenny Joplin</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/23_ban-eylens-interview/` was built on 2025-12-13T23:04:34.973Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
