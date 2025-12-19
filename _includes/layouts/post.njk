@@ -9,7 +9,13 @@ layout: layouts/base.njk
 	<h1>{{ title }}</h1>
 
 	<ul class="post-metadata">
-		<li><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("d LLLL yyyy") }}</time></li>
+		<li>
+			<time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate("d LLLL yyyy") }}</time>
+			{% if updated %}
+				(last updated:
+				<time datetime="{{ updated | htmlDateString }}">{{ updated | readableDate("d LLLL yyyy") }})</time>
+			{% endif %}
+		</li>
 		Tags:
 		{%- for tag in tags | filterTagList %}
 			{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}

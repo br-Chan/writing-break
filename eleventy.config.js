@@ -136,6 +136,15 @@ export default async function(eleventyConfig) {
 	}
 	eleventyConfig.addPlugin(pluginTOC, defaults);
 
+	eleventyConfig.addCollection("postsSortedByUpdated", async (collectionsApi) => {
+		return collectionsApi.getFilteredByTag("posts").sort((a,b) => {
+			const dateA = a.data.updated || a.date;
+			const dateB = b.data.updated || b.date;
+
+			return dateA - dateB;
+		})
+	});
+
 	// Features to make your build faster (when you need them)
 
 	// If your passthrough copy gets heavy and cumbersome, add this line

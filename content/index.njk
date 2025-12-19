@@ -19,6 +19,15 @@ const numberOfLatestPostsToShow = 5;
 	<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in the list of <a href="posts.njk">all posts</a>.</p>
 {% endif %}
 
+<h1>Recently Updated</h1>
+{% set postslist = collections.postsSortedByUpdated | head(-1 * numberOfLatestPostsToShow) %}
+{% set postslistCounter = postsCount %}
+{% include "sortedpostslist.njk" %}
+
+{% if morePosts > 0 %}
+	<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} will be linked here when I'm not too lazy to set up the list.</p>
+{% endif %}
+
 {# <p>Categories: TODO</p> #}
 
 {# {% set mostRecent = collections.posts | first %} #}
