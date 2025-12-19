@@ -136,7 +136,7 @@ export default async function(eleventyConfig) {
 	}
 	eleventyConfig.addPlugin(pluginTOC, defaults);
 
-	eleventyConfig.addCollection("postsSortedByUpdated", async (collectionsApi) => {
+	eleventyConfig.addCollection("recently-updated", async (collectionsApi) => {
 		return collectionsApi.getFilteredByTag("posts").sort((a,b) => {
 			const dateA = a.data.updated || a.date;
 			const dateB = b.data.updated || b.date;

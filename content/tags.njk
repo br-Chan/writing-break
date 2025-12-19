@@ -9,8 +9,8 @@ const eleventyNavigation = {
 <p>I've configured to have each post auto-tagged to a specific category/categories. I can also add tags manually on a per-post basis.</p>
 
 <ul>
-{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
-	{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
-	<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
-{% endfor %}
+	{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
+		{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+		<li><a href="{{ tagUrl }}" class="post-tag">{{ tag }}</a></li>
+	{% endfor %}
 </ul>
