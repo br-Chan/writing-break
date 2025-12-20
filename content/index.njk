@@ -30,7 +30,7 @@ const numberOfLatestPostsToShow = 5;
 {% include "sortedpostslist.njk" %}
 
 {% if morePosts > 0 %}
-	<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} will be linked here when I'm not too lazy to set up the list.</p>
+	<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in the list of <a href="/tags/recently-updated">recently updated posts</a>.</p>
 {% endif %}
 
 {# <p>Categories: TODO</p> #}
