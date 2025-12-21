@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Crystal Plains</title>
+		<meta name="description" content="Beaten, beaten, beaten.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 3em;
+	border: 1px solid;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-desc {
+	font-size: 0.8125em;
+	font-weight: thin;
+	color: var(--color-gray-90);
+	text-decoration-thickness: 0px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	/* margin-right: 1em; */
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="crystal-plains">Crystal Plains</h1>
+
+	<ul class="post-metadata">
+		<li>
+			<time datetime="2025-12-21">21/12/25</time>
+			 • updated
+			
+				<time datetime="2025-12-21">21/12/25</time>
+			
+		</li>
+		• Tags:
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    2,486 words • Reading time: 12 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>Beaten, beaten, beaten.</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>The Tablet fell away from Alec just as he hit the ground. Instead of an eruption of pain, there was only a muffled <em>thump</em>. His readied resolve ate up what pain there was quickly. His head bounced off the ground and his brain shuddered in his skull like a tennis ball. He saw the Tablet hit the ground and fling itself away into the air. The iridescence dissipated and fell away, revealing a landscape far unlike the purple hills just moments ago.</p>
+<p>A great expanse of rock, flatter than anything he had ever known, or could remember. Again, it was an atypical kind of rock: mint-coloured and translucent. It shimmered with indiscernible colours, hiding its true hue… And it was so <em>flat</em>. It was as if a massiveknife had been scraped across the land, rendering it into a disillusioned plane. It felt cold on his bare skin. As he drew his hands across the floor, his shoulder twitched and ached. Was he always going to fall from a height after using the Tablet?</p>
+<p>Tablet… What Tablet? Alec thought hard, but his head pounded harder. It was on the tip of his tongue… His memories had slipped away again, sand from a leaky glass.</p>
+<p>He sprung up, darting his eyes around for something that had fallen away from him. He’d dropped something important. He swung his giddy head around, hoping to find something that deviated from the shimmering landscape. This rock was more like glass, or crystal. He peered down at his feet. The nature of its opacity meant he could see the material stretch down, down, down until it grew hazy under its own depths. Alec imagined himself floating on thin air above a shimmery abyss.</p>
+<p>He felt nausea come on him as something squirmed inside his body. He bent down and retched, slimy vomit staining the shining floor. It was blue. The slime tasted sour and sweet, and he found it grossly familiar. Had he eaten this some time ago? He wiped his mouth dry with a dirty sleeve – his shirt was so ripped up – and stared down at the ground in disgust. His vomit was like a splotch of bacteria on this perfect crystal dish, and the hues shifted and rippled in annoyance.</p>
+<p>Stepping away from the filth, Alec looked up at the sky: a misty shade of yellow or bronw, more vapour than air. It looked like a vast, sky-encompassing cloud, blanketing and smothering. But at the same time he couldn’t spot any of the puffs and fluffs expected of a cloud. Like the crystal plains he stood upon, the sky looked flat and solid.</p>
+<p><em>What could it be?</em></p>
+<p>At any rate, it didn’t matter. There wasn’t anything from here to the crystalline horizon that he could use to get off the ground and find out.</p>
+<p>Up ahead in the distance, he saw a shimmering light. Alec squinted into the disturbingly flat horizon – some kind of reflection? What would it be reflecting? Come to think of it, Alec couldn’t see any source of light anywhere in that thick yellow sky, and yet he could still see perfectly all around him.</p>
+<p>The shimmering light was in the ground itself, and it was moving towards him: an impossibly long line of light, of an impossibly queer hue, from the impossibly flat horizon; a wall of light that stretched down into the depths of the crystal underground.  As it approached, it looked to him like a shallow wave seen far out at sea, virtually indistinguishable from the rest of the water save for a thin sheet of sparkling foam.</p>
+<p>The wave of light came on him and a low keening permeated the still air. The wave passed under him. Searing light shone through the ground, from the darkened depths to the soles of his sandals, in a line so straight it appeared bent. Under his feet the shimmering went, a sparkling, sidewinding snake that blinded his eyes. It continued behind him, its deep hum fading now. All was still again.</p>
+<p><em>Ow!</em></p>
+<p>Alec felt a pain in his head – it felt like something small twitching in the centre of his brain, like a little nugget. He stared after the retreating wave of light, and he decided to follow it. If the wave was going somewhere, surely he must go there too.</p>
+<p>Despite the mind-numbing monotony of the blue-green crystal, its sheer immensity staggered him. What freak of nature could possibly have made the world into one as of perfectly polished glass? Was it a freak of nature at all? Alec imagined an army of people laying down layers and layers of molten crystal, leaving each to dry for a hundred days, and after hundreds of layers had been finished standing back to bask in its beauty from their palaces far above. It would have taken an eternity to create a world such as this.</p>
+<p>And then one day a little human appeared on their glorious work  of art, spat a blue globule of vomit and dirtied the crystal flooring with his footprints.</p>
+<p>Just when Alec was wondering if he was going anywhere at all, he heard the light wave’s humming return; was it coming back the way it had come? Then Alec jumped as a second wave of light swooped beneath his feet from behind him. The sound of the flickering wave diminished as it sailed ahead of him, and its noise faded as the first one had. Alec marched after the pair of waves as they blurred together into a double horizon.</p>
+<p>The first wave of light had filled him with a sense of wonder; this one only irked him.</p>
+<p>He hadn’t walked more than a few minutes before he heard that telltale keening come again. Vast and awake, it felt, lumbering through the ground and into the air. Alec’s eyes saw for a brief moment a behemoth of metal, a steam train bursting through the grasslands. Then the memory fell away. He watched begrudgingly as yet another wave swept past him; a physical, intangible rhythm through the crystal. A growing discontent arose in Alec unbidden. He strode forward, fists clenched, as he watched the shimmering band mock him as it joined its brethren.</p>
+<p>Like a compounding disease, the waves came on him again and again, rolling through the ground with that awful hum and leaving him behind every time. Why was this angering him so? They weren’t doing anything to him! But the light rushed by faster and faster, the pause between each flashing wave dwindling to no more than 20 seconds… 10 seconds… Now the whole crystal plains was awash with the hypnotic rows of light, and all that Alec could hear was that deep unending <em>humming</em>. The sound rattled his skull and buzzed in his ears, laughing. Anger flowed through Alec as from a tap without a stopper. He broke into a trot, then a run, but the waves only outpaced him the faster.</p>
+<p>“Stop it!” he cried at last. “<em>Stop it!</em>”</p>
+<p>The ground shuddered with every passing wave, one coming by every time Alec placed a foot down. The buzzing in his ears snaked into his brain, drilling his mind to mush. Only the nugget in his head still quivered in solidarity. His feet now ached dreadfully, pins and needles pushed into his soles every time his sandals hit the epileptic crystal.</p>
+<p>Sprinting now, pushing himself to the limit to outrun the demonic rows of light. They seemed to be above him and through him now, laughing at him in every echo chamber in his head. <em>Beaten, beaten, beaten,</em> they cried, every time they passed him. The ground was a permanent disco psychopathy, and his eyes singed with tears from the brightness. But if anything, the whole world was darkening around him, the Void seeping towards him with outstretched arms, ready to embrace him once more.</p>
+<p><em>Am I even moving at all?</em> Alec thought now. The horizon, now so blurry and unfocused from the inundation of waves, was still so far away. Nothing was changing. Nothing…</p>
+<p>Something. Something up ahead to the right. Something that glowed with four familiar colours. Black, white, blue, green.</p>
+<p>All thoughts of the race against nature were forgotten and Alec jumped for the Tablet. It glowed as clear as day in his grasp. He plunged his thought into it and absorbed the energy within. His pain vanished completely. The pins and needles were surgically removed one by one. How could he have forgotten the Tablet of 4612? And then, as the cradled the Tablet and whispered sweet nothings, the memories returned. They blasted him with tiny waves of their own in his mind, all out of order but in absolute cohesion.</p>
+<p><em>Alec had <a href="https://br-chan.github.io/writing-break/4612/25_tabula-rasa/">broken a leg</a> in the ravine. The sands of a desert burned his face. The yellow haired woman had <a href="https://br-chan.github.io/writing-break/4612/9_first-contact/">turned into a monster</a>. The skeleton face of the Dread Dragon grinned. Alec had pushed <a href="https://br-chan.github.io/writing-break/4612/11_liberty-loon/">Barlibur</a> away, but not before eating his precious Azure. He crossed the sea to escape The Orrient and the Christmas Killers. But he couldn’t escape himself – only when he at last had lost his mind and memory. From four becomes one, one Bane of the Worlds.</em></p>
+<p>As energy drained from the Tablet, a new kind of energy accumulated. A spark of light skirted across the surface. It was an inanimate animal, growing hungrier the more it fed. What did it mean?</p>
+<p>Alec looked above for answers, and for a moment forgot his fear and recalled his race against light. A spiteful urge surged in him. He didn’t need to <em>run</em> to beat the waves. He just had to work in a different dimension.</p>
+<p>Alec could sense the level of energy that remained in the Tablet, the same way he could detect the level of water in a bottle through touch. The Tablet could heal him of injuries. Could it do <em>more</em>?</p>
+<p>He strained as molten iron shot through his fingers and into his muscles. All the hairs on his body stood on end, and his limbs grew invisible wings. His whole body now shivered with steep, steep power.</p>
+<p>Alec jumped and he shot into the sky.</p>
+<p>The air howled in shock as he soared higher and higher. Wind rushed through his limbs and pulled back his hair in a fantacular frenzy. Alec barked a roar of laughter; he was flying! He was going to find out what that yellow sky was, after all.</p>
+<p>When was he going to slow down? He was rising and simply not stopping. He coughed, but the wind tore away the rest of his breath. He squinted into the sky, still trying to figure it out, but its purgatory look between mist and substance remained. He seemed to be <em>approaching</em> it, like it was…</p>
+<p>and before he knew what he was seeing, he slammed into it with an ear-crushing whomph. He sunk deep into a spongy surface, his body careening further and further into the sky. But it wasn’t a sky. No sky would feel this solid and squishy. For a moment he couldn’t breathe, and all he could do was tighten his grip on the Tablet of 4612. Gravity began to pull back on him and he could squeeze in a few breaths. But he remained stuck fast to this strange material. He was a large fly caught in an impossibly larger web. Screaming inwardly, he tore his face out. Adhesive clung to his cheeks, and his lungs seemed to be full of the stuff too, breathelss as they were. He took an upside down look at the thing that he thought was the sky.</p>
+<p>It was a ceiling. A sticky, spongy, sky-encompassing ceiling. It might have once been bright yellow long ago, but now it was a sickly shade of rotting hay – and it smelled liek it too. He looked for any footholds or holes, but just like the ground it was as flat as a pancake. The glue that coated the ceiling gave it a moist, grey tinge to it. That explained the misty look it had from far below.</p>
+<p>Alec craned his neck, but with his body lying stomach up he couldn’t catch a glimpse of the ground. He wished he could; he kind of wnated to feel the adrenaline rush into him as his view dropped far below to the shiny floor. Alec was surprising himself with how calm he was in this situation.</p>
+<p>He needed to get off the ceiling, but extricating himself from the flytrap would put him under much deaadlier circumstances. He could feel the Tablet diging in his sternum. Could he use it somehow to get out of this mess?</p>
+<p>And as if a button had been pressed, the Tablet gave a loud <em>bang</em> and his body fell free from the glue. He scrabbled for a foothold, but of course there was none, and with an ear-popping squelch he was off the ceiling and in the air again. Wind rushed through him, but this time in the opposite direction.</p>
+<p>He stifled another laugh. Soaring again! But a disconcerting feeling edged up on him and he didn’t know what it was until he realised his hands were holding nothing. The Tablet was gone! Again! He looked about himself, but at once he began to spin around and around. His vision blurred into a mesh of sparkling crystal and receding ceiling. The Tablet was the only thing that could break his fall or get him out of here. How had he lost it? Was it falling with him, out of sight? Or had it remained stuck to the ceiling, clinging in fear as its owner became another splodge of bacteria on the floor? If it was the latter…</p>
+<p>Fear came at him like a truck. His lungs clutched themselves in horror and his heart almost burst asunder.</p>
+<p>“<em>Where are you?!</em>” he cried out, hoping somehow the Tablet would listen.</p>
+<p>But with the whirlwind raging around him and with his blurred vision becoming ever more sparkly with the rushing waves of crystal light, panic rose upon him like a plague. His brain, dissolving into a puddle, scoured itself for anything that could make this all go away.</p>
+<p>He could only fall and fall and fall, hoping blindly for the Tablet to fly into his hands or for some other supernatural intervention to whisk him away.</p>
+<p><em>Beaten, beaten, beaten,</em> cried the waves of light.</p>
+<p><br><br></p>
+<hr>
+<p><em>This is a revised version of a piece from 9 Jan 2023. This was (and still is) my least favourite story written post-2022. I think it suffers from the very meaning that it is attempting to tell: of someone struggling with a lack of direction and a purpose in life. I’ll be returning to this story to further revise it in future drafts.</em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/4612/26_azalaroth/">
+							<b>← Previous in 4612</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>Azalaroth</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/27_crystal-plains/` was built on 2025-12-21T09:35:31.678Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
