@@ -46,7 +46,7 @@ Alec clutched the Tablet like a baby. As the sea came in to catch him, blind him
 
 <br><br>
 
-***Sea of Dirt: FIN***
+***Sea of Soil: FIN***
 
 ---
 
