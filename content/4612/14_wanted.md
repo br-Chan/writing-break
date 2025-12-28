@@ -1,8 +1,8 @@
 ---
 title: Wanted
-description: This is a revised version that was originally written on 28 Dec 2021.
+description: THE CHRISTMAS KILLERS - a band of outlaws and brigands wanted for Murder, Arson, Robbery, Magic and Treachery against The Orriental States of the Eastern Lands and Its Imperial Army
 date: 2025-09-14 17:30:00
-tags:
+tags: atro
 noToc: true
 ---
 

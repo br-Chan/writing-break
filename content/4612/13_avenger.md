@@ -1,9 +1,9 @@
 ---
 title: Avenger
-description: A Christmas killing in a broken town.
+description: Cobblestones and blood.
 date: 2025-09-14 19:39:00
 updated: 2025-12-20
-tags:
+tags: atro
 noToc: true
 ---
 

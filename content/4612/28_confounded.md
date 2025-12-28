@@ -2,7 +2,7 @@
 title: Confounded
 description: "Confounded /kənˈfaʊndɪd/: used to describe the technological designs of the creatures from the stars, or replications of such, through which a variety of fantastical utilities may be produced (steam power, advanced clockwork, heavier-than-air flight, matter creation)."
 date: 2025-12-26 23:19:00
-tags:
+tags: atro
 noToc: true
 ---
 

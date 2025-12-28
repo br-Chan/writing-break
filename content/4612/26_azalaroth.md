@@ -2,7 +2,7 @@
 title: Azalaroth
 description: Find enclosed the report of this week's recent events of the realm. ~ Your loyal spy Secul
 date: 2025-12-19 23:58:00
-tags:
+tags: atro
 noToc: true
 ---
 

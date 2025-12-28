@@ -1,14 +1,15 @@
 ---
 title: Seized
-description: This is a revised version of a story from 4 June 2021.
+description: Wind in the wheat, blood in the wind.
 date: 2025-09-07 18:54:00
-tags:
+updated: 2025-12-28 23:54:00
+tags: atro
 noToc: true
 ---
 
 Atro stood before the man he had stabbed to death. His floppy sandals slithered over the wet, bloodstained grass. The bitter smell of iron tainted the fresh air. The drip-drop of blood from the cold blade in his hands uncharismatically wetted his foot.
 
-Atro knew what he'd done, what irreversible crime he had committed. There was always that feeling you'd get when you were in trouble. Atro knew the feeling well, he was always in trouble - for scaring Mama by climbing a tree too high, or for doodling on Papa's antique maps. There was always a feeling - the Trouble Moment - that you feel right after you've done something *very wrong* and an adult has just taken notice.
+Atro knew what he'd done, what irreversible crime he had committed. There was always that feeling you'd get when you were in trouble. Atro knew the feeling well, he was always in trouble - for scaring Mama by climbing a tree too high, or for doodling on Papa's antique maps. There was always a feeling - the Trouble Moment - that you feel right after you've done something *very wrong* and an adult -- someone of authority -- has just taken notice.
 
 He hated the feeling: his legs quaked with a fear beyond fear. His heart hammered in utter horror. His hands were frozen, caught red-handed with his father's sword. Just moments ago he had been fetching a bucket of water for Papa from the river. He was going to help Mama with the next batch of bread. And tomorrow they would all celebrate his 13th birthday.
 
@@ -18,7 +19,7 @@ Trample and clamour: three soldiers turned the corner from the other side of the
 
 All the soldiers were clad in loose robes and crimson brigandines, the imperial army uniform of The Orrient - Atro's own homeland. When Atro had spotted them from the riverside, ransacking their cottage and interrogating his parents, their intent had been clear. The fire of conscription had finally reached this lonely cottage farm, and by Emperor's decree they were to whisk him off on a ship to fight in the war.
 
-*The War.* Atro's vision blurred at the sudden prospect of *battle* - swords swinging, spears splintering, helmets cracking and breaking open. To be stolen away from Papa and Mama, to be sent across the sundering seas, to die... And never see home ever again.
+*The War.* Atro's vision blurred at the sudden prospect of *battle* - swords swinging, spears splintering, helmets cracking and breaking open. To be stolen away from Papa and Mama, to be sent across the Sundering Seas, to die... And never see home ever again.
 
 He couldn't. He *wouldn't*. He had to protect Papa and Mama. He had to protect his home. Nothing else mattered. He would kill them all or die trying. Nothing would make him bend a knee and join the Empire's tyrannical army.
 

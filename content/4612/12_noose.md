@@ -3,7 +3,7 @@ title: Noose
 description: The War Hangings of The Orrient are widely regarded the most gruesome and insensitive of events in all of the empire's history. The fact that it ruined that year's Christmas was just a bonus.
 date: 2025-09-13 23:58:00
 updated: 2025-12-25 21:57:00
-tags:
+tags: atro
 noToc: true
 ---
 

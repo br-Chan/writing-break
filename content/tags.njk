@@ -8,6 +8,16 @@ const eleventyNavigation = {
 
 <p>I've configured to have each post auto-tagged to a specific category/categories. I can also add tags manually on a per-post basis.</p>
 
+<p>
+	Main categories:
+	<a href="/4612/">4612</a>,
+	<a href="/tags/stories/">Stories</a>,
+	<a href="/watch-later/">Watch Later</a>,
+	<a href="/tags/actual-blog/">Actual Blog</a>
+</p>
+
+<p>All Tags:</p>
+
 <ul>
 	{% for tag in collections | getKeys | filterTagList | sortAlphabetically %}
 		{% set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}

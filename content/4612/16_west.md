@@ -1,8 +1,8 @@
 ---
 title: West
-description: This is a revised version of a story from 4 Aug 2022.
+description: Tears for fears on the riverside.
 date: 2025-09-16 23:59:00
-tags:
+tags: atro
 noToc: true
 ---
 

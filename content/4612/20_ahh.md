@@ -1,8 +1,8 @@
 ---
 title: AHH!
-description: This is a revised version of a story from 12 Sep 2022.
+description: A little girl gets more than she bargains for on her trip through the forest.
 date: 2025-09-20 23:42:00
-tags:
+tags: atro
 noToc: true
 ---
 

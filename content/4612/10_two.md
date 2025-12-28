@@ -1,8 +1,8 @@
 ---
 title: "2"
-description: So it begins. This is a revised version of a story from 17 July 2021.
+description: So it begins.
 date: 2025-09-12 00:00:00
-tags:
+tags: atro
 noToc: true
 ---
 

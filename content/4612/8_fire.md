@@ -1,8 +1,8 @@
 ---
 title: Fire
-description: Based on a story I wrote on 5 July 2021, but I have now rewritten it from a completely original one-off character's perspective. As such, this only the first draft and I will be returning at a later date to further revise it.
+description: Every fire has a soul.
 date: 2025-09-10 15:40:00
-tags:
+tags: atro
 noToc: true
 ---
 
