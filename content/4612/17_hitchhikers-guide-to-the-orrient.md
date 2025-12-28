@@ -2,11 +2,12 @@
 title: Hitchhiker's Guide to The Orrient
 description: This is a revised version of a story from 10 Aug 2022.
 date: 2025-09-17 21:06:00
+updated: 2025-12-28 22:44:00
 tags:
 noToc: true
 ---
 
-*NOLI HOC PUBLICARE / DO NOT PUBLISH*<br>*this is a draft only*
+*NOLI HOC PUBLICARE / DO NOT PUBLISH*<br>*this is a draft*
 
 ## GREETINGS
 
@@ -34,7 +35,7 @@ The Orrient's weather varies very slightly over the course of the year, and for 
 
 Sunny skies bless the land for many months of the year, and even on cooler days storm clouds are a rare sight. Of deep importance is the perpetual light and warmth. The farmers of the Wheat Fields depend on them to grow the crops that feed the entire island. Only among the peaks of the Ogeo Mountains and the surrounding forest will deep clouds and mist shroud the air. Here also does it snow during the winter. The snow sometimes spreads westward through Thind Forest, blanketing the trees in a soft white cover.
 
-Rain is a common occurrence on the western side of The Orrient, as the oceanic winds rise up and collect on the slopes of the mountains. This is the rainfall that supplies all the island's rivers with water. Very little rain leaks over eastward, and this is often said to be the reason why Vice's Desert remains to this day, even decades after its departure.
+Rain is a common occurrence on the western side of The Orrient, as the oceanic winds rise up and collect on the slopes of the mountains. This is the rainfall that supplies all the island's rivers with water. Very little rain leaks over eastward, and this is often said to be the reason why Vice's Desert remains to this day, even centuries after its departure.
 
 That, however, does not mean that the eastern side is an inhospitable place; the Teal and Beryl Rivers still support a great many people, including our capital city, and those rivers are far more than enough for twice the population they already support.
 
@@ -44,7 +45,7 @@ Although in the current time we are a kind and generous island, we were and stil
 
 The beginning of the Empire was of feudal war. It was ruled by hundreds of splintered factions, each fighting for their own honour and glory. The Orriental Fedual Wars went on for hundreds of years, claiming thousands of lives. One faction, however, implemented a new strategy that would change the tide of battle: the conscription of the youth, which previously had been seen as a great sin (as it now does again today). This faction, our faction, doubled the size of its armies and demolished all others. And though many young men and women were lost, we finally unified the island under one banner.
 
-The Orriental States of the Eastern Lands was born, and the first Emperor Benevelle took up the foundling throne in the year 935 After the Great War. His first Imperial decree was to dismantle the First Imperial Army, which was a big indicator of how he and the following emperors would rule. It would only be after The Orrient entered the Annihlatio Foedus, the old anti-magic pact, that the Imperial Army would return.
+The Orriental States of the Eastern Lands was born, and the first Emperor Benevelle took up the foundling throne in the year 935 After the Great War. His first Imperial decree was to dismantle the First Imperial Army, which was a big indicator of how he and the following emperors would rule. It would only be after The Orrient entered the Annihilatio Foedus, the old anti-magic pact, that the Imperial Army would return.
 
 Our power could not be felt more than during the Durgor War. In the year 3010, Durgor promised to sell a portion of its land to The Orriental States for a sum of money. But after said payment the Kingdom refused to hand the land over, only increasing the aforementioned price. The Emperor Panitet gave the order to declare war on Durgor, and so battle began once more. Such was the brutality of the Durgorians that the Emperor was forced to bring back the conscription of youths. This triggered migrations of young men and women westward, and the formation of rebellious parties such as the infamous Christmas Killers.
 
@@ -64,11 +65,11 @@ Here are the perfect locations to visit on your travels through the island!
 
 - **Trientier Cemetary**, the exclusive graveyard of the last and strongest faction to resist Orriental rule during the Fuedal Wars. These people rode Trient Deer into battle, each of whom could slay many a soldier. We honour them to this day, and the cemetary acts as a reminder of how much we take for granted. What could have happened if Trientier had won the Fuedal Wars?
 
-- **The Hanging Tree of Bolya's Beacon**, the honorary oak tree. The original Hanging Tree was used to execute those accused of treason against the Empire, and was used judiciously until it was burned down by the Christmass Killers in the year 3017. The tree was replanted, and grew to be even taller than the original. It is now adorned with the largest set of swings in the Eastern Lands, and oen may also attempt to climb to its topmost branches. Legend has it that on the clearest of days, you might just be able to spot Auhert's Beacon, the sister city of Bolya's beacon, on the coast of The Occident.
+- **The Hanging Tree of Bolya's Beacon**, the honorary oak tree. The original Hanging Tree was used to execute those accused of treason against the Empire, and was used judiciously until it was [burned down](https://br-chan.github.io/writing-break/4612/12_noose/) in the year 3016. The tree was replanted, and grew to be even taller than the original. It is now adorned with the largest set of swings in the Eastern Lands, and oen may also attempt to climb to its topmost branches. Legend has it that on the clearest of days, you might just be able to spot Auhert's Beacon, the sister city of Bolya's beacon, on the coast of The Occident.
 
-- The great **deltas of Aestudor**, where the River Orri's expansive estuary meets the sea. Its fame stems from a cave painting of the deltas not far away. Its sheer beauty and realism is challenged only by the mystery of how one could have painted something so seemingly accurate in a cave passage from which the delta could not be seen. It would have either been a lengthy process of periodically running back up the cave passage to take glances during the process, or some form of primitive magic.
+- The great **deltas of Aestudor**, where the River Orri's expansive estuary meets the sea. Its fame stems from an ancient cave painting of the deltas not far away. Its sheer beauty and realism is challenged only by the mystery of how one could have painted something so seemingly accurate in a cave passage from which the delta could not be seen. It would have either been a lengthy process of periodically running back up the cave passage to take glances during the process, an incredible feat of memory, or some form of primitive magic.
 
-- The **Tinkerer's Tavern** of Twiddler's Buck is home to the best beer of the island, although getting to town maybe a difficult task. Can you handle the flame of Dragon-scale beer?
+- The **Tinkerer's Tavern** of Twiddler's Buck is home to the best beer of the island, although getting to town may be a difficult task. Can you handle the flame of Dragon-scale beer?
 
 <div style="text-align:center"><b>THANK YOU FOR READING</b></div>
 <div style="text-align:center"><b>WE HOPE YOU ENJOY THIS GEM OF AN ISLAND</b></div>
@@ -79,7 +80,7 @@ Here are the perfect locations to visit on your travels through the island!
 <div style="text-align:center"><i>magnus extra, major intra</i></div>
 <div style="text-align:center">Glory to all ye in The Orriental States of the Eastern Lands</div>
 
-*NOLI HOC PUBLICARE / DO NOT PUBLISH*<br>*this is a draft only*
+*NOLI HOC PUBLICARE / DO NOT PUBLISH*<br>*this is a draft*
 
 <br><br>
 
