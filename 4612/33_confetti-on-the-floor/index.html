@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Confetti on the Floor</title>
+		<meta name="description" content="Happy new year.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 3em;
+	border: 1px solid;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-desc {
+	font-size: 0.8125em;
+	font-weight: thin;
+	color: var(--color-gray-90);
+	text-decoration-thickness: 0px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	/* margin-right: 1em; */
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="confetti-on-the-floor">Confetti on the Floor</h1>
+
+	<ul class="post-metadata">
+		<li>
+			<time datetime="2026-01-29">29/01/26</time>
+			 • updated
+			
+				<time datetime="2026-01-29">29/01/26</time>
+			
+		</li>
+		• Tags:
+			<li><a href="/writing-break/tags/4612/" class="post-tag">4612</a></li>
+	</ul>
+
+	
+<p>
+    5,041 words • Reading time: 25 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>Happy new year.</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>Dim and brash was the windswept night.</p>
+<p>Tattered streetlamps wasted away in their solemn ranks or lay in rusted coffins of rubble. Sheer and ruined buildings funneled the wind from its skyline tributaries into a single forceful current that tore through the abandoned avenue. It was all Alec could do to keep the pellets of dust out of his eyes as he ran against the gale that at any moment could tear him from his path and send him into the jaws of the creature behind him. He dared to look back, if only to take in for just a moment that panting iron muzzle, that hide of rusted metal, those five pounding legs, and the ever-narrowing gap between him and that Confounded wolf creature.</p>
+<p>His hands gripped the Tablet of 4612 all the harder. Rainbow rays danced through his fingers and across the warped iron walls on either side.</p>
+<p>The Tablet had taken him everywhere; so many places, so many worlds. He had trouble remembering them all. The best he could do was give each world a name, and sometimes a crumb or two of remembrance would stick to the names like limpets. <a href="https://br-chan.github.io/writing-break/4612/25_tabula-rasa/">Tabula Rasa</a> – a phrase in The Orrient’s traditional tongue – the purple hills and vales he’d dropped into on his first day out of the Void. <a href="https://br-chan.github.io/writing-break/4612/27_crystal-plains/">Crystal Plains</a> – a shimmering floor, the sticky ceiling, and the great fall. The third world had been the <a href="https://br-chan.github.io/writing-break/4612/29_sea-of-dirt/">Sea of Soil</a>, the fourth Kraken Rock, the fifth the Acrid Crater… And on and on and on. He had failed to think of a name for this world – the moment he had landed here amongst the debris of the dilapidated city block, that mechanical predator had awoken and started chasing him down.</p>
+<p>He’d still been <a href="https://br-chan.github.io/writing-break/4612/18_twilight-in-wind/">counting seconds</a>, in the deepest reaches of his subconsciousness, from the moment he’d reawakened from his ‘<a href="https://br-chan.github.io/writing-break/4612/15_memento-mori/">death</a>’ in the Void. He barely thought about it anymore, and yet still that number ticked upwards of its own volition. It was the only thing that had consistently stuck fast to his memory all this time.</p>
+<p>He didn’t have the arithmetic capability to convert those aggregate seconds into anything useful like days or months. Every moment he experienced simply joined the melding soup of moments that was now his life. Just a few worlds ago he’d reached 30 million seconds, a milestone that almost impressed him. But what had scared him was that he didn’t really know how long that was. He didn’t know how long he’d been phasing in and out of realities.</p>
+<p>How many days had he been out here, lost and alone?</p>
+<p>“Gah!”</p>
+<p>Something heavy fell upon him. Alec hit the hard stone ground with a dusty whumph. The Confounded creature was on him! Alec struggled to unpin himself. The creature was far, far heavier than its starved metal frame had appeared. Alec’s ears filled with the mechanical whirring in its limbs and the electric buzz of its motorised mouth. A speaker lodged somewhere in its throat played dirty animalistic panting on repeat, heaving in and out of wretched static; <a href="https://br-chan.github.io/writing-break/4612/15_memento-mori/">detecting static</a> had become Alec’s innate skill. Humming yellow torches that were the machine’s eyes bored into Alec’s cakey mess of uncut, sinewy hair, lighting up the scene. The Tablet of 4612, trapped between the ground and his chest, eked what light it could from underneath the dogpile.</p>
+<p>The terrible smell of oil drowned out the rest of his senses, filling him with terror and disgust and… Recognition. Where had he smelled this much oil before? He dipped a spoon into his soup of memories, but it may as well have been a fork. He could find scraps and shards filtered through the tines: a burning engine, a hanging man, a flying city – but nothing more. He could remember General Stacy just fine – could remember him <a href="https://br-chan.github.io/writing-break/4612/13_avenger/">bleeding out on the cobblestones</a>; the pain of his intermittent memory was just as bad as the crushing pain of the creature flattening his spine.</p>
+<p>The Automaton’s panting stopped, and Alec  hoped it was going to climb off.</p>
+<p>Then jaws of metal dug into his flesh and Alec’s left shoulder erupted in pain. He screamed, wriggling. His hands slipped the Tablet out from underneath his quivering body.</p>
+<p><em>Hit the wolf, hit the wolf,</em> his mind screamed.</p>
+<p><em><strong>BANG!</strong></em></p>
+<p>With only a single blind strike behind his back, the Tablet sent the creature flying up and away. Alec was up in an instant, fast enough to watch the Automaton slam into a streetlamp, sending both crashing down onto a metal contraption parked on the side of the road – a Confounded vehicle, something Alec remembered reading about in a history book on the Golden Age of Confoundment. Whatever kind of Age that was, Alec had no clue. Why could he remember something as mundane as that, and not other, more important things? For example, how he’d gotten into this entire mess in the first place, floating about in that Void over 30 million seconds ago.</p>
+<p>His shoulder was numb and wet. Clearing his mind, he held the Tablet close to his heart, and within moments energy surged into his body. The burning bite wounds closed up and the pain evaporated.</p>
+<p>He felt a little twitch deep in his mind. A warning shot – the first itch of the nugget in his head.</p>
+<p>Contrary to his hopes, the Automaton got up with its 5 unsteady legs. One of them had been crushed by the fall – the alien one that stuck out of its belly. It shook the thing violently in an attempt to break it off its hinges.</p>
+<p><em>No wonder it has five legs,</em> Alec thought with mirth. <em>Spare tyre.</em></p>
+<p>But no doubt, this machine was based on some real life alien creature that lived in this world, back before it had been reduced to a hulking shell of dented cars and smashed windows. Indeed, he was amazed that out of the hundreds of worlds he’d visited, almost all of them had been bleak and devoid of life. After the Sea of Soil, he’d not found any more discernible life for more than 5 million seconds on his clock – days and days of broken terrains, dark nights and darker frights.</p>
+<p>Recently, however, he’d been stumbling across more and more life. Some of them were fantastical and disobeyed all senses of reality – others were metal dogs that bit his shoulder off. An entire civilisation had been a first for him, albeit in its current apocalyptic state.</p>
+<p>The wolf creature paused. It began to twitch in an eerie fashion, at regular hypnotising intervals. Then, as if it had been barked an order, it assumed a sitting position. Its head cocked to the left, its mouth dropped open and the grainy speaker inside began to play a very different kind of sound. It took a moment for Alec to register that it was a song.</p>
+<p><em>No more champagne,</em></p>
+<p><em>And the fireworks are through.</em></p>
+<p><em>Here we are, me and you,</em></p>
+<p><em>Feeling lost and feeling blue.</em></p>
+<p>Alec took a hazardous step foward. He must have damaged the Automaton and caused a malfunction somewhere in there, deep inside its fried electrical brain. It must be some kind of simple, default protocol. The lyrics echoed up and down the street, filling it with static-filled verse. Alec was so entranced by this sudden change in the dog, he almost didn’t realise it was singing in a language he understood. Something told Alec to run, that itchy nugget in his head again, but he couldn’t help but watch. The Tablet lay forgotten in his hands as he listened to the Automaton sing.</p>
+<p><em>It’s the end of the party,</em></p>
+<p><em>And the morning seems so grey.</em></p>
+<p><em>So, unlike yesterday,</em></p>
+<p><em>Now’s the time-</em></p>
+<p>A quick jolting bang, and an arc of white energy leapt from the Tablet’s surface like a frog tongue into the air. It made Alec jump, and apparently the wolf creature too, because the song stopped at once. The Confounded machine spasmed again, then shook itself out of its stupor as its speaker switched to a whining growl.</p>
+<p>Alec took it as his cue to run.</p>
+<br>
+<hr>
+<br>
+<p>As he fled, he studied his Tablet for more energy fluctuations. The glowing numbers thrummed with imbalance.</p>
+<p>Recently, he’d found it convenient to think of the Tablet as a magical container of two fuel tanks – one ‘good’, the other ‘bad’. The fuel in the good tank could turn the Tablet into a weapon: all he needed to do was hit the Tablet like a brick, and he could whack an Automaton the weight of an anvil across a road. He could also use its fuel to magically heal himself, as he’d done to his shoulder. Doing these things would deplete the good tank, which he could feel with his mind. He was linked to this Tablet somehow, magically.</p>
+<p>The avenue narrowed as the ghostly buildings closed in. The Automaton barked as its heavy claws clanged up the road not far behind. Alec bet he’d slowed it down a notch by disabling one of its legs. Now he just had to tire it out. Surely the thing ran on some kind of fuel tank of its own?</p>
+<p>The Tablet’s bad tank was different. Not only would it fill of its own accord, it seemed that as the good tank depleted, the bad tank filled. As its level rose, the Tablet would act more and more erratically. And he could feel when the tank was nearing fullness in his head – the little nugget in there that twisted and turned.</p>
+<p>Twisting and turning, like he’d done in his sleep in the days after the <a href="https://br-chan.github.io/writing-break/4612/12_noose/">Destruction of Thindburg</a>. He was becoming more able to see his past now, surfacing in the soup of memories. He didn’t like what he saw.</p>
+<p>Alec’s soup of memories brought up that moment in Tabula Rasa – when the Tablet was literally bouncing out of his hands, coils of extant power flaring off its surface. But he couldn’t remember what would happen when the bad tank filled up to the top, only that it could never be allowed to get there. He had a feeling that he’d known what the Tablet would have done if the bad tank became full, but of course that memory was lost in his brain soup. Maybe he’d recall if his cranial nugget didn’t twist like a needle; the fuller the tank, the more painful it’d get. Once again, it was a magical link.</p>
+<p>There was only one way he knew how to empty the bad tank. Its fuel was special; he could use it to perform the most divine feat of power he’d yet seen in his new life after the Void, and transport himself up and out of reality. All the bad tank’s fuel would evaporate, and he’d land unceremoniously into yet another world.</p>
+<p>That was the song and dance he’d had to carry out ever since Tabula Rasa: land in a new world; empty the good tank to defend himself from both the living and non-living terrors that went to oust him like the trespasser he was; then the bad tank would quite near reach the brim, and he could handle the nugget’s pain no longer; he’d leave, sometimes mere minutes after arriving – such was the speed of the tank’s filling. Sometimes it took a lot longer.</p>
+<p>The Automaton barked, a lot louder and closer this time. Alec looked behind just in time to see it crouch and leap towards him, clawed forelimbs outstretched to catch him in every way possible. There was nothing he could do but lift the Tablet and swing-</p>
+<p>And with a flash of light the Tablet connected with the wolf creature’s jaw. It hit the floor and cracks spiderwebbed the asphalt, sending its body into spasms again. Dust pooled upwards around it. Alec watched the dust rise like coffee steam; he almost heard a glass cup shattering on the floor, and feel the tremors of the Habit Square coffee shop <a href="https://br-chan.github.io/writing-break/4612/32_vice/">as it exploded</a>.</p>
+<p>A searing pain – Alec dropped the Tablet and fell, gripping his head as it throbbed. It wasn’t the nugget’s pain. Memories clear as day piled on top of him like hot sauce out of a bottle: wet and clumpy, all at once. Vice the Shadow Wyrm. Melior of the Inept. Ami of the Tannery. Atro who could not help. Ami’s screams before she slid into the dragon’s gullet. The squirming bulge in Vice’s throat that descending into its stomach.</p>
+<p>“FORGET THAT! FORGET THAT!” The words tumbled out of his mouth, tearing his throat apart.</p>
+<p>…Alec blinked, finding himself curled up into a ball. What was he doing down here? He couldn’t remember a thing. He’d swung at the wolf creature and then… He was here on the floor. What had just happened?</p>
+<p>The Automaton, still convulsing on the ground, twitched its mouth open again to sing:</p>
+<p><em>Sometimes I see</em></p>
+<p><em>How the brave new world arrives,</em></p>
+<p><em>And I see how it thrives</em></p>
+<p><em>In the ashes of our lives.</em></p>
+<p>The verses jolted Alec back to focus. He didn’t wait for the pile of Confoundment to get up again. He staggered up and took off.</p>
+<p>But no sooner had he taken a few steps did the Tablet pop and crackle – <em>behind</em> him. Looking back in shock, he realised he’d left it behind on the ground in his rush. It was his only way out of this dark and broken world!</p>
+<p>He dashed right back. The Automaton was regaining its senses, returning to its rabid self. Alec nabbed the Tablet, but it wriggled free and hopped back out of his hand, flopping about like a fervent fish. The bad tank was filling fast.</p>
+<p>Too late: the wolf creature bounded towards him, mouth foaming with static.</p>
+<p>Another uncontrolled flare of energy from the Tablet whapped the creature in the jaw. It snapped right off with a shattering crack. The Automaton quivered a moment before breaking into song again, giving Alec enough time to scoop up the Tablet and run. He cursed himself for losing his head start. He flicked away another passing throb of the nugget.</p>
+<p><em>Oh yes, Man is a fool</em></p>
+<p><em>And he thinks he’ll be okay,</em></p>
+<p><em>Dragging on, feet of clay,</em></p>
+<p><em>Never knowing he’s astray.</em></p>
+<p><em>Keeps on going, anyway…</em></p>
+<br>
+<hr>
+<br>
+<p>The avenue was looking every more narrow, ever more disheveled. Collapsed buildings garnished the avenue with cracked bricks and massive iron shavings. But the walls of the dull metal city still closed in, towers rising higher than they ever did, or could, in the towns of Alec’s blended memories.</p>
+<p>The name of one exception came to him: <em>Mistiflying</em>. But he failed to remember anything else about the city.</p>
+<p>None of the streetlamps here still stood with any regality at all; they bent this way and that, or sat mangled and torn up inside storefronts and alleyway entrances.</p>
+<p><em>An alleyway</em> –  he spotted an unblocked one farther up the avenue. It was small. If the way was clear, he could take it. There was no way the Automaton could follow him in.</p>
+<p>And just like that, he tripped on one of the fallen streetlamps and fell, Tablet flying, ankle twisting.</p>
+<p>Alec whimpered and tried to push himself up. His arms flailed about as if they hadn’t got the memo. His right leg trembled; his foot gasped and seethed in its agony. Something was fractured. An immense, feverish vision of a fresh loaf of bread enveloped Alec’s view, before the wind picked up and he coughed up dust. The vision was swept away, replaced by the Tablet of 4612 vibrating and flashing warning lights. Out of reach. The nugget’s pain ramped up, tightening bit by bit.</p>
+<p>In between bouts of greasy pain, he chanced a look behind him. The Automaton was a couple streetlamps away, quickling gaining. It looked far more deadly <em>without</em> its lower jaw: a mindless, thoughtless beast pounding up the tarmac. <em>Clang, clang, clang</em> its claws went upon the ground.</p>
+<p>He couldn’t go on like this, not with the wolf creature still up and running while he lay injured like this. <em>Feet of clay.</em> He… A lance of pain shot up his calf. He had to disable the Automaton somehow. It was just a machine. Machines could be taken apart.</p>
+<p>Alec stopped his whimpering and calmed his breaths. He pulled up his shirt collar – he’d forgotten what colour it had been before it had turned brown (and other alien colours) from layers of picked-up muck. He bit down on the fabric hard. Despite the awful taste, his mouth salivated. He puffed up his chest and crawled his way forward, targets set on the Tablet of 4612.</p>
+<p>Alec screamed into his shirt as the pain in his foot expanded, a balloon that grew with every second that he crawled across the street. It was a boiling poison that seeped through his foot and up his leg. Locks of hair sank over his face and blocked his vision, and sweat dripped right into his eyes. He bit down harder on his shirt. Spittle seeped into the fabric and liquified the grime. The nugget in his head twisted deeper and deeper, ready to pop the inflating balloon like a piñata full of red, gooey candy.</p>
+<p>Instead of pushing out the pain, Alec focused on it, harnessed it, drove himself forward. His ears rang, drowning out the Automaton’s static that approached from behind.</p>
+<p>He stretched out an arm to reach for the Tablet. It quivered like a corn kernel ready to pop. Just one lucky jump and it would land on his palm. He watched it pop up this way, shudder that way, inch ever closer. So close…</p>
+<p>And then the Automaton grabbed him. Vicious claws ripped into his clothes and pulled him backwards. The intoxicating smell of oil re-entered his nostrils.</p>
+<p>“No!” he cried, nudging the Tablet with his fingertips before it leaped away with a sparking coil of light. The Automaton brought its head down to Alec’s neck, ready to crush his windpipe with its mechanical maw.</p>
+<p>But it didn’t bite down. Alec craned his neck and found himself face-to-face with its circular yellow eyes staring into his soul – just like <a href="https://br-chan.github.io/writing-break/4612/32_vice/">Vice</a> had all those years ago.</p>
+<p><em>“You’re just another monster to forget and be forgotten,”</em> the dragon whispered.</p>
+<p>“No! No, I’m not!” Alec slammed the wolf creature’s head. “Not anymore! Not…” And yet he had not the memories to back him up. Had he just forgotten, or did he have none at all? No proof against Vice’s claim.</p>
+<p>The Automaton was frozen. Through his delirium, Alec had forgotten that it had lost its rusty lower jaw. What could the robot’s programming do but wait forever for the non-existent jaw to finish its job? It wasn’t attacking anymore, but neither was it getting off him. Alec reached for the Tablet again in vain. It was getting angrier, leaping higher and higher as the spears of flickering plasma grew longer.</p>
+<p>The nugget wrenched itself clockwise, leeching off another storm of pain. Alec clenched his teeth as its throbbing waves echoed off the walls in his skull.</p>
+<p>The bad tank was reaching the brim. The robot had to get off him.</p>
+<p>He whipped his arms back and began to tear at the Automaton’s head. He whacked its neck, tore at its teeth, pulled at its eyes. He wavered in and out of painful consciousness. At last, one of his fists connected with something loose and clangy by its belly and Alec felt a large plate drop onto his back. The Automaton shivered, almost coming out of its stupor.</p>
+<p>It sang, right in his ear. Its tinny, gravel voice pounded the nugget further and further through his brain like a gavel.</p>
+<p><em>Seems to me now,</em></p>
+<p><em>That the dreams we had before</em></p>
+<p><em>Are all dead, nothing more</em></p>
+<p><em>Than confetti on the floor…</em></p>
+<p>Alec gave it a wild kick in the behind. He retched in horror – he’d used his broken foot – but it had the intended effect. The Automaton broke out of its song, fully wakened, and turned round to face the to-be attacker. At last, Alec could crawl free. He took a deep quaff of adrenaline and surged forwared.</p>
+<p>The Tablet leapt right into his hands. Gratified elation gave way to peppery shock as Alec finally felt how heavy the bad tank had become. He struggled to keep it steady in his hands while tiny daggers of light danced about and embraced him.</p>
+<p>He examined his palms – blood dripped from shallow cuts and scratches, courtesy of his tussle with the Automaton. Alec channeled power from the Tablet into his veins, using it to mend himself. With a satisfying crack his ankle swiveled into its proper place and the storm of pain receded. By the time he was done, he’d completely emptied the good tank. He stood up, testing his leg, then turned round to face the Automaton.</p>
+<p>It was falling apart now. Alec had smashed off a bolted metal sheet that had protected its underside. The chassis that was the wolf creature’s belly was broken open, revealing a complex set of churning gears and silvery control boards. They hung out of the underbelly, shuddering and leaking nuts and bolts.</p>
+<p>He’d done more damage to its face than he’d thought. One of its lamplight eyes was no longer lit. A speaker, a flat little device connected to filaments threaded through its mouth, hung loosely from its scratched up gullet like a wired tongue. Demented static swayed backwards and forwards as the Automaton staggered towards its prey. Whatever power source it had was certainly running out.</p>
+<p>Alec didn’t have any fuel in the good tank to beat it off. Maybe he didn’t have to.</p>
+<p>The Automaton stood there, struggling to keep itself upright. And it sang once more.</p>
+<p>Its words were strained and coarse, as if it were fighting to push them out. But its last good eye shone with such flickering intensity, its shivering frame standing so proud and earnest. Its crackly voice seemed to bring itself to tears.</p>
+<p><em>Happy Ne-ew Year, Happy New Year, may we all</em></p>
+<p><em>Have a vision now and then</em></p>
+<p><em>Of a world where every neighbour is a friend.</em></p>
+<p><em>Happy New Year, Happy New Year, may we all</em></p>
+<p><em>Have our hopes, our will to try</em></p>
+<p><em>If we don’t we might as well lay down and die…</em></p>
+<p>At last, its forelegs gave in and it tumbled into a heap, gears flying loose and wires splitting like wheat in the wind.</p>
+<p><em>You and I…</em></p>
+<p>Alec knelt on the floor, watching the dog’s eye flicker for the last time before it dimmed. A background hum, the sounds of whirring gears and churning fans, slowed to a silence. Finally, the speaker’s static fell apart and dissipated among the hollow echoes of the broken city.</p>
+<p>Alec felt a pang in his heart. He waited to hear the static return, for the dog to reawaken.</p>
+<p>“Don’t be a fool,” he muttered to himself. “He was trying to kill you, the moment he laid his eyes on you.”</p>
+<p>But he felt so alone now; all alone in this broken city, silent now.</p>
+<p>Silence.</p>
+<p>Alec looked down at the Tablet in his hands; it was all quiet, all still. No more energy crackled from its surface. He touched his forehead; the nugget in his head had gone quiet too.</p>
+<p>All of this felt like it had happened before. Alec dipped his fork into his soup of memories, and the tines caught a glob of memory: from  the world he’d named <a href="https://br-chan.github.io/writing-break/4612/25_tabula-rasa/">Tabula Rasa</a>. There was a reason he’d called it that, although the reason why had escaped him until now. It was to remind him of the horrors that the Tablet of 4612 could unleash.</p>
+<p>In the traditional tongue of The Orrient, Tabula Rasa meant Blank Slate.</p>
+<p>“A calm before the storm…”</p>
+<p>A murderous hum filled his body – filled everything around him. The ghostly buildings lit up with frightened cracked glass eyes and wide-mouthed doorways. The etched numbers – 4612 – glowed brighter and brighter, then brighter still, until it became possibly the brightest thing in the entire world.</p>
+<p>And just when Alec remembered it all, of the consequences of letting the Tablet go unchecked for too long in any world, it was too late. It shuddered again, in a bad way; the storm was beginning. The murderous hum grew louder and louder, then louder still.</p>
+<p><em><strong>BOOM!!</strong></em></p>
+<p>Alec’s vision lit up all white, then a massive bolt of lightning erupted from the Tablet’s stony confines. Up it went, jagged and true, vaporising several skyscrapers and ascending off into the night sky. Pounding thunder shattered his eardrums. He collapsed, hands raised and stuck clutching the Tablet. It was now a pure white light.</p>
+<p>The buildings and towers above crumpled and fell, all of them. He could feel them – every splintering door and cracking window, every bursting pipe and melting rebar, every ruptured shard of plastic and dusted grain of concrete. All of that and more, blasted away by the Tablet’s might until Alec lay alone upon a mounting sea of debris in the night.</p>
+<p>His soup bowl of memories tipped over, spilling over the messy floor of his mind. Alec drowned in remembered words and phrases, all Confounded and confusing. Atoms. Magic. The great twinkling sky, the Edge of the Universe. From 4 becomes 1, one <a href="https://br-chan.github.io/writing-break/4612/24_the-legend-of-4612/">Bane of the Worlds</a>.</p>
+<p>The Tablet’s lightning bolt dispersed, spreading across all that Alec could see – the canvas of outer space. And at once he could feel it. All of it. The whole universe, from pole to pole. The planet he lay upon, dusted and bare. Comets and asteroids passing overhead, direction obscene. Stars so bright, so large, yet so dim and small upon the backdrop of twirling galaxies, and the galaxies of galaxies. And all of them paling in comparison to the beauty and majesty of the universe that encompassed them all.</p>
+<p>Then a growing darkness. The Edge of the Universe shimmering and shrinking. Dim stars dimming further, then shattering into sundered bits. Planets, gassy and solid, combusting and dissolving into the growing shadow. Cosmic stardust flickering out of existence. Meteorites soaring into nothingness. Galaxies heaving final breaths before they, too, burst apart and settled like confetti on the floor.</p>
+<p>Alec could only stare, unblinking, unbreathing, his breaths like static as he clutched the Tablet that stayed affixed to his hands. This was what happened when the bad tank reached its brim. An entire universe would pay.</p>
+<p>A shimmering cloud thundered into view. A giant wall of broiling blackness enveloped the whole sky, blotting out the last stars. The Edge of the Universe, all of its edges, were approaching. Alec, horrorstruck, struggled and shook. He forced himself to sit up and pull upon the Tablet. But it could not be moved.</p>
+<p>The Tabllet shone with a searing light so bright and hot it began to burn and melt his surroundings. Concrete and steel alike melted into gooey oceans. What few buildings that had remained upright sank into the steaming conglomerate fluid. The Automaton, the wolf that just moments ago had been so vibrant and alive, melted away into a greyish puddle.</p>
+<p>And still Alec remained, stuck to the Tablet. His hands did not even feel the slightest bit of pain. But his eyes burned with wet, hot tears as he gasped and sobbed. Through the amassing smoke and noxious steam, he could see the great wall of the universe burn up the atmosphere, pockets of explosions peppering the night sky. A sky no longer.</p>
+<p>A massive crack in the ground was rent across the avenue, which had already ceased to exist underneath the sea of molten material. A groaning crumbling noise echoed across what remained of the universe, so small as it was now, and the very planet Alec sat upon came apart. The last vestige of reality, crumbling away.</p>
+<p>A massive crevasse appeared under Alec’s feet. But instead of falling, he floated in midair, hanging onto the Tablet of 4612. He was no longer the one holding it in place – it was doing that of its own accord.</p>
+<p>He begged it to stop. He pled to the Universe, pled to the Tablet to stop the destruction. But it would not stop. This was the Tablet’s purpose, by whoever or whatever had forged this artifact in a time beyond time. This was its purpose.</p>
+<p>Bane of the Worlds.</p>
+<p>Everything flashed through his eyes, as if time itself had been gnawed to a stub: the Edge of the Universe closed in. The ocean of molten metal vaporised and disappeared. For a fraction of a fraction of a second, Alec glimpsed a wide, open plain of bare rock, devoid of all life and substance.</p>
+<p>Then the cracks expanded and the planet disappeared in a muted, crunching whumph.</p>
+<p>Alec had shut his eyes. When he opened them, nothing changed – pitch black, spotless and bare, depthless and deathless. He looks down at the ground, but saw naught but abyss. The deepest of his fears descended on him.</p>
+<p>With a resounding crack, the Tablet broke free from its frozen position. Alec cradled it, watching the glowing numbers fade away. It was back to its dull, old self, both tanks depleted.</p>
+<p>Gone was the universe. Gone were the myriad of galaxies of stars. Gone was the planet that had still clung to life. Gone was the Automaton, that old, rusting machine going half crazy, that had just wanted to sing.</p>
+<p>“What have you done?” Alec whispered, his sense of direction fading as he spiraled through the blank slate.</p>
+<p>“What have I done?”</p>
+<p><br><br></p>
+<hr>
+<p><em>Musical Inspiration: <a href="https://www.youtube.com/watch?v=3Uo0JAUWijM">Happy New Year - ABBA</a></em>
+<br>
+<em>This is a revised version of a story from 2 Jan 2024.</em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+					<a class="links-nextprev-prev" href="/writing-break/4612/32_vice/">
+						<b>← Previous in 4612</b>
+						<br>
+						<span href="/4612/32_vice/">Vice</span>
+					</a>
+				<a class="links-nextprev-prev" href="/writing-break/stories/5_peanut-butter-pie/">
+					<b>← Previous</b>
+					<br>
+					<span>Peanut Butter Pie</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/4612/33_confetti-on-the-floor/` was built on 2026-01-29T08:51:05.451Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
