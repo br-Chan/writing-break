@@ -1,7 +1,7 @@
 ---
 title: Call of Clockthulhu
 description: TICK, TICK, TICK.
-date: 2026-03-01 22:09:00
+date: 2026-03-01 20:23:00
 tags:
 noToc: true
 ---
