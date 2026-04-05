@@ -2,6 +2,7 @@
 title: Back in the Can.Ter.Bu.Ry.
 description: Flew in from Muriwai beach, Air New Zealand ~ Didn't get Maccas last night
 date: 2026-02-28 23:29:00
+updated: 2026-04-05 13:56:00
 tags:
 noToc: true
 ---
@@ -52,7 +53,7 @@ Otago's always on my mi-mi-mi-mi-mi-mi-mi-mi-mind
 Oh, show me 'round your snow-peaked mountains way down South<br>
 Take me to the Milford Sound<br>
 Let me hear your Maori Hakas singing out<br>
-Come and keep your Whanau warm
+Come and take your Whanau round
 
 I'm back in the Canterbury (Hey)<br>
 You don't know how lucky you are, bro<br>
