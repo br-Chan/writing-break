@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>800 Years of Practical Work Experience</title>
+		<meta name="description" content="You were almost having a good day until you found yourself at the Grey Lynn Campus.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 3em;
+	border: 1px solid;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-desc {
+	font-size: 0.8125em;
+	font-weight: thin;
+	color: var(--color-gray-90);
+	text-decoration-thickness: 0px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	/* margin-right: 1em; */
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="800-years-of-practical-work-experience">800 Years of Practical Work Experience</h1>
+
+	<ul class="post-metadata">
+		<li>
+			<time datetime="2026-04-05">5/04/26</time>
+			 • updated
+			
+				<time datetime="2026-04-05">5/04/26</time>
+			
+		</li>
+		• Tags:
+			<li><a href="/writing-break/tags/stories/" class="post-tag">stories</a></li>
+	</ul>
+
+	
+<p>
+    2,261 words • Reading time: 11 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>You were almost having a good day until you found yourself at the Grey Lynn Campus.</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p>You were almost having a good day until you found yourself at the Grey Lynn Campus.</p>
+<p>Today is October 14th 2025. Lectures end in 2 weeks. Part III SWE is nearing its end. And the SOFTENG 325 assignment is due tomorrow. You are tearing your hair out.</p>
+<p>“Bob! You made it!”</p>
+<p>Jenny awaits you at the top of the steps of the Engineering Building. She beams at you with her annoyingly toothy smile, her golden brown hair a tussled mess down to her waist.</p>
+<p>You clamber up, a study-induced hangover sweating through your forehead. 325 is killing you. You’d be throwing hands with Andrew if not for the fact that he likes Pokémon. But you’re <em>this</em> close.</p>
+<p>“I almost thought you weren’t coming,” Jenny blabbers on. “You didn’t reply to my last DM. Come on up!”</p>
+<p>Yawning, you recall the Discord conversation. You’d woken up bright and early (just after midday – totally early), and was fully intent on sleeping further into the afternoon  until:</p>
+<picture><source type="image/avif" srcset="/writing-break/img/vFpE1kxeVA-1076.avif 1076w"><source type="image/webp" srcset="/writing-break/img/vFpE1kxeVA-1076.webp 1076w"><img loading="lazy" decoding="async" src="/writing-break/img/vFpE1kxeVA-1076.jpeg" alt="Jenny says she made a machine that cane give Bob all 800 practical work hours. Huh????" width="1076" height="996"></picture>
+<p>Surely it was impossible. You can’t cheat the system. You’re in Part III Software Engineering and have 0 hours to your name. Not a sausage. You fear you’ll never graduate. All you’ve ever wanted for the past 2 years was that wretched, glorious job offer. You’d do <em>anything</em> for the practical work hours. <em>Anything</em>.</p>
+<p>And this is <em>Jenny</em> you’re talking about.</p>
+<p>You met Jenny in 2023. Her name had preceded her. She answered <s>almost</s> every single question on Piazza, beating even the infamous Jayden Kah and illustrious Alex Brown. She was all Kevin Jia could talk about: <em>“You lot should all be more like her! Smarter.”</em> You thought at first that she was an ENGGEN 115 TA and not a Part I student. Turns out she was both.</p>
+<p>It soon became clear that perhaps Jenny was not Human. Her CV boasts 42 First in Course Awards (7 per semester). Last you checked, she had almost 8 thousand followers on LinkedIn. She has exec roles in every single tech club in the university: SESA, DEVS, UOACS, you name it. In WDCC, she’s been a Co-President, a Projects Exec, a Tech Exec, an Industry Exec, a project manager, a tech lead and a project member – all simultaneously. She once became President of GDGC just to rename it back to GDSC before resigning. Incoming Co-Presidents Aref and Arnav were too chicken to reverse it.</p>
+<p>On her darkest days, you’ve watched her doomscroll Leetcode. <em>Leetcode</em>.</p>
+<p>But most importantly, Jenny was more than just a software engineer: she was an inventor. In Part II she’d taken Computer Systems Engineering, but quickly realised she was far too advanced for such a trifle – she was practically teaching classes <em>for</em> the lecturers. She decided to swap to SWE, but it was only incrementally more difficult for her.</p>
+<p>Being Jenny’s friend was a blessing and a curse. For one thing, you were always the guinea pig in all her “machines”. You’d been coerced into running on a treadmill that made electric power, trying on gloves that made you type faster, riding a go kart that flew, taste-testing pies made by an automatic pie-making machine (yes, <em>the</em> Piebot 3000, the one that the Prime Minister was caught pigging out at in Kate Edger that one time).</p>
+<p>Every time you’d been a guinea pig, you’d paid the price one way or another: the treadmill electrocuted you, the gloves gave you instant carpal tunnel (literally), the go kart left you at the top of the Sky Tower (also literally), and the pie-making machine… Actually that one was fine, the pie was awesome.</p>
+<p>As bad as Jenny’s inventions were, each of them did exactly as she said they would – one way or another.</p>
+<p>So if Jenny says she can do something – no matter how preposterous – she was bound to be right.</p>
+<p>All 800 hours, she’d said. Ticked off by evening, she’d said.</p>
+<p><em>Anything for the practical work hours.</em></p>
+<hr>
+<p>The Unleash Space is a hubbub of activity. The whole room has been cleared to make way for a massive steel structure in the centre. It looks like the Challenger space shuttle, and just as volatile. Haphazard wires and estranged gears spiral in and out of the contraption, and the whole thing hums like a disturbingly human-sized pressure cooker. All of the makerspace’s staff are milling about, talking amongst themselves in awed whisper. The only people not interested are a group of 7 students playing Jackbox in the corner with one of the makerspace TVs. You spot both Part III class reps over there. Weirdos.</p>
+<p>Jenny shoos away a few adoring fans as she pulls your arm towards the <s>pressure cooker</s> machine. Ignoring everyone else, she avidly explains all the technical details. You can’t even understand half of it.</p>
+<p>Of course, Jenny had fulfilled <em>her</em> 800 hours when she co-founded Halter alongside Craig Piggott, at the burgeoning age of 10. These days, all the software companies love her – and fear her. Every industry night, they set up a stall specifically for Jenny. The company representatives line up to beg for her services, sometimes bearing gifts to convince her to join them. Serato once gave her an entire DJ set. Sandfield pledged her their entire supply of Sandfield-brand can openers (there were literally thousands). One time a Jane Street employee offered to straight up give her their own job. Partly counter-offered with an Engineering Co-Director role.</p>
+<p>But she’d never been satisfied. In uni, she’d never taken up a single internship. You wonder why.</p>
+<p>“Long story short,” she continues, “instead of going through 800 hours of practical work, you step inside this machine and it’ll push 800 hours of practical work through <em>you</em>! It simulates 2 entire summers of intense software work and mathematically proves you can be signed off!”</p>
+<p>You blink twice. “So, like that one scene in the Matrix where he learns kung fu?” Did this girl just create the <em>Matrix?</em></p>
+<p>“Exactly. Now, step inside!” She theatrically waves a hand toward a tiny door at the front of the bubbling machine.</p>
+<p>You hesitate. “Is it… Safe?”</p>
+<p>Golden brown hair whips about in dismissal. “Who do you think I am? Of course it’s safe!” Jenny puts her hands on her hips. “And it’ll <em>work</em>. Don’t you want your hours?”</p>
+<p>“Don’t I want my-” You look down and grit your teeth. You see her smug face from the side of your eye. She knows she just pissed you off.</p>
+<p><em>Don’t you want your hours?</em> What have you been doing for the past 2 years of your <em>life</em>?? Countless hours of writing CVs and cover letters. Doing Leetcode Easy’s (and failing to do Leetcode Mediums). Enough internship applications to stack overflow. Dozens and dozens of tech club events: Industry Nights, Leetcode Workshops, the entire Journey to Web Dev, K-Pop Dance Workshop 2 years in a row.</p>
+<p><em>Anything for the practical work hours.</em></p>
+<p>You step inside.</p>
+<hr>
+<p>The door shuts with a clang. Everything goes dark and the hubbub of the Unleash Space becomes mute and far away. You bump into a circuit board. All you can see are the dim shadows of microcontrollers and PCBs and funky wires buzzing around your head. It’s like Harry Potter’s Cupboard Under the Stairs in here, only smaller. And with no bed. Oh, how you wish for your comfy bed…</p>
+<p>“What now?” you ask.</p>
+<p>…</p>
+<p>“Jenny?”</p>
+<p>You hear Jenny’s muffled voice, and then the the sound of a big, metal lever being pulled.</p>
+<p>Everything begins to shake inside. You try to sit down or grab ahold of something, but there’s not even any space to <em>move</em>. You accidentally grab a crocodile clip and you yelp as it shocks you with electricity. You lean against the cold hard walls of the machine. Loud noises deafen you as Jenny’s machine continues to tremor.</p>
+<p>“Jenny??”</p>
+<p>…</p>
+<p>The stench of laser cutters and molten plastic fill the cramped space. It sure feels like a pressure cooker now.</p>
+<p>“Oh, f#ck me…”</p>
+<p>As you stand there, you get the feeling that something in Jenny’s machine is… Alive. The whirring seems to hum to a tune. The vibrations fall in sync with your heartbeat. Whirling gears and flashing lights twirl and dance like pigeons in flight, round and around your head. A series of deep clicking noises, like that of a whale, pound through the contraption, first slowly and then quickly: <em>CLIK, CLIK, CLIK CLIK CLIK CLIKCLIKCLIKCLIK…</em></p>
+<p>Then a loud <em>WHAM</em>, and everything compounds. The noises, the lights, the thrumming, whirring – vibrations wriggling into your shoes, your clothes, your bones, your heart…</p>
+<p>The shaking and whirring revolve and spiral around you, and suddenly you feel dizzy. A headache hits you, slow and disorientating.</p>
+<p>You are feeling really dizzy now…</p>
+<p>“J-Jenny… Time out… Time out…”</p>
+<p>But you can’t see or hear anything outside the machine now. Everything is dark. You are alone at the edge of a universe that is coming alive and humming a tune.</p>
+<p>A siren sounds, ear-piercing, right in your ear and into your head, your soul. A lightning sharp pain hits you like a freight train.</p>
+<p><em>WHAM!</em></p>
+<p>You scream aloud and-</p>
+<hr>
+<p>You fall onto wet grass.</p>
+<p>You gasp and seethe, coughing up grass and mud. <em>What the f#ck?</em></p>
+<p>You’re touching grass. You’re outside. Everything’s bright again. The dizziness is gone, but a rush of blood is surging through your head – your brain feels like a balloon ready to pop. Is this how it feels when you’ve done 2 internships?</p>
+<p>You blink twice and lift your head. The sky is a peculiar shade of blue, speckled by orange clouds. You’re in a field of green. You’re not in the Unleash Space. Jenny’s machine had… Flown you to Albert Park? Was that supposed to happen? Where’s the machine? You’re all alone here, lying on your stomach and drenched in morning dew.</p>
+<p><em>Morning dew…</em></p>
+<p>You spot the sun to your right, rising just above the horizon.</p>
+<p>It’s supposed to be mid-afternoon.</p>
+<p>“You alright?”</p>
+<p>You jump and look up to your left. You see, bizarrely, a reception desk not far away. It’s completely isolated in the middle of the field. It’s quite literally a shack, no bigger than Jenny’s machine. A lady leans on the desk, eyeing you like you’re an alien. No one else is around.</p>
+<p>You get to your feet. Everything aches, as though you’ve run a million marathons.</p>
+<p>You reach the counter and stare awkwardly at the lady’s weird eyeliner. “Um, hello… Who are you? How did I get here?”</p>
+<p>The receptionist taps a badge on her dark blue uniform. “Katie,” she said. “You appeared in a weird flash of light and landed on the ground.” Then she turned away and rummaged for something behind the desk.</p>
+<p>You furrow your eyebrows. “…what? Appeared in a flash of-” And it’s just then that you notice the big sign on the desk:</p>
+<blockquote>
+<p>University of Auckland - Grey Lynn Campus</p>
+</blockquote>
+<p><em>What??</em></p>
+<p>“What joke is this?” you ask, a chuckle escaping your lips. “Since when was there a Grey Lynn Campus?”</p>
+<p>“For the past 800 years, dummy.” Katie brings out a handful of purple rubber balls, and she leans into a faded swivel chair tucked inside the shack.</p>
+<p>“No seriously, why are you here? And how did <em>I</em> get here?”</p>
+<p>Katie rolls her eyes and starts to juggle the balls. “I’m here to fulfil my hours. Just a couple more weeks manning the helpdesk and I can finally graduate. And I already said: flash of light, touched grass. Did you teleport from SESA HQ or something?”</p>
+<p>“Okay, now seriously, is Jenny behind all this?”</p>
+<p>Katie frowns in confusion – genuine confusion. “Who’s Jenny?”</p>
+<p>A feeling seeps into you. You don’t quite know what this feeling is yet. It’s a cold, icy feeling, the kind you get right after you’ve done something <em>very wrong</em> but you don’t know why.</p>
+<p>“Um, okay, so… Who made this all up? Who invented Grey Lynn Campus?”</p>
+<p>“I don’t know what you’re on about, bro.” Katie keeps juggling as she closes her eyes and sighs. “Auckland Uni made the Grey Lynn Campus?? In 2100. What kind of answer do you want?”</p>
+<p>Your freeze after hearing the words. “In- What…?” You read the fine print on the sign:</p>
+<blockquote>
+<p>est. 2104, sponsored by SESA</p>
+</blockquote>
+<p><em>Established in 2104</em>. The mystery feeling explodes inside you, from head to quivering toe.</p>
+<p>You ask a final question: “What’s today’s date?”</p>
+<p>“14th October 2825.”</p>
+<p><em>2825</em>.</p>
+<p>You’d asked her since when there was a Grey Lynn Campus. For 800 years, she’d said.</p>
+<p>You’d asked her how he’d got here. She said you appeared in a weird flash of light.</p>
+<p>Every time you’d been a guinea pig in one of Jenny’s inventions, you’d paid the price one way or another.</p>
+<p><em>The year is 2825</em>.</p>
+<p>Jenny’s machine hadn’t pushed 800 hours of time through you. It had pushed <em>you</em> through time – 800 years into the future.</p>
+<p>You feel all dizzy again…</p>
+<hr>
+<p>The receptionist watches the stranger black out and collapse. She frowns, shrugs, and keeps juggling.</p>
+<p>Juggling is second nature to Katie Bier. It’s been a thing in her family for eons.</p>
+<p><em><strong>To be continued…</strong></em></p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/stories/6_call-of-clockthulhu/">
+							<b>← Previous in stories</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>Call of Clockthulhu</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/stories/7_800-years-of-practical-work-experience/` was built on 2026-04-05T03:02:13.380Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
