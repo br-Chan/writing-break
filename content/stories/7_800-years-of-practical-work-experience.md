@@ -1,7 +1,7 @@
 ---
 title: 800 Years of Practical Work Experience
 description: You were almost having a good day until you found yourself at the Grey Lynn Campus.
-date: 2026-04-05 14:58:00
+date: 2026-04-05 15:00:00
 tags:
 noToc: true
 ---
