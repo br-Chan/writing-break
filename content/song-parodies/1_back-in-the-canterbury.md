@@ -1,8 +1,8 @@
 ---
-title: Back in the Can.Ter.Bu.Ry.
+title: Back in the Can.Ter.Bu.Ry. | song parody
 description: Flew in from Muriwai beach, Air New Zealand ~ Didn't get Maccas last night
 date: 2026-02-28 23:29:00
-updated: 2026-04-05 13:56:00
+updated: 2026-04-18 13:32:00
 tags:
 noToc: true
 ---
@@ -10,7 +10,7 @@ noToc: true
 *A parody of [:Back In The U.S.S.R.](https://www.youtube.com/watch?v=nS5_EQgbuLc) by The Beatles*
 
 ---
-
+<center>
 Flew in from Muriwai Beach, Air New Zealand<br>
 Didn't get Maccas last night<br>
 On the way, an empty wallet on my knee<br>
@@ -31,9 +31,9 @@ Back in the Canter<br>
 Back in the Canter<br>
 Back in the Canterbury
 
-(Well) The Nelson girls really knock me out (Ooh, ooh-ooh-ooh)<br>
+(Well) The Nelson girls really knock me out<br>
 They leave the North behind<br>
-And Christchurch girls make me sing and shout (Ooh, ooh-ooh-ooh)<br>
+And Christchurch girls make me sing and shout<br>
 Otago's always on my mi-mi-mi-mi-mi-mi-mi-mi-mind<br>
 Oh, come on!
 
@@ -45,21 +45,22 @@ Yeah, I'm back in the Canterbury​<br>
 You don't know how lucky you are, bro<br>
 Back in the Canterbury​
 
-(Well) The Nelson girls really knock me out (Ooh, ooh-ooh-ooh)<br>
+(Well) The Nelson girls really knock me out<br>
 They leave the North behind<br>
-And Christchurch girls make me sing and shout (Ooh, ooh-ooh-ooh)<br>
+And Christchurch girls make me sing and shout<br>
 Otago's always on my mi-mi-mi-mi-mi-mi-mi-mi-mind
 
 Oh, show me 'round your snow-peaked mountains way down South<br>
 Take me to the Milford Sound<br>
 Let me hear your Maori Hakas singing out<br>
-Come and take your Whanau round
+Come and bring your Whanau round
 
-I'm back in the Canterbury (Hey)<br>
+I'm back in the Canterbury<br>
 You don't know how lucky you are, bro<br>
 Back in the Canterbury​
 
 Oh-oh, let me tell you, brother<br>
-Hey, I'm back, I'm back in Canterbury​ (Ooh-ooh-ooh)<br>
-Hey, it's so good to be home (Ooh-ooh-ooh)<br>
+Hey, I'm back, I'm back in Canterbury​<br>
+Hey, it's so good to be home<br>
 Yeah, back in Canterbury​
+</center>
