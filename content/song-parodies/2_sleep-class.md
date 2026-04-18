@@ -43,7 +43,7 @@ I wanna fall asleep but it’s too soon<br>
 I want siesta but I can’t snooze<br>
 Or drift right off to sleep<br>
 But I am trying<br>
-and maybe<br>
+so hard<br>
 I think I<br>
 deserve this
 
