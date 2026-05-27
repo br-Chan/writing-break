@@ -1,7 +1,7 @@
 ---
 title: Aphrodite Appears
 description: In stories they say Aphrodite appears as the one that you are attracted to. But to me I feel as though Aphrodite would appear to me not as a person.
-date: 2026-07-27 15:00:00
+date: 2026-07-28 09:20:00
 tags:
 noToc: true
 ---
