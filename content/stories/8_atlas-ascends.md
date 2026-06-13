@@ -1,6 +1,6 @@
 ---
 title: Atlas Ascends
-description: 
+description: When the Olympians sought to strike me down, I was swift to surrender -- scrambling for sovereignty over a more putrid punishment. The Titanomachy, the primordial battle between the Titans and the Olympian gods, was ended, and the Olympian Gods meted their retribution as promised.
 date: 2026-06-13 15:55:00
 tags:
 noToc: true
