@@ -108,4 +108,4 @@ Something moved on Mount Olympus. Carefully, I inched my eyes down to my feet. F
 
 Suddenly I could hear what Iapetus spake, billions of years ago as he drowned in the Helm of Hades. He had sworn vengeance against those that disbelieved in the worth of he and his sons.
 
-The essence transformed into wriggling microscopic iotas, and henceforth the tragedy of Life began.
+The essence transformed into wriggling microscopic beings, and henceforth the tragedy of Life began.

@@ -2,7 +2,7 @@
 title: Peanut Butter Pie
 description: "Did you ever hear of a peanut butter pie?"
 date: 2026-01-15 22:09:00
-tags:
+tags: poetry
 noToc: true
 ---
 
