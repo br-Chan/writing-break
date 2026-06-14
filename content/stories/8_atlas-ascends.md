@@ -2,7 +2,7 @@
 title: Atlas Ascends
 description: But when the Olympians sought to strike me down, I was swift to surrender - scrambling for sovereignty over a more putrid punishment. The Titanomachy, the primordial battle between the Titans and the Olympian gods, was ended, and the Olympian Gods meted their retribution as promised.
 date: 2026-06-13 15:55:00
-updated: 2026-06-14 14:14:00
+updated: 2026-06-14 14:49:00
 tags:
 noToc: true
 ---
@@ -21,7 +21,7 @@ Coeus and Crius were brought before Demeter -- as was her right for what they ha
 
 Iapetus, my father, was brought before Hades. Iapetus was heaved towards the upturned Helm of Hades, a large iron basin at the bottom of the world, filled with the oily waters of the River Styx. Iapetus was pitched headfirst into the basin's broth; and there his body boiled as Hades held him still. His soul dissolved into the acids of the Styx, leaving his body a small, crusted pit stuck fast to the Helm -- but still my father survived in the waters. The living, milky spirits of Iapetus were poured into the halls of Time, Space and Matter, hallowing them.
 
-Tears are a funny feeling. They make their presence known well before they arrive, and yet arrive sudden all the same; and upon your skin they are cold.
+Tears are a funny feeling. They make their presence known well before they arrive, and yet arrive suddenly all the same; and upon your skin they are cold.
 
 And, at last, the turn was mine. I had been crafty, I thought, to have stood with my kin but avoided the blame and the putrid punishment. I chose the path of dignity.
 
@@ -83,7 +83,7 @@ Could I not even, perhaps, see the face of my daughter, dearest Calypso?
 
 Tears are a funny feeling indeed.
 
-Years passed and passed overhead. As I suffered under the weight of the Sky, I began to hear the Titans that writhed below me. I could hear Cronus on Zeus's thunderbolt-spindle -- a lamed, old madman as the Fates spun his destiny into fabric. I could hear Hyperion's song -- a pining tinnitus that rung like a battle hymn. I could hear Coeus and Crius, mindless, and I could bear witness to the miracles they wrought: planets and moons, comets and meteors, stardust and supernovae -- miracular, but mindless. I could hear my father -- but only in the recesses of my memory. I could feel him only in the coagulated spirits layered across Mount Olympus. I could hear them all, dying in the dark as the Olympians lived in the light.
+Years passed and passed overhead. As I suffered under the weight of the Sky, I began to hear the Titans that writhed below me. I could hear Cronus on Zeus's thunderbolt-spindle -- a lamed, old madman as the Fates spun his destiny into fabric. I could hear Hyperion's song -- a pining tinnitus that rung like a battle hymn. I could hear Coeus and Crius, mindless, and I could bear witness to the miracles they make: planets and moons, comets and meteors, stardust and supernovae -- miracular, but mindless. I could hear my father -- but only in the recesses of my memory. I could feel him only in the coagulated spirits layered across Mount Olympus. I could hear them all, dying in the dark as the Olympians lived in the light. I exist in a world wrought of sin.
 
 Now I imagined the Olympians up there laughing at my expense as they partied in their palaces:
 
@@ -101,7 +101,7 @@ I called for help, spittle flying, but could not shout. I grew angry, sweat pour
 
 And would the gods not deserve it?
 
-But if I were to drop the Sky and end it all, would it not kill what little family I had left? Even if they did not know it, I was saving them. I was saving them, for the rest of their lives and mine. They would never know it.
+But if I were to drop the Sky and end it all, it would kill what little family I had left. Even if they did not know it, I was saving them. I was saving them, for the rest of their lives and mine. They would never know it.
 
 They would never know it.
 
