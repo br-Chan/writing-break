@@ -13,9 +13,9 @@ In stratagem of battle I was second only to Cronus, our king. With my guidance, 
 
 But when the Olympians sought to strike me down, I was swift to surrender -- scrambling for sovereignty over a more putrid punishment. The Titanomachy, the primordial battle between the Titans and the Olympian gods, was ended, and the Olympian Gods meted their retribution as promised.
 
-Cronus was brought before Zeus, his son and successor. He was strung upon Zeus's cosmic spindle, and he spun Cronus around and around and around -- skin tearing, muscles bending, bones breaking, mind mangling. And so Cronus was spun into thread -- a fine, golden thread that glistened in the darkness of a proto-world torn apart by the Titanomachy. The spindle was passed to the Moirai, the Fates. They wove a tapestry with the string that had been king, and henceforth the fabric of Time began.
+Cronus was brought before Zeus, his son and successor. He was strung upon Zeus's cosmic spindle, and Zeus spun him around and around and around -- skin tearing, muscles bending, bones breaking, mind mangling. And so Cronus was spun into thread -- a fine, golden thread that glistened in the darkness of a proto-world torn apart by the Titanomachy. The spindle was passed to the Moirai, the Fates. They wove a tapestry with the string that had been king, and henceforth the fabric of Time began.
 
-Hyperion was brought before Poseidon, and he was engulfed in the fires of the forge. It roasted and rendered him into a dark, raging ball that was his soul -- a shining, shimmering obsidian orb, Hyperion's screams of agony reduced to a whining hymn. So Poseidon struck the orb with his three-pronged tine, and Hyperion exploded into cascading oratorio. His angers, his egos, his musics, inflated wide into the cosmos, and henceforth the symphony of Space began.
+Hyperion was brought before Poseidon, and he was engulfed in the fires of the forge. It roasted and rendered him into a dark, raging ball that was his soul -- a shining, shimmering obsidian orb, from which Hyperion's screams of agony were reduced to a whining hymn. So Poseidon struck the orb with his three-pronged tine, and Hyperion exploded into cascading oratorio. His angers, his musics, inflated wide to match his ego, and henceforth the symphony of Space began.
 
 Coeus and Crius were brought before Demeter -- as was her right for what they had done. She took the Sickle of Cronus and castrated them, then quartered their bodies, and then in her rage she swung the sickle back and forth, back and forth. So Coeus and Crius were sliced into a thousand trillion wriggling pieces; and still Demeter swung her sickle, until the titans two were a seething sea of energy and mass. She poured their entrails into the expanding Hyperion. The pieces of Coeus and Crius, light and dark, surged across the infant Universe, and henceforth the song and dance of Matter began.
 
@@ -23,7 +23,7 @@ Iapetus, my father, was brought before Hades. Iapetus was heaved towards the upt
 
 Tears are a funny feeling. They make their presence known well before they arrive, and yet arrive sudden all the same; and upon your skin they are cold.
 
-And, at last, the turn was mine. I had been crafty, I thought, to have fought for my kin but avoided the blame and the putrid punishment. I chose the path of dignity.
+And, at last, the turn was mine. I had been crafty, I thought, to have stood with my kin but avoided the blame and the putrid punishment. I chose the path of dignity.
 
 Zeus himself came to me. He spoke in a sublime and benevolent voice, as an equal. He brought me to the rim of the infant Universe.
 
@@ -63,13 +63,13 @@ For the first time, Zeus smiled. Then he laughed, a bitterness turned sweet and 
 
 And then the Sky came crashing down upon my shoulders. I bore it with my back and pressed on it with my hands. Hard as rock it was, and yet soft as silk. Its bulk stretched from pole to pole and beyond my comprehension.
 
-I tried to stand. The Sky did not budge. The Mountain was unyielding. I tried to ease the tension upon my spine, but my hold against the Sky waned and I felt it about to crush me. I tried even to move, but one shift of my pinky brought the whole world a-tremoring.
+I tried to stand. The Sky did not budge. The Mountain was unyielding. I tried to ease the pressure upon my spine, but my hold upon the Sky waned and I felt it about to crush me. I tried even to move, but one shift of my pinky brought the whole world a-tremoring.
+
+Was I free to leave? Was this a test of loyalty? Would Zeus come swiftly back to say that I had passed, and I could ascend? To join his ranks as part of the Olympian pantheon?
 
 "Zeus," I cried. "What have you done? What have I promised you?"
 
 But I heard nothing -- nothing but the echoed memory of his laugh, dark and evil like his father before him. There was a terrible, terrible silence in the Universe.
-
-Was I free to leave? Was this a test of loyalty? Would Zeus come swiftly back to say that I had passed, and I could ascend? To join his ranks as part of the Olympian pantheon?
 
 The burden grew. My muscles shivered and shook. It was as heavy as the weight of the Olympians above me; as heavy as the pains of my kin below me. Sweat dripped from my forehead and soaked into the ground at my feet, swirling with the concentrated spirits of my father inside.
 
@@ -77,25 +77,23 @@ I knelt there, waiting for someone to return. Zeus, magnanimous, would surely re
 
 Perhaps he would return with his pantheon. They would celebrate here on Mount Olympus and give toast to their victory -- our victory.
 
-Perhaps he would bring my fellow Titans, my brethren. There were those who joined Zeus well before the fighting began: Oceanus and Tethys of the cosmic rivers; Helios and Selene of the celestial lights; Mnemosyne and Themis of the all-knowing laws. 
+Perhaps he would bring my fellow Titans, my brethren. There were those who joined Zeus well before the fighting began: Oceanus and Tethys of the cosmic rivers; Helios and Selene of the celestial lights; Mnemosyne and Themis of the all-knowing laws. And of course there were my brothers: Prometheus and Epimetheus who had sided with Zeus. Like me! Like me.
 
-And of course there were my brothers: Prometheus and Epimetheus who had sided with Zeus. Like me! Like me.
-
-Could he not even, perhaps, show me the face of my daughter, dearest Calypso?
+Could I not even, perhaps, see the face of my daughter, dearest Calypso?
 
 Tears are a funny feeling indeed.
 
-Years passed and passed overhead, and as I suffered under the weight of the sky, I began to hear the Titans that writhed below me. I could hear Cronus on Zeus's thunderbolt-spindle -- a lamed, old madman as the Fates spun his destiny into fabric. I could hear Hyperion's song -- a pining tinnitus that longed for mercy. I could hear Coeus and Crius, mindless, and I could bear witness to the miracles they wrought: planets and moons, comets and asteroids, stardust and supernovae -- miracular, but mindless. I could hear my father -- but only in the recesses of my memory. I could feel him only in the coagulated spirits layered across Mount Olympus. I could hear them all, dying in the dark as the Olympians lived in the light.
+Years passed and passed overhead. As I suffered under the weight of the Sky, I began to hear the Titans that writhed below me. I could hear Cronus on Zeus's thunderbolt-spindle -- a lamed, old madman as the Fates spun his destiny into fabric. I could hear Hyperion's song -- a pining tinnitus that rung like a battle hymn. I could hear Coeus and Crius, mindless, and I could bear witness to the miracles they wrought: planets and moons, comets and meteors, stardust and supernovae -- miracular, but mindless. I could hear my father -- but only in the recesses of my memory. I could feel him only in the coagulated spirits layered across Mount Olympus. I could hear them all, dying in the dark as the Olympians lived in the light.
 
 Now I imagined the Olympians up there laughing at my expense as they partied in their palaces:
 
-"What did you tell him, Zeus? That it was a *special* honour? And he *believed you*?"
+"What did you tell him, Zeus? That it was a *special* honour? And he *believed you?*"
 
-"What was it that he called himself? Atlas *Enduring*?"
+"What was it that he called himself? Atlas *Enduring?*"
 
 "Did he say he would stand beside us in our sovereignty? *Beside* us? The gall..."
 
-Or maybe -- and an icy cold filled my heart -- they were not talking about me at all. Perhaps none of them were. Perhaps Zeus had not told the other Olympians what he had done to me. Perhaps Zeus had not returned because he had forgotten about me, and I was just another Titan to tie up like Cronus on his spindle.
+Or maybe -- and an icy cold filled my heart -- they were not talking about me at all. Perhaps none of them were. Perhaps Zeus had not told the other Olympians what he had done to me. Perhaps Zeus had not returned because he had forgotten about me. To him, I had been just another Titan to tie up like Cronus on his spindle.
 
 No one was coming for me.
 
@@ -107,12 +105,12 @@ But if I were to drop the Sky and end it all, would it not kill what little fami
 
 They would never know it.
 
-The weight of the Sky was not what pained me, even as years turned into centuries into millennia. It was the way it hung in my heart -- lowly, sunken, yet empty. It was the cold of a ball of ice in my chest, chilling me and killing me.
+The weight of the Sky was not what pained me, even as years turned into centuries into millennia. It was the way it hung in my heart -- lowly, sunken, yet empty. It was the cold of a ball of ice in my chest, chilling me and killing me. I could let go at any moment, and it would all be over.
 
-I could let go at any moment, and it would all be over. I could; I would; I should. But something stayed my hand.
+But something stayed my hand.
 
 Something moved on Mount Olympus. Carefully, I inched my eyes down to my feet. Far, far below, the planet had been transformed. My tears, my sweat, my spittle, had rained down in plumes across the planet. And under the planet's surface -- layered, latent -- were the concentrated pockets of the essence of Iapetus, come here eons ago when Hades emptied his helm into these hallowed halls. And as the fluids of my torment and of Iapetus combined -- the joint pain of father and son -- something became more than just essence.
 
-They wriggled and arose at my feet.
+Something wriggled and arose at my feet.
 
 Henceforth, the tragedy of Life begins.
