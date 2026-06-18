@@ -2,7 +2,7 @@
 title: Atlas Ascends
 description: When the Olympians sought to strike me down, I was swift to surrender - scrambling for sovereignty over a more putrid punishment. The Titanomachy, the primordial battle between the Titans and the Olympians, was ended, and the Olympian gods meted their retribution as promised.
 date: 2026-06-13 15:55:00
-updated: 2026-06-17 19:58:00
+updated: 2026-06-18 14:02:00
 tags:
 noToc: true
 ---
@@ -11,7 +11,7 @@ I am Atlas of the Mountain.
 
 In the stratagem of battle I was second only to Cronus, our king. With my guidance, Cronus led our kin into war and waged heavenly slaughter.
 
-But when the Olympians sought to strike me down, I was swift to surrender -- scrambling for sovereignty over a more putrid punishment. The Titanomachy, the primordial battle between the Titans and the Olympians, was ended, and the Olympian gods meted their retribution as promised.
+But when the Olympians defeated Cronus and sought to strike me down, I was swift to surrender -- scrambling for sovereignty over a more putrid punishment. I remained free while my kin fought on and into doom. The Titanomachy, the primordial battle between the Titans and the Olympians, was ended, and the Olympian gods meted their retribution as promised.
 
 Cronus was brought before Zeus, his son and successor. He was strung upon Zeus's cosmic spindle, and Zeus spun him around and around and around -- skin tearing, muscles bending, bones breaking, mind mangling. And so Cronus was spun into thread -- a fine, golden thread that glistened in the darkness of a proto-world torn apart by the Titanomachy. The spindle was passed to the Moirai, the Fates. They wove a tapestry with the string that had been king, and henceforth the fabric of Time began.
 
@@ -29,9 +29,9 @@ Tears are funny to me; they make their presence known well before they arrive an
 
 <br>
 
-At last, the turn was mine. I had been crafty, I thought, to have stood with my kin but avoided the blame and the putrid punishment. I had chosen the path of dignity.
+At last, the turn was mine. I had been crafty, I thought, to have stood with my kin but avoided the blame and the putrid punishment. I had known when our time was up and it was time to broker peace. I had chosen the path of dignity.
 
-Zeus himself came to me. He spoke in a sublime and benevolent voice -- as an equal, it seemed to me. He brought me to the rim of the infant Universe.
+Zeus himself came to me. He spoke in a sublime and benevolent voice -- as an equal, I thought. He brought me to the rim of the infant Universe.
 
 "Do you see the world we have wrought?" he said. "Do you see its chaos and infirmity? Do you see how your kin writhe?"
 
@@ -85,8 +85,6 @@ Perhaps he would return with his pantheon. They would celebrate here on Mount Ol
 
 Perhaps he would bring my fellow Titans, my brethren. There were those who joined Zeus well before the fighting began: Oceanus and Tethys of the cosmic rivers; Helios and Selene of the celestial lights; Mnemosyne and Themis of the all-knowing laws. And of course there were my brothers, Prometheus and Epimetheus. They all had sided with Zeus, like me! Like me...
 
-Could I not even, perhaps, see the face of my daughter, dearest Calypso?
-
 Tears are funny indeed. The dagger cut like a scythe on my skin.
 
 <br>
@@ -95,11 +93,9 @@ Tears are funny indeed. The dagger cut like a scythe on my skin.
 
 <br>
 
-Years passed and passed overhead. As I suffered under the weight of the Sky, I had begun to hear the Titans that writhed below me. I could hear Cronus on Zeus's thunderbolt-spindle -- a lame, old madman as the Fates spun his destiny into fabric. I could hear Hyperion's song -- a pining tinnitus that rang like a battle hymn. I could hear Coeus and Crius, mindless, and I could bear witness to the miracles they made: planets and moons, comets and meteors, stardust and supernovae -- miracular, but mindless. I could hear my father -- but only in the recesses of my memory. I could feel him only in the coagulated spirits layered across Mount Olympus.
+Years passed and passed overhead. As I suffered under the weight of the Sky, I had begun to hear the Titans that writhed below me. I could hear Cronus on Zeus's thunderbolt-spindle -- a lame, old madman as the Fates spun his destiny into fabric. I could hear Hyperion's song -- a pining tinnitus that rang like a battle hymn. I could hear Coeus and Crius, mindless, and I could bear witness to the miracles they made: planets and moons, comets and meteors, stardust and supernovae -- miracular, but mindless. I could hear my father -- but only in the recesses of my memory. I could feel him only in the coagulated spirits layered across Mount Olympus. I could hear all my kin, dying in the dark as the Olympians lived in the light. I existed in a world wrought of sin.
 
-I could hear all my kin, dying in the dark as the Olympians lived in the light. I existed in a world wrought of sin.
-
-Zeus had tricked me. It had taken me nigh on a thousand years to realise it. My blood boiled. I heaved my chest to swear a terrible oath at Zeus, son of Cronus -- but at once the Sky shimmied out of my grip and forced me back into my kneeling pose, frozen in the act of pledging myself to Zeus's servitude.
+Zeus had tricked me. It had taken me nigh on a thousand years to realise it. My blood boiled. I heaved my chest to swear a terrible oath at Zeus, son of Cronus -- but at once the Sky shimmied out of my grip and forced me back into my kneeling pose. The sky had frozen me in the act of pledging myself to Zeus's servitude.
 
 Now I imagined the Olympians in the Sky laughing at my expense as they partied in their palaces:
 
@@ -127,7 +123,7 @@ They would never know it.
 
 <br>
 
-The weight of the Sky was not what pained me, even as years turned into centuries into millennia. It was the way it hung in my heart -- lowly, sunken, yet empty. It was the cold of a ball of ice in my chest, chilling and killing me. I could let go at any moment, and it would all be over.
+The weight of the Sky was not what pained me, even as years turned into centuries, into millennia. It was the way it hung in my heart -- lowly, sunken, yet empty. It was a ball of ice in my chest, chilling and killing me. I could let go at any moment, and it would all be over.
 
 But something stayed my hand.
 
