@@ -1,6 +1,6 @@
 ---
 title: Web Dev Devotee | song parody
-description: 
+description: Using Claude Code in the middle of night ~ Just another web dev devotee
 date: 2026-07-02 19:53:00
 tags:
 noToc: true
