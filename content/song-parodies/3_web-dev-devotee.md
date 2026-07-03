@@ -2,6 +2,7 @@
 title: Web Dev Devotee | song parody
 description: Using Claude Code in the middle of night ~ Just another web dev devotee
 date: 2026-07-02 19:53:00
+updated: 2026-07-03 13:04:00
 tags:
 noToc: true
 ---
@@ -25,7 +26,7 @@ Sweaty palms melt your vibe (code)<br>
 Midnight debugging<br>
 
 The black magic of Next.js<br>
-README files under package jsons<br>
+READMEs under package jsons<br>
 Using Claude Code in the middle of night<br>
 Just another web dev devotee<br>
 Sunsets on the empty CV<br>
@@ -51,7 +52,7 @@ Sweaty palms melt your vibe (code)<br>
 Midnight debugging<br>
 
 The black magic of Next.js<br>
-README files under package jsons<br>
+READMEs under package jsons<br>
 Using Claude Code in the middle of night<br>
 Just another web dev devotee<br>
 Sunsets on the empty CV<br>
