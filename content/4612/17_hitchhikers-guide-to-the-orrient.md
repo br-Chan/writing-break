@@ -3,7 +3,7 @@ title: Hitchhiker's Guide to The Orrient
 description: This is a revised version of a story from 10 Aug 2022.
 date: 2025-09-17 21:06:00
 updated: 2025-12-28 22:44:00
-tags:
+tags: atro
 noToc: true
 ---
 
