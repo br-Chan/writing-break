@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Tagged &#39;actual-blog&#39;</title>
-		<meta name="description" content="On a writing break.">
+		<title>JavaScript | song parody</title>
+		<meta name="description" content="It falls apart, there&#39;s not a code to run there ~ It falls apart if there&#39;s not a code to write">
 		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
 		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
 		
@@ -384,6 +384,174 @@ header {
 
 .contentstart {
 	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
 	</head>
@@ -420,43 +588,118 @@ header {
 		<main id="main">
 			<heading-anchors>
 				
-<h1 id="tagged-actual-blog">Tagged “actual-blog”</h1>
 
 
-<ol reversed="" class="postlist" style="--postlist-index: 3">
-	<li class="postlist-item">
-		<a title="SOFTENG 325 Notes" href="/writing-break/actual-blog/2_softeng-325-notes/" class="postlist-link">
+
+<div class="precontent">
+	<h1 id="javascript-song-parody">JavaScript | song parody</h1>
+
+	<ul class="post-metadata">
+		<li>
+			<time datetime="2026-07-10">10/07/26</time>
+			 • updated
 			
-				SOFTENG 325 Notes
+				<time datetime="2026-07-10">10/07/26</time>
 			
-		</a>
-		
-		<time class="postlist-date" datetime="2025-10-30">
-			30 Oct 2025
-		</time>
-		&nbsp;·&nbsp;
-			<a href="/writing-break/tags/actual-blog/" class="postlist-date">actual-blog</a>
-		&nbsp;·&nbsp;<a class="postlist-date" href="/writing-break/actual-blog/2_softeng-325-notes/#start=content:&length=6&after=open%20post%20to%20keep%20reading...">:Preview</a>
-	</li>
-	<li class="postlist-item">
-		<a title="&quot;You always think you&#39;re the one who&#39;s better than me, living in the future and all. Well guess what, two can play at that game.&quot; ~ Past Me, 25 Oct 2022" href="/writing-break/actual-blog/1_an-email-battle-with-my-18-year-old-self/" class="postlist-link">
-			
-				An email battle with my 18-year-old self
-			
-		</a>
-		
-		<time class="postlist-date" datetime="2025-10-25">
-			25 Oct 2025
-		</time>
-		&nbsp;·&nbsp;
-			<a href="/writing-break/tags/actual-blog/" class="postlist-date">actual-blog</a>
-		&nbsp;·&nbsp;<a class="postlist-date" href="/writing-break/actual-blog/1_an-email-battle-with-my-18-year-old-self/#start=content:&length=6&after=open%20post%20to%20keep%20reading...">:Preview</a>
-	</li>
-</ol>
+		</li>
+		• Tags:
+			<li><a href="/writing-break/tags/song-parodies/" class="post-tag">song-parodies</a></li>
+	</ul>
+
+	
+<p>
+    390 words • Reading time: 2 minutes
+</p>
+
+	
+	
+	
+
+	<p><i>It falls apart, there&#39;s not a code to run there ~ It falls apart if there&#39;s not a code to write</i></p>
+
+	
+	
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<p><em>How it feels when I look at the state of generative AI in the software industry.</em></p>
+<p><em>A parody of <a href="https://www.youtube.com/watch?v=cJvJOsSfVcg">:Nomu</a> by Good Kid</em><br>
+<em><a href="https://www.youtube.com/watch?v=eXrYBYOnt9A">:Karaoke version</a></em></p>
+<hr>
+<center>
+My four Claude Codes, draw four conclusions<br>
+And none of them point to true<br>
+A tangled mess of code, I confess<br>
+But the intent was there, I swear<br>
+I set my sights on something that I thought was new
+<p>So now I sit and stare across<br>
+IDEs spanning the whole screen<br>
+Two spinning fans in my own head<br>
+No words to speak, been here a week<br>
+And still, I haven’t got a clue</p>
+<p>It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write<br>
+(Creative instinct, fluttering away from the mind)<br>
+It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write</p>
+<p>Each tech a tech stack of its own<br>
+Each page rendered only in Next<br>
+The syntax skips, semantics slips<br>
+And after Vite, growing defeat<br>
+Of language lost, tokens deplete<br>
+And I guess we LGTM’d<br>
+And lost all meaning in the end<br>
+It ended up a tiny piece<br>
+Of every code, of every line<br>
+Of every tech, of every debt</p>
+<p>It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write<br>
+(Creative instinct, fluttering away from the mind)<br>
+It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write</p>
+<p>A tangled mess of code, I confess<br>
+But the intent was there, I swear<br>
+I set my sights on something that I thought was you</p>
+<p>It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write<br>
+(Creative instinct, fluttering away from the mind)<br>
+It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write</p>
+<p>If there’s not a dev that’s right<br></p>
+<p>It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write<br>
+It falls apart, there’s not a code to run there<br>
+It falls apart if there’s not a code to write</p>
+</center>
 
 
-<p>See <a href="/writing-break/tags/">all tags</a>.</p>
 
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/song-parodies/3_web-dev-devotee/">
+							<b>← Previous in song-parodies</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>Web Dev Devotee | song parody</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+				<a class="links-nextprev-next" href="/writing-break/song-parodies/5_minecraft/">
+							<b>Next in song-parodies →</b>
+							<br>
+					<b>Next →</b>
+					<br>
+					<span>Minecraft | song parody</span>
+				</a>
+			
+		</ul>
+	</div>
 
 			</heading-anchors>
 		</main>
@@ -472,7 +715,7 @@ header {
 			</p>
 		</footer>
 		
-		<!-- This page `/tags/actual-blog/` was built on 2026-07-10T07:02:15.821Z -->
-		<script type="module" src="/writing-break/dist/xbxy_EL6cU.js"></script>
+		<!-- This page `/song-parodies/4_javascript/` was built on 2026-07-10T07:02:15.237Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>
