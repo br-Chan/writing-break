@@ -7,6 +7,8 @@ tags:
 noToc: true
 ---
 
+*On coming to terms with insomnia.*
+
 *A parody of [:Dance Class](https://www.youtube.com/watch?v=DQNkGccNXK0) by Good Kid*<br>
 *[:Karaoke version](https://www.youtube.com/watch?v=AmUmeFTM4Mo)*
 

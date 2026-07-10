@@ -2,13 +2,15 @@
 title: Web Dev Devotee | song parody
 description: Using Claude Code in the middle of night ~ Just another web dev devotee
 date: 2026-07-02 19:53:00
-updated: 2026-07-03 13:04:00
+updated: 2026-07-10 17:34:00
 tags:
 noToc: true
 ---
 
+*My doomed love letter to web development.*
+
 *A parody of [:LA Devotee](https://youtu.be/r5dNcKTcnPA?si=cy3O1vtLLGPrcLwX) by Panic! at the Disco*<br>
-*[:Karaoke version](https://www.youtube.com/watch?v=HsStCCTr928)*
+*[:Karaoke version](https://www.youtube.com/watch?v=HQdrFNeL7V4)*
 
 ---
 
@@ -39,13 +41,13 @@ Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another web dev devotee<br>
 
-You got merge conflicts from your pull request<br>
+You got merge conflicts on your pull request<br>
 And the GitHub Actions keep weeping your name<br>
-Ya couldn't change it, oh<br>
+Ya couldn't fix it, oh<br>
 Couldn't ever try to make it work, no<br>
-The frontend lights that read your wrongs<br>
-And a backend storm with Express errors<br>
-Couldn't change ya, oh<br>
+The frontend lawns that read your wrongs<br>
+And the backend storms with Express warnings<br>
+Couldn't change ya, heads up<br>
 Couldn't ever try to make you get a job<br>
 
 Sweaty palms melt your vibe (code)<br>
@@ -71,7 +73,7 @@ Web dev Devotee<br>
 Commits node modules!<br>
 
 The black magic of Serato & Visa<br>
-The Sand fields & Atlassian skies<br>
+The Sandfield & Atlassian skies<br>
 Never see Canva nor Orion's light<br>
 Just another web dev devotee<br>
 Sunsets on the Summer of Tech<br>
