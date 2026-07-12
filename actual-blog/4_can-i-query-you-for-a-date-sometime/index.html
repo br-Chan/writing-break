@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Can I Query you for a date sometime?</title>
+		<meta name="description" content="On a writing break.">
+		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
+		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
+		
+		
+		
+		<style>/* This is an arbitrary CSS string added to the bundle */
+/* Defaults */
+:root {
+	--font-family: -apple-system, system-ui, sans-serif;
+	--font-family-monospace: Consolas, Menlo, Monaco, Andale Mono WT, Andale Mono, Lucida Console, Lucida Sans Typewriter, DejaVu Sans Mono, Bitstream Vera Sans Mono, Liberation Mono, Nimbus Mono L, Courier New, Courier, monospace;
+}
+
+/* Theme colors */
+:root {
+	--color-gray-20: #e0e0e0;
+	--color-gray-50: #C0C0C0;
+	--color-gray-90: #333;
+
+	--background-color: #fff;
+
+	--text-color: var(--color-gray-90);
+	--text-color-link: #082840;
+	--text-color-link-active: #5f2b48;
+	--text-color-link-visited: #17050F;
+
+	--syntax-tab-size: 2;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-gray-20: #808080;
+		--color-gray-50: #505050;
+		--color-gray-90: #dad8d8;
+
+		/* --text-color is assigned to --color-gray-_ above */
+		--text-color-link: var(--text-color);
+		--text-color-link-active: #6969f7;
+		--text-color-link-visited: var(--text-color);
+
+		--background-color: #15202b;
+	}
+}
+
+
+/* Global stylesheet */
+* {
+	box-sizing: border-box;
+}
+
+@view-transition {
+	navigation: auto;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0 auto;
+	font-family: var(--font-family);
+	color: var(--text-color);
+	background-color: var(--background-color);
+}
+html {
+	overflow-y: scroll;
+}
+body {
+	max-width: 50em;
+}
+
+/* https://www.a11yproject.com/posts/how-to-hide-content/ */
+.visually-hidden:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Fluid images via https://www.zachleat.com/web/fluid-images/ */
+img{
+  max-width: 100%;
+}
+img[width][height] {
+  height: auto;
+}
+img[src$=".svg"] {
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+video,
+iframe {
+	width: 100%;
+	height: auto;
+}
+iframe {
+	aspect-ratio: 16/9;
+}
+
+p:last-child {
+	margin-bottom: 0;
+}
+p {
+	line-height: 1.5;
+}
+
+li {
+	line-height: 1.5;
+}
+
+a[href] {
+	color: var(--text-color-link);
+}
+a[href]:visited {
+	color: var(--text-color-link-visited);
+}
+a[href]:hover,
+a[href]:active {
+	color: var(--text-color-link-active);
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+main,
+footer {
+	padding: 1rem;
+}
+main :first-child {
+	margin-top: 0;
+}
+
+header {
+	border-bottom: 1px dashed var(--color-gray-20);
+}
+
+#skip-link {
+	text-decoration: none;
+	background: var(--background-color);
+	color: var(--text-color);
+	padding: 0.5rem 1rem;
+	border: 1px solid var(--color-gray-90);
+	border-radius: 2px;
+}
+
+/* Prevent visually-hidden skip link fom pushing content around when focused */
+#skip-link.visually-hidden:focus {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	/* Ensure it is positioned on top of everything else when it is shown */
+	z-index: 999;
+}
+
+.toc {
+	margin-top: -1rem;
+	margin-left: -1.5rem;
+}
+
+.links-bordertop {
+	border-top: 1px dashed var(--color-gray-20);
+	padding: 1em 0 0 0;
+}
+.links-nextprevwrapper {
+	display: grid;
+	gap: .5em;
+	grid-template-columns: 1fr 1fr;
+}
+.links-nextprev {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: .5em 1em;
+	list-style: "";
+	padding: 0 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.links-nextprev-prev a[href] {
+	color: blue;
+}
+.links-nextprev-prev, .links-nextprev-next {
+	border-radius: 1rem;
+	border: 1px dashed var(--color-gray-20);
+	padding: 1em;
+	text-decoration: none;
+	/* border-color: black; */
+}
+.links-nextprev-prev:hover span, .links-nextprev-next:hover span {
+	text-decoration: underline;
+}
+.links-nextprev-next {
+	text-align: right;
+}
+.links-nextprev-next:hover, .links-nextprev-prev:hover {
+	/* background: #f9f9f9; */
+	border-color: var(--text-color);
+}
+.links-nextprev a:hover {
+    color: var(--text-color);
+}
+
+table {
+	border-collapse: collapse;
+	margin: 1em 0;
+}
+table td,
+table th {
+	padding-right: 3em;
+	border: 1px solid;
+}
+
+pre,
+code {
+	font-family: var(--font-family-monospace);
+}
+pre:not([class*="language-"]) {
+	margin: .5em 0;
+	line-height: 1.375; /* 22px /16 */
+	-moz-tab-size: var(--syntax-tab-size);
+	-o-tab-size: var(--syntax-tab-size);
+	tab-size: var(--syntax-tab-size);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	overflow-x: auto;
+}
+code {
+	word-break: break-all;
+}
+.nutshell-bubble code {
+    background: white;
+	padding: 0;
+}
+
+/* Header */
+header {
+	display: flex;
+	gap: 1em;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+}
+.home-link {
+	flex-grow: 1;
+	font-size: 1.8em; /* 16px /16 */
+	font-weight: 700;
+}
+.home-link:link:not(:hover) {
+	text-decoration: none;
+}
+
+/* Nav */
+.nav {
+	display: flex;
+	gap: .5em 1em;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.nav-item {
+	display: inline-block;
+}
+.nav-item a[href]:not(:hover) {
+	text-decoration: none;
+}
+.nav a[href][aria-current="page"] {
+	text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+	counter-reset: start-from var(--postlist-index);
+	list-style: none;
+	padding: 0;
+	padding-left: 1.5rem;
+}
+.postlist-item {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	counter-increment: start-from -1;
+	margin-bottom: 1em;
+}
+.postlist-item:before {
+	display: inline-block;
+	pointer-events: none;
+	content: "" counter(start-from, decimal-leading-zero) ". ";
+	line-height: 100%;
+	text-align: right;
+	margin-left: -1.5rem;
+}
+.postlist-date,
+.postlist-item:before {
+	font-size: 0.8125em; /* 13px /16 */
+	color: var(--color-gray-90);
+}
+.postlist-date {
+	word-spacing: -0.5px;
+}
+.postlist-link {
+	font-size: 1.1875em; /* 19px /16 */
+	font-weight: 700;
+	flex-basis: calc(100% - 1.5rem);
+	padding-left: .25em;
+	padding-right: .5em;
+	text-underline-position: from-font;
+	text-underline-offset: 0;
+	text-decoration-thickness: 1px;
+}
+.postlist-desc {
+	font-size: 0.8125em;
+	font-weight: thin;
+	color: var(--color-gray-90);
+	text-decoration-thickness: 0px;
+}
+.postlist-item-active .postlist-link {
+	font-weight: bold;
+}
+
+.compactpostlist-link {
+	text-decoration: none;
+}
+.compactpostlist-link-active {
+	text-decoration: underline;
+}
+
+/* Tags */
+.post-tag {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: capitalize;
+	font-style: italic;
+}
+.postlist-item > .post-tag {
+	align-self: center;
+}
+
+/* Tags list */
+.post-metadata {
+	display: inline-flex;
+	flex-wrap: wrap;
+	gap: .5em;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	/* margin-bottom: 1rem; */
+}
+.post-metadata time {
+	/* margin-right: 1em; */
+}
+
+.precontent {
+	border-bottom: 1px dashed var(--color-gray-20);
+	padding-bottom: 1rem;
+}
+
+.contentstart {
+	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
+}</style>
+		
+	</head>
+	<body class="reader-bar-start">
+		<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+
+		<header>
+			<a href="/writing-break/" class="home-link">Writing Break</a>
+			<nav>
+				<h2 class="visually-hidden" id="top-level-navigation-menu">Top level navigation menu</h2>
+				<ul class="nav">
+					<li class="nav-item">
+						<a href="/writing-break/">Home</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/feed/feed.xml">Feed</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/posts/">All Posts</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/4612/">4612</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/tags/">Tags</a>
+					</li>
+					<li class="nav-item">
+						<a href="/writing-break/about/">About</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main id="main">
+			<heading-anchors>
+				
+
+
+
+<div class="precontent">
+	<h1 id="can-i-query-you-for-a-date-sometime">Can I Query you for a date sometime?</h1>
+
+	<ul class="post-metadata">
+		<li>
+			<time datetime="2026-07-12">12/07/26</time>
+			 • updated
+			
+				<time datetime="2026-07-12">12/07/26</time>
+			
+		</li>
+		• Tags:
+			<li><a href="/writing-break/tags/actual-blog/" class="post-tag">actual-blog</a>, </li>
+			<li><a href="/writing-break/tags/tech-talk/" class="post-tag">tech-talk</a></li>
+	</ul>
+
+	
+<p>
+    2,132 words • Reading time: 11 minutes
+</p>
+
+	
+	<a href="#table-of-contents">:Table of Contents</a>
+
+	<p><i></i></p>
+
+	<h3 id="xtable-of-contents">:xTable of Contents</h3>
+	<p></p><nav class="toc">
+                <ol>
+                    
+                    <li><a href="#tanstack-query">TanStack Query</a>
+            		</li>
+
+                    <li><a href="#openapi-typescript">OpenAPI TypeScript</a>
+            		</li>
+
+                    <li><a href="#openapi-fetch">OpenAPI Fetch</a>
+            		</li>
+
+                    <li><a href="#services-and-hooks">Services and Hooks</a>
+            		</li>
+
+                    <li><a href="#swagger-vs.-scalar">Swagger vs. Scalar</a>
+            		</li>
+
+                    <li><a href="#can-we-actually-see-something-happen-now%3F">Can we actually see something happen now?</a>
+            		</li>
+                </ol>
+            </nav><p></p>
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<h2 id="tanstack-query" tabindex="-1">TanStack Query</h2>
+<p>Day 2 of my full-stack web project: figure out how to set up TanStack Query.</p>
+<p>I’ve had cursory experience with the library, limited to writing up query &amp; mutation hooks (and watching the query client code in respectful awe). I spent a day learning and researching. Most of this wasn’t to do with rote learning how TanStack Query works (something I already knew), but instead with the best way to set it up and achieve what I wanted in a well structured manner. I took a look at Bulletproof React, my go-to for all things architectural, as well as existing repositories I’ve contributed to that use TanStack Query. I could say more about Bulletproof React, but for now here’s what they say about <a href="https://github.com/alan2207/bulletproof-react/blob/master/docs/api-layer.md">isolating the API layer</a>.</p>
+<p>I created a single instance of my API client using Axios. This way, I can configure it however I want and use it across the whole application, reducing many headaches. It’s also fun to be able to import the <code>api</code> client from a cool and spooky location and go <code>api.get()</code> in one swift call… No? Just me?</p>
+<p>The TL;DR of TanStack Query is you create a new QueryClient (courtesy of the library) and use a QueryClientProvider to wrap your application in main.ts. Then you can call special hooks to make queries.</p>
+<p>I also did a funky thing with a function called <code>createRootRouteWithContext</code>. It does exactly what it says on the tin, creating the route such that it requires a certain context to be given to it – in my case, the query client. This root context will be provided to all routes in the route tree without having to provide it to each route individually. To be completely frank, I don’t yet fully grasp the utility of providing the query client to each route if I’m going to be defining the API requests externally. My thinking is that this isn’t as useful in the way I’ve decided to structure my project, but perhaps I just haven’t grasped the idea fully in the first place.</p>
+<p>My time at WDCC exposed me to the wonderful design pattern of defining API requests separately. That, paired with Bulletproof React’s “features” guidelines makes for a very juicy architectural combination. More on that later.</p>
+<h3 id="%3A-speaking-of-wdcc%E2%80%A6" tabindex="-1">: Speaking of WDCC…</h3>
+<p>In our project last year, our API client was completely hand rolled by our resident web dev pro. It was 473 lines long… I don’t know how to feel about that. In my honest opinion, it’s not a bad thing to reduce bloat in your own application by using a trusted, well-used dependency.</p>
+<h2 id="openapi-typescript" tabindex="-1">OpenAPI TypeScript</h2>
+<p>Moving onto day 3…</p>
+<p>During my research, I had a growing concern: how should I keep types in the frontend synchronised with the backend? Without manually writing them in both the frontend and backend, that is (which would be an utter pain and kick me out of the software engineering space).</p>
+<p>In my internship, the answer to that was to create a shared package as a yarn workspace and add it as a dependency in the package.json. I immediately flashbacked to all the horrors of trying to get the type safety working properly… Never again. At least, not with yarn.</p>
+<p>Meanwhile, Bulletproof React’s demo repo has a <code>types/api.ts</code> file that says:</p>
+<blockquote>
+<p>// let’s imagine this file is autogenerated from the backend</p>
+</blockquote>
+<p>Bingo.</p>
+<h3 id="let%E2%80%99s-auto-generate-the-file-from-the-backend" tabindex="-1">Let’s auto-generate the file from the backend</h3>
+<p>My research led me to <a href="https://openapi-ts.dev/">openapi-typescript</a>, a library that converts OpenAPI schemas to TypeScript types. This fit perfectly because <a href="http://ASP.NET">ASP.NET</a> recently updated themselves to use OpenAPI by default, so I’ve basically got everything set up already. I dove into openapi-typescript research.</p>
+<p>The process is as follows:</p>
+<ol>
+<li>Obtain your input OpenAPI schema (JSON or YAML).</li>
+<li>Run the openapi-typescript command to convert the schema file to an output .ts file.</li>
+<li>Use this .ts file to your heart’s content.</li>
+</ol>
+<p>I may be explaining my dev work out of chronological order a bit, but I ended up writing a package.json script called <code>gen-api</code> to automate all this. Firstly, I installed a backend package that outputs the OpenAPI schema in the output obj folder whenever the build runs. Then:</p>
+<pre><code>&quot;gen-api&quot;: &quot;dotnet build apps/Backend &amp;&amp; pnpx openapi-typescript apps/Backend/obj/Backend.json --output apps/Frontend/src/types/api.ts&quot;,
+</code></pre>
+<p>So whenever I make changes to the backend, I just need to run <code>pnpm gen-api</code> and the updated schema is channelled into the api.ts. This will also help when I set up CI/CD and deploy this application in the murky future. I’m quite chuffed with this workflow, though!</p>
+<h3 id="the-auto-generated-file" tabindex="-1">The auto-generated file</h3>
+<p>For curiosity’s sake, here’s the skinny on the file generated by openapi-typescript.</p>
+<picture><source type="image/avif" srcset="/writing-break/img/Ybt0C2VIUs-770.avif 770w"><source type="image/webp" srcset="/writing-break/img/Ybt0C2VIUs-770.webp 770w"><img loading="lazy" decoding="async" src="/writing-break/img/Ybt0C2VIUs-770.png" alt="openapi-fetch" width="770" height="777"></picture>
+<p>The <code>paths</code> interface exposes the whole API. For example, “/api/Friends” has a get and a post, but no put or delete. Each post request has no parameters but does have a request body, and has a response of status 200 with certain expected content. All of that is described by the <code>paths</code> interface.</p>
+<p>The <code>components</code> interface contains all your schemas. My Friend model written in C# is here.</p>
+<p>These are meant to be exported and used to create your frontend types. For example:</p>
+<pre><code>export type Friend = components[&quot;schemas&quot;][&quot;Friend&quot;];
+</code></pre>
+<p>It may look stupid, but it’s comforting to know that you have a single source of truth in the backend, and that the Friend type is 100% accurate. I really enjoy it being “data-driven”, or if that’s the wrong term, the idea that you only need to change one thing and everything else follows suit. It’s something that developers like Mojang are doing in Minecraft, making everything under the sun data-driven (from configuring blocks that are flammable to what is a painting). My writing blog is also data-driven in a way: I simply need to add a markdown file and everything else is handled for me to display it in the UI. It’s a very simple kind of beauty.</p>
+<h2 id="openapi-fetch" tabindex="-1">OpenAPI Fetch</h2>
+<p>The people who made openapi-typescript also made openapi-fetch, a “type-safe fetch client that pulls in your OpenAPI schema. Weighs 6 kb and has virtually zero runtime”. I found this really rewarding, even though I had to switch out Axios for it.</p>
+<picture><source type="image/avif" srcset="/writing-break/img/_iK6Qd2jEF-1358.avif 1358w"><source type="image/webp" srcset="/writing-break/img/_iK6Qd2jEF-1358.webp 1358w"><img loading="lazy" decoding="async" src="/writing-break/img/_iK6Qd2jEF-1358.png" alt="openapi-fetch" width="1358" height="617"></picture>
+<p>Notice how I pass in <code>paths</code> from the auto-generated api.ts as a generic in <code>createClient</code>. That’s important for enabling type-safety!</p>
+<p>Other than some differences in syntax, the API client is essentially the same! But now it’s TYPE-SAFE. As someone who suffers from chronic carelessness, getting type errors and intellisense for entire APIs is like ambrosia.</p>
+<p>Here’s it knowing that there is only one API route possible for a POST request:</p>
+<picture><source type="image/avif" srcset="/writing-break/img/AhhaTb-o5F-1231.avif 1231w"><source type="image/webp" srcset="/writing-break/img/AhhaTb-o5F-1231.webp 1231w"><img loading="lazy" decoding="async" src="/writing-break/img/AhhaTb-o5F-1231.png" alt="It knows all the API paths" width="1231" height="145"></picture>
+<p>And here’s it knowing that the shape of a request body isn’t what the backend expects:</p>
+<picture><source type="image/avif" srcset="/writing-break/img/chEfTlF0jh-1110.avif 1110w"><source type="image/webp" srcset="/writing-break/img/chEfTlF0jh-1110.webp 1110w"><img loading="lazy" decoding="async" src="/writing-break/img/chEfTlF0jh-1110.png" alt="It knows all the API paths" width="1110" height="147"></picture>
+<p>Needless to say, this brings me immense joy. Of course, I’m still cautious: I’ve only been using this for a day, and there’s more that I could improve. But so far, it’s allowed me to create a rock solid set of types that match the backend perfectly.</p>
+<h2 id="services-and-hooks" tabindex="-1">Services and Hooks</h2>
+<p>It was finally time to write up my services and query hooks.</p>
+<p>Bulletproof React promotes the idea of organising code into feature folders. You can read more about project structure <a href="https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md">here</a>. In my project, I created a <code>src/features/friends</code> directory and an api folder within to house my service.ts and queries.ts. I find this method of organisation pretty neat, because it keeps everything modular and separated really intelligently (as long as you do it right).</p>
+<p>Bulletproof React also promotes a very uni-directional flow of dependencies between code, which I’ve used to great effect in my most recent internship and in a couple personal projects. I won’t go too into it, as the link above discusses it more than well enough. I look back fondly on the lengthy discussions with my internship partner Joran as we figured out how to structure a legacy codebase into something much more palatable.</p>
+<p>There seem to be a couple different ways to write your frontend services, but I go for the following strategy:</p>
+<pre><code>const FriendService = {
+    createFriend: async (data: FriendCreateRequest) =&gt; {
+		const response = await api.POST(&quot;/api/Friends&quot;, {
+			body: data,
+		});
+		return response;
+	},
+
+	getFriends: async () =&gt; {
+		const response = await api.GET(&quot;/api/Friends&quot;);
+		return response;
+	},
+
+	getFriendById: async (friendId: string) =&gt; {
+		const response = await api.GET(`/api/Friends/{id}`, {
+			params: { path: { id: friendId } },
+		});
+		return response;
+	},
+
+    // And so on...
+}
+</code></pre>
+<p>Then you refer to each service function like <code>FriendService.getFriends</code>. Note the interesting OpenAPI Fetch syntax.</p>
+<p>This way differs from what Bulletproof React suggests, in which each action is put in its own file (e.g. get-friends.ts, create-friend.ts, etc.). I decided to go for a proper service ‘layer’, followed by a single queries file.</p>
+<picture><source type="image/avif" srcset="/writing-break/img/918Xld1p7C-826.avif 826w"><source type="image/webp" srcset="/writing-break/img/918Xld1p7C-826.webp 826w"><img loading="lazy" decoding="async" src="/writing-break/img/918Xld1p7C-826.png" alt="Friend queries" width="826" height="512"></picture>
+<p>The above is pretty bread and butter for TanStack Query. You create a query or mutation hook and use either <code>useQuery</code> or <code>useMutation</code> depending on if you’re fetching data or manipulating it in some way.</p>
+<p>I created a shared friendsQueryOptions function so that I could write the query key in just one place, and use it when invalidating queries in the <code>useCreateFriend</code> mutation hook. Query invalidation is a thing you need to do because once you manipulate certain data, you need to “invalidate” out-of-date data that may be cached from previous queries.</p>
+<p>I could create a “query key factory” or something like that – it was something I read up on. I’ll look into it at some point, but when I only have one query key to keep track of (“friends”) I don’t see the utility just yet.</p>
+<p>While I was doing this, I took the time to create DTOs for the Friend model: FriendCreateRequest and FriendUpdateRequest. They’re both identical, just without the id field since there is no need for the user to give an id when creating or updating a certain friend. Because of my clever workflow design decisions made earlier in the day, all I had to do was write up the C# classes, update the controller functions to use these Request models, and then run <code>pnpm gen-api</code> to update the frontend api.ts!</p>
+<p>Now I needed to make sure that the changes I’d made to the backend weren’t breaking anything, but so far I hadn’t anything to interact with the API.</p>
+<h2 id="swagger-vs.-scalar" tabindex="-1">Swagger vs. Scalar</h2>
+<p>Swagger is the de facto interactive OpenAPI documentation. I’ve had experience using it before to test APIs.</p>
+<p>But I found out that OpenAPI had an update and recently moved to this other thing called Scalar UI to replace Swagger as the default. Or maybe I read it wrong, and OpenAPI simply never shipped with built-in support for Swagger. Either way, here’s the specific <a href="https://learn.microsoft.com/en-us/aspnet/core/fundamentals/openapi/using-openapi-documents?view=aspnetcore-10.0">Microsoft Learn article</a> talking all about it.</p>
+<p>I originally had a Swagger set up, but I was having a conflict with the schema where the Swagger wouldn’t perceive me entering values into the input fields and gave me validation errors even though I followed them to the letter. So I went with Scalar, the prescribed modern alternative.</p>
+<p>I was VERY skeptical – I always err on the side of caution when introducing myself to new techs for little reason. But I was blown away by how suave Scalar looks:</p>
+<picture><source type="image/avif" srcset="/writing-break/img/BGLF1rFTd8-1918.avif 1918w"><source type="image/webp" srcset="/writing-break/img/BGLF1rFTd8-1918.webp 1918w"><img loading="lazy" decoding="async" src="/writing-break/img/BGLF1rFTd8-1918.png" alt="Scalar interactive API docs" width="1918" height="862"></picture>
+<p>It completely does away with the tacky 2010s design of Swagger and goes for a more modern, minimal look. And, vitally, it still provides request testing. It lets you set the cookie, header values, and of course the query params and request body with a very intuitive UI/UX.</p>
+<p>I’m quite happy to be using Scalar now. I’ll see how it goes. I made sure all my endpoints worked fine with the new models.</p>
+<h2 id="can-we-actually-see-something-happen-now%3F" tabindex="-1">Can we actually see something happen now?</h2>
+<p>Up to this point, I still don’t know if there are any bugs in fetching data from the backend and if I’ve written any TanStack code wrong.</p>
+<p>Meanwhile, while writing up this post, I noticed another openapi-typescript library I hadn’t noticed before: openapi-react-query. It’s apparently a thin library made precisely for my situation: using TanStack Query with openapi-typescript and openapi-fetch.</p>
+<p><em>Oh god,</em> I thought, <em>I really shouldn’t get myself lost in this type-safe rabbit hole.</em></p>
+<p>Right?</p>
+<p>That, as well as actually seeing if this whole architecture works, will be the agenda for the next post.</p>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/actual-blog/3_hey-girl-are-you-into-classical-music-because-you-are-csharp/">
+							<b>← Previous in actual-blog</b>
+							<br>
+							<b>← Previous in tech-talk</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>Hey girl are you into classical music, because you are C#!</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
+
+			</heading-anchors>
+		</main>
+
+		<footer>
+			<p>
+				<em>Made by <a href="https://br-chan.github.io/">br-Chan</a></em>
+				<br>
+				<em>
+					Built with <a href="https://www.11ty.dev/">Eleventy v3.1.2</a>
+					and enhanced with <a href="https://ncase.me/nutshell/#WhatIsNutshell">:Nutshell</a>
+				</em>
+			</p>
+		</footer>
+		
+		<!-- This page `/actual-blog/4_can-i-query-you-for-a-date-sometime/` was built on 2026-07-12T06:41:45.109Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
+	</body>
+</html>
