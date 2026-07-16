@@ -2,6 +2,7 @@
 title: JavaScript | song parody
 description: It falls apart, there's not a code to run there ~ It falls apart if there's not a code to write
 date: 2026-07-10 17:38:00
+updated: 2026-07-17 11:14:00
 tags:
 noToc: true
 ---
@@ -28,7 +29,7 @@ And still, I haven't got a clue
 
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
-(Creative instinct, fluttering away from the mind)<br>
+(The creative instinct fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
@@ -45,7 +46,7 @@ Of every tech, of every debt
 
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
-(Creative instinct, fluttering away from the mind)<br>
+(The creative instinct fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
@@ -55,7 +56,7 @@ I set my sights on something that I thought was you
 
 It falls apart, there's not a code to run there<br>
 And it falls apart if there's not a code to write<br>
-(Creative instinct, fluttering away from the mind)<br>
+(The creative instinct fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
