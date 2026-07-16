@@ -14,7 +14,7 @@ noToc: true
 ---
 
 <center>
-My four Claude Codes, draw four conclusions<br>
+My four Claude Codes, make four different thoughts<br>
 And none of them point to true<br>
 A tangled mess of code, I confess<br>
 But the intent was there, I swear<br>
@@ -54,7 +54,7 @@ But the intent was there, I swear<br>
 I set my sights on something that I thought was you
 
 It falls apart, there's not a code to run there<br>
-It falls apart if there's not a code to write<br>
+And it falls apart if there's not a code to write<br>
 (Creative instinct, fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
