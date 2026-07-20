@@ -1,6 +1,6 @@
 ---
 title: Back in WDCC | song parody
-description: Frontend devs make me sing and shout ~ That Figma's always on my mi-mi-mi-mi-mi-mi-mi-mi-mind
+description: Frontend devs make me sing and shout ~ That Figma's always on my, my, my, my, my, my, my, my, my mind!
 date: 2026-07-20 19:36:00
 tags:
 noToc: true

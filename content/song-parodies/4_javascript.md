@@ -37,7 +37,8 @@ Each tech a tech stack of its own<br>
 Each page rendered only in Next<br>
 The syntax skips, semantics slips<br>
 And after Vite, growing defeat<br>
-Of language lost, tokens deplete<br>
+Of language lost, tokens deplete
+
 And I guess we LGTM'd<br>
 And lost all meaning in the end<br>
 It ended up a tiny piece<br>
