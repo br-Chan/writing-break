@@ -104,7 +104,7 @@ Bulletproof React also promotes a very uni-directional flow of dependencies betw
 
 There seem to be a couple different ways to write your frontend services, but I go for the following strategy:
 
-```
+```ts
 const FriendService = {
     createFriend: async (data: FriendCreateRequest) => {
 		const response = await api.POST("/api/Friends", {
