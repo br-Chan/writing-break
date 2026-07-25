@@ -609,7 +609,7 @@ pre[class*="language-diff-"] {
 
 	
 <p>
-    2,132 words • Reading time: 11 minutes
+    2,076 words • Reading time: 10 minutes
 </p>
 
 	
@@ -698,29 +698,28 @@ pre[class*="language-diff-"] {
 <p>Bulletproof React promotes the idea of organising code into feature folders. You can read more about project structure <a href="https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md">here</a>. In my project, I created a <code>src/features/friends</code> directory and an api folder within to house my service.ts and queries.ts. I find this method of organisation pretty neat, because it keeps everything modular and separated really intelligently (as long as you do it right).</p>
 <p>Bulletproof React also promotes a very uni-directional flow of dependencies between code, which I’ve used to great effect in my most recent internship and in a couple personal projects. I won’t go too into it, as the link above discusses it more than well enough. I look back fondly on the lengthy discussions with my internship partner Joran as we figured out how to structure a legacy codebase into something much more palatable.</p>
 <p>There seem to be a couple different ways to write your frontend services, but I go for the following strategy:</p>
-<pre><code>const FriendService = {
-    createFriend: async (data: FriendCreateRequest) =&gt; {
-		const response = await api.POST(&quot;/api/Friends&quot;, {
-			body: data,
-		});
-		return response;
-	},
+<pre class="language-ts" tabindex="0"><code class="language-ts"><span class="token keyword">const</span> FriendService <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">createFriend</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>data<span class="token operator">:</span> FriendCreateRequest<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token constant">POST</span><span class="token punctuation">(</span><span class="token string">"/api/Friends"</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+			body<span class="token operator">:</span> data<span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> response<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-	getFriends: async () =&gt; {
-		const response = await api.GET(&quot;/api/Friends&quot;);
-		return response;
-	},
+	<span class="token function-variable function">getFriends</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">(</span><span class="token string">"/api/Friends"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> response<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-	getFriendById: async (friendId: string) =&gt; {
-		const response = await api.GET(`/api/Friends/{id}`, {
-			params: { path: { id: friendId } },
-		});
-		return response;
-	},
+	<span class="token function-variable function">getFriendById</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span>friendId<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+		<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> api<span class="token punctuation">.</span><span class="token constant">GET</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">/api/Friends/{id}</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+			params<span class="token operator">:</span> <span class="token punctuation">{</span> path<span class="token operator">:</span> <span class="token punctuation">{</span> id<span class="token operator">:</span> friendId <span class="token punctuation">}</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+		<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token keyword">return</span> response<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span>
 
-    // And so on...
-}
-</code></pre>
+    <span class="token comment">// And so on...</span>
+<span class="token punctuation">}</span></code></pre>
 <p>Then you refer to each service function like <code>FriendService.getFriends</code>. Note the interesting OpenAPI Fetch syntax.</p>
 <p>This way differs from what Bulletproof React suggests, in which each action is put in its own file (e.g. get-friends.ts, create-friend.ts, etc.). I decided to go for a proper service ‘layer’, followed by a single queries file.</p>
 <picture><source type="image/avif" srcset="/writing-break/img/918Xld1p7C-826.avif 826w"><source type="image/webp" srcset="/writing-break/img/918Xld1p7C-826.webp 826w"><img loading="lazy" decoding="async" src="/writing-break/img/918Xld1p7C-826.png" alt="Friend queries" width="826" height="512"></picture>
@@ -763,6 +762,18 @@ pre[class*="language-diff-"] {
 				</a>
 		</ul>
 		<ul class="links-nextprev">
+					<a class="links-nextprev-next" href="/writing-break/actual-blog/5_ive-booked-us-a-table-for-two/">
+						<b>Next in actual-blog →</b>
+						<br>
+						<span>I&#39;ve booked us a Table for two :O</span>
+					</a>
+				
+					<a class="links-nextprev-next" href="/writing-break/actual-blog/5_ive-booked-us-a-table-for-two/">
+						<b>Next in tech-talk →</b>
+						<br>
+						<span>I&#39;ve booked us a Table for two :O</span>
+					</a>
+				
 				<a class="links-nextprev-next" href="/writing-break/song-parodies/6_back-in-wdcc/">
 					<b>Next →</b>
 					<br>
@@ -786,7 +797,7 @@ pre[class*="language-diff-"] {
 			</p>
 		</footer>
 		
-		<!-- This page `/actual-blog/4_can-i-query-you-for-a-date-sometime/` was built on 2026-07-20T07:45:42.866Z -->
+		<!-- This page `/actual-blog/4_can-i-query-you-for-a-date-sometime/` was built on 2026-07-25T11:52:45.835Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>

@@ -5,11 +5,69 @@
   <subtitle>On a writing break.</subtitle>
   <link href="https://br-chan.github.io/writing-break/feed/feed.xml" rel="self" />
   <link href="https://br-chan.github.io/writing-break/" />
-  <updated>2026-07-20T19:36:00Z</updated>
+  <updated>2026-07-25T23:50:00Z</updated>
   <id>https://br-chan.github.io/writing-break/</id>
   <author>
     <name>br-Chan</name>
   </author>
+  <entry>
+    <title>I&#39;ve booked us a Table for two :O</title>
+    <link href="https://br-chan.github.io/writing-break/actual-blog/5_ive-booked-us-a-table-for-two/" />
+    <updated>2026-07-25T23:50:00Z</updated>
+    <id>https://br-chan.github.io/writing-break/actual-blog/5_ive-booked-us-a-table-for-two/</id>
+    <content type="html">&lt;p&gt;So, here’s (finally) the context for this side project of mine: I want an aide to help me keep in touch with my friends better!&lt;/p&gt;
+&lt;p&gt;Over the course of my 4-year degree, I’ve met TONS of knew people. Before university, I was much more introverted and I did have friends (shout out to the man KNW), but I had a lot of trouble meeting new people. My first year of uni changed all that, and it was an exponential growth from there.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Pebbling&quot;&gt;:Pebbling&lt;/a&gt; is a term used for how penguins present pebbles to their loved ones to show their love, and it’s more recently become a term to refer to how &lt;a href=&quot;https://en.wikipedia.org/wiki/Pebbling#Pebbling_in_humans&quot;&gt;:humans send each other small things&lt;/a&gt; like memes and videos for much the same reason.&lt;/p&gt;
+&lt;p&gt;I want an application that will help me make sure that I’m keeping in touch with all the people I want to keep in touch with – whether that’s through a small catch up, random question, a physical hangout, a game session, or even just a meme. So it sort of transcends “friends”, and more about just the people that you know in general.&lt;/p&gt;
+&lt;h2 id=&quot;the-frontend%2C-finally&quot; tabindex=&quot;-1&quot;&gt;The Frontend, Finally&lt;/h2&gt;
+&lt;p&gt;First off, I had to set up some CORS stuff so that the backend and frontend could properly talk to each other:&lt;/p&gt;
+&lt;pre class=&quot;language-cs&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-cs&quot;&gt;builder&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Services&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;AddCors&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;options &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    options&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;AddPolicy&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+        &lt;span class=&quot;token named-parameter punctuation&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;AllowViteDevServer&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+        policy &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+            policy&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;WithOrigins&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;http://localhost:3000&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;AllowAnyHeader&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;AllowAnyMethod&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;And once I’d added that to my &lt;code&gt;Program.cs&lt;/code&gt;, we were ready to rumble.&lt;/p&gt;
+&lt;h2 id=&quot;%3Afun-fact-about-cors-and-nutshell&quot; tabindex=&quot;-1&quot;&gt;:Fun Fact about CORS and Nutshell&lt;/h2&gt;
+&lt;p&gt;For anyone not reading this post on &lt;a href=&quot;https://br-chan.github.io/writing-break/actual-blog/5_ive-booked-us-a-table-for-two/&quot;&gt;:my actual site&lt;/a&gt;, I use this library called Nutshell, made by Niki “commits her node modules” Case. It allows links to be opened up as little panels on the same page, rather than opened up in a new page. These links are denoted by the colons prepending them. But I can only link to webpages that have &lt;a href=&quot;https://ncase.me/nutshell/#CaveatOnLinking&quot;&gt;:CORS enabled&lt;/a&gt; or have Nutshell installed.&lt;/p&gt;
+&lt;h2 id=&quot;all-roads-lead-to-tanstack&quot; tabindex=&quot;-1&quot;&gt;All Roads lead to TanStack&lt;/h2&gt;
+&lt;p&gt;What I want: to show the friends database table as a table in the frontend UI. I knew that there was this library called TanStack Table, but since I’d already used both TanStack’s Router and Query libraries I decided to stay away from a third library. I decided to look at ShadCN’s documentation on building a &lt;a href=&quot;https://ui.shadcn.com/docs/components/base/data-table&quot;&gt;data table&lt;/a&gt;…&lt;/p&gt;
+&lt;p&gt;And the guide suggested using TanStack Table ._.&lt;/p&gt;
+&lt;p&gt;Oookay… Surely a third TanStack pancake wouldn’t hurt?&lt;/p&gt;
+&lt;p&gt;Admittedly, it was pretty nice.&lt;/p&gt;
+&lt;p&gt;I basically followed the ShadCN guide that I linked to above, but without some of the optional steps that I didn’t want to implement.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a basic table component (installed by ShadCN or made by yourself)&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;columns&lt;/code&gt; list of the type &lt;code&gt;ColumnDef&amp;lt;Friend&amp;gt;[]&lt;/code&gt;, courtesy of TanStack Table. This is a list for all the column names in your table – at the moment that would be ID and name.&lt;/li&gt;
+&lt;li&gt;Create a &lt;code&gt;&amp;lt;DataTable /&amp;gt;&lt;/code&gt; component to render the basic table with the columns we configured, and call the &lt;code&gt;useReactTable&lt;/code&gt; hook that gives us some real juicy bits to fiddle with (that sentence sounded better in my head).&lt;/li&gt;
+&lt;li&gt;The table is basically done, but with &lt;code&gt;useReactTable&lt;/code&gt; you can enable things like row actions (giving you an Actions cell at the end of each row), pagination, sorting (I made the column headers sort names alphabetically), filtering (with a text input field), row selection, and even column visibility toggling.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Ultimately, TanStack Table really blew me away with how much it actually let you do. And all without being ‘headless’ if you know what I mean – it’s completely table-agnostic in the sense that the library doesn’t implement any sort of table. You do that, and then TanStack Table handles the rest.&lt;/p&gt;
+&lt;p&gt;If you don’t care about anything in step 4, then maybe you won’t see much use for it. But I still feel like I’m scratching the surface here with what you can do.&lt;/p&gt;
+&lt;p&gt;Here’s what I had after some tinkering!&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/PHUf852B2o-1918.avif 1918w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/PHUf852B2o-1918.webp 1918w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://br-chan.github.io/writing-break/img/PHUf852B2o-1918.png&quot; alt=&quot;The data table of friends&quot; width=&quot;1918&quot; height=&quot;855&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;This showed that I had indeed set everything up in the past 2 posts correctly and friends (created with Scalar for now) can be fetched successfully. Although note I did do a sanity check to just spit out friends’ names as text before starting this whole thing, which led to me diagnosing the aforementioned CORS issue.&lt;/p&gt;
+&lt;h2 id=&quot;routes-and-penguins&quot; tabindex=&quot;-1&quot;&gt;Routes and Penguins&lt;/h2&gt;
+&lt;p&gt;My initial idea for the frontend page here is to show the table, always, on the lefthand side, and if you click on a friend it’ll pop up some details on the righthand side (as well as the option to edit the friend).&lt;/p&gt;
+&lt;p&gt;I decided to do this by relocating the data table into the layout of this route. In Next.js, this is the &lt;code&gt;layout.tsx&lt;/code&gt;. In TanStack Router, if you’re doing file-based routing with directories, this is &lt;code&gt;&amp;lt;your-route&amp;gt;/route.tsx&lt;/code&gt;.&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/zZCZylEiNP-830.avif 830w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/zZCZylEiNP-830.webp 830w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://br-chan.github.io/writing-break/img/zZCZylEiNP-830.png&quot; alt=&quot;The layout with the table&quot; width=&quot;830&quot; height=&quot;427&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;I learned some cool frontend structure tips from my friend Daniel: always keep the page files as clean as possible and extract any logic to components. I found that whatever code he touched resulted in very easily parsable tsx like the above. In fact, he’d probably extract the outer div into its own component that was just &lt;code&gt;&amp;lt;div className=&amp;quot;&amp;quot;&amp;gt;{children}&amp;lt;/div&amp;gt;&lt;/code&gt;. He was that ruthless.&lt;/p&gt;
+&lt;p&gt;I have an index.tsx file that replaces the Outlet with a simple empty state (WIP), and then a $penguinId.tsx for a dynamic route that changes what content is fetched for the Outlet. This has a very important benefit of the state being kept in the URL rather than somewhere mysterious in React (e.g. useState or a state library).&lt;/p&gt;
+&lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/AU9q7H_nAr-1917.avif 1917w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/AU9q7H_nAr-1917.webp 1917w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://br-chan.github.io/writing-break/img/AU9q7H_nAr-1917.png&quot; alt=&quot;The friend fetched on the frontend&quot; width=&quot;1917&quot; height=&quot;857&quot;&gt;&lt;/picture&gt;
+&lt;p&gt;The url for this is /friend/1, so the state is tracked and you can copy-paste this link to always get back to what you expect to see.&lt;/p&gt;
+&lt;p&gt;One last thing I did was switch the term “friend” to “penguin”. We must be far more general if I want this application to be about keeping in touch with all the people I want to keep in touch with, not just friends.&lt;/p&gt;
+&lt;h2 id=&quot;wait%2C-so-what-about-openapi-react-query%3F&quot; tabindex=&quot;-1&quot;&gt;Wait, so what about openapi-react-query?&lt;/h2&gt;
+&lt;p&gt;I promised I’d talk about this. I did do a lot of experimentation, but essentially this library is what you &lt;em&gt;should&lt;/em&gt; use if you’re using openapi-typescript’s libraries and also TanStack Query. Otherwise you get duplication of some properties, crucially errors and I believe loading states. I haven’t experimented as to which one doesn’t get touched, but I believe openapi-typescript prevails over TanStack.&lt;/p&gt;
+&lt;p&gt;I was okay with using openapi-react-query – in fact, it actually negates the need to have service functions! You can safely pass in the API path into the wrappers that this library gives you, and it just works as intended. Happy happy joy joy.&lt;/p&gt;
+&lt;p&gt;Except it’s not. Because it’s a wrapper that &lt;em&gt;completely replaces&lt;/em&gt; TanStack Query. And that means it naturally lags behind TanStack and isn’t as up to date. The latest version of openapi-react-query was February this year. That’s a lot of updates and I’m not sure I want to be left behind that much. Is the effect negligible? Perhaps. But it’s given me a lot to think about with not a clear idea of what’s the right solution.&lt;/p&gt;
+&lt;p&gt;I’ll have to think on that one. In the meantime, work progresses once more…&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Back in WDCC | song parody</title>
     <link href="https://br-chan.github.io/writing-break/song-parodies/6_back-in-wdcc/" />
@@ -120,29 +178,28 @@ Yeah, back in WDCC&lt;/p&gt;
 &lt;p&gt;Bulletproof React promotes the idea of organising code into feature folders. You can read more about project structure &lt;a href=&quot;https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md&quot;&gt;here&lt;/a&gt;. In my project, I created a &lt;code&gt;src/features/friends&lt;/code&gt; directory and an api folder within to house my service.ts and queries.ts. I find this method of organisation pretty neat, because it keeps everything modular and separated really intelligently (as long as you do it right).&lt;/p&gt;
 &lt;p&gt;Bulletproof React also promotes a very uni-directional flow of dependencies between code, which I’ve used to great effect in my most recent internship and in a couple personal projects. I won’t go too into it, as the link above discusses it more than well enough. I look back fondly on the lengthy discussions with my internship partner Joran as we figured out how to structure a legacy codebase into something much more palatable.&lt;/p&gt;
 &lt;p&gt;There seem to be a couple different ways to write your frontend services, but I go for the following strategy:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;const FriendService = {
-    createFriend: async (data: FriendCreateRequest) =&amp;gt; {
-		const response = await api.POST(&amp;quot;/api/Friends&amp;quot;, {
-			body: data,
-		});
-		return response;
-	},
+&lt;pre class=&quot;language-ts&quot; tabindex=&quot;0&quot;&gt;&lt;code class=&quot;language-ts&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; FriendService &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token function-variable function&quot;&gt;createFriend&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; FriendCreateRequest&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;POST&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/api/Friends&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			body&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 
-	getFriends: async () =&amp;gt; {
-		const response = await api.GET(&amp;quot;/api/Friends&amp;quot;);
-		return response;
-	},
+	&lt;span class=&quot;token function-variable function&quot;&gt;getFriends&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;/api/Friends&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 
-	getFriendById: async (friendId: string) =&amp;gt; {
-		const response = await api.GET(`/api/Friends/{id}`, {
-			params: { path: { id: friendId } },
-		});
-		return response;
-	},
+	&lt;span class=&quot;token function-variable function&quot;&gt;getFriendById&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;friendId&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;string&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;await&lt;/span&gt; api&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token constant&quot;&gt;GET&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token template-string&quot;&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;/api/Friends/{id}&lt;/span&gt;&lt;span class=&quot;token template-punctuation string&quot;&gt;`&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+			params&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; path&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; id&lt;span class=&quot;token operator&quot;&gt;:&lt;/span&gt; friendId &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+		&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 
-    // And so on...
-}
-&lt;/code&gt;&lt;/pre&gt;
+    &lt;span class=&quot;token comment&quot;&gt;// And so on...&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then you refer to each service function like &lt;code&gt;FriendService.getFriends&lt;/code&gt;. Note the interesting OpenAPI Fetch syntax.&lt;/p&gt;
 &lt;p&gt;This way differs from what Bulletproof React suggests, in which each action is put in its own file (e.g. get-friends.ts, create-friend.ts, etc.). I decided to go for a proper service ‘layer’, followed by a single queries file.&lt;/p&gt;
 &lt;picture&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/918Xld1p7C-826.avif 826w&quot;&gt;&lt;source type=&quot;image/webp&quot; srcset=&quot;https://br-chan.github.io/writing-break/img/918Xld1p7C-826.webp 826w&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;https://br-chan.github.io/writing-break/img/918Xld1p7C-826.png&quot; alt=&quot;Friend queries&quot; width=&quot;826&quot; height=&quot;512&quot;&gt;&lt;/picture&gt;
