@@ -1,7 +1,7 @@
 ---
 title: The Moon Is Burning
 description: The moon is burning ~ It burns and it bites ~ It itches and scritches ~ Like minnows and mites
-date: 2026-08-02 08:40:00
+date: 2026-08-02 09:18:00
 tags:
 noToc: true
 ---
@@ -24,7 +24,7 @@ While the meet is adjourning
 
 Lights flash, alarms flare<br>
 Reddening plastic lawns<br>
-Whimpering, limbless, in its plea<br>
+Limbless in its plea<br>
 It peals for peddling pawns
 
 We killed it, don't you see?<br>
