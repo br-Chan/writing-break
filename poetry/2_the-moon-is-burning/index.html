@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>SOFTENG 325 Notes</title>
-		<meta name="description" content="SOFTENG 325 Notes">
+		<title>The Moon Is Burning</title>
+		<meta name="description" content="The moon is burning ~ It burns and it bites ~ It itches and scritches ~ Like minnows and mites">
 		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
 		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
 		
@@ -592,314 +592,61 @@ pre[class*="language-diff-"] {
 
 
 <div class="precontent">
-	<h1 id="softeng-325-notes">SOFTENG 325 Notes</h1>
+	<h1 id="the-moon-is-burning">The Moon Is Burning</h1>
 
 	<ul class="post-metadata">
 		<li>
-			<time datetime="2025-10-30">30/10/25</time>
+			<time datetime="2026-08-02">2/08/26</time>
 			 • updated
 			
-				<time datetime="2025-10-30">30/10/25</time>
+				<time datetime="2026-08-02">2/08/26</time>
 			
 		</li>
 		• Tags:
-			<li><a href="/writing-break/tags/actual-blog/" class="post-tag">actual-blog</a></li>
+			<li><a href="/writing-break/tags/poetry/" class="post-tag">poetry</a></li>
 	</ul>
 
 	
 <p>
-    757 words • Reading time: 4 minutes
+    95 words • Reading time: 1 minute
 </p>
 
 	
 
-	<p><i>SOFTENG 325 Notes</i></p>
+	<p><i>The moon is burning ~ It burns and it bites ~ It itches and scritches ~ Like minnows and mites</i></p>
 
 	<h3 id="xtable-of-contents">:xTable of Contents</h3>
-	<p></p><nav class="toc">
-                <ol>
-                    
-                    <li><a href="#rest-api-design">REST API Design</a>
-            		</li>
-
-                    <li><a href="#quality-attribute-scenarios">Quality Attribute Scenarios</a>
-            		</li>
-
-                    <li><a href="#tactics">Tactics</a>
-            		</li>
-
-                    <li><a href="#architectural-patterns">Architectural Patterns</a>
-            		</li>
-
-                    <li><a href="#structures-and-views">Structures and Views</a>
-            		</li>
-                </ol>
-            </nav><p></p>
+	<p></p>
 </div>
 
 <p class="contentstart"><i>content:</i></p>
 
-<h2 id="rest-api-design" tabindex="-1">REST API Design</h2>
-<pre><code>Request header:
-Path param:
-Search param:
-Request body:
-Response codes:
-Response body:
-</code></pre>
-<h2 id="quality-attribute-scenarios" tabindex="-1">Quality Attribute Scenarios</h2>
-<p><strong>Performance</strong></p>
-<table>
-<thead>
-<tr>
-<th>Portion of Scenario</th>
-<th>Possible Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source</td>
-<td>Internal or external to the system</td>
-</tr>
-<tr>
-<td>Stimulus</td>
-<td>Arrival of a periodic, sporadic, or stochastic event</td>
-</tr>
-<tr>
-<td>Artifact</td>
-<td>System or one or more components in the system</td>
-</tr>
-<tr>
-<td>Environment</td>
-<td>Operational mode: normal, emergency, peak load, overload</td>
-</tr>
-<tr>
-<td>Response</td>
-<td>Process events, change level of service</td>
-</tr>
-<tr>
-<td>Response Measure</td>
-<td>Latency, deadline, throughput, jitter, miss rate</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Availability</strong></p>
-<table>
-<thead>
-<tr>
-<th>Portion of Scenario</th>
-<th>Possible Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source</td>
-<td>Internal/external people, hardware, software, physical infrastructure</td>
-</tr>
-<tr>
-<td>Stimulus</td>
-<td>Fault: omission, crash, incorrect timing, incorrect response</td>
-</tr>
-<tr>
-<td>Artifact</td>
-<td>Processors, communication channels, persistent storage, processes</td>
-</tr>
-<tr>
-<td>Environment</td>
-<td>Normal operation, startup, shutdown, repair mode, degraded operation, overloaded operation</td>
-</tr>
-<tr>
-<td>Response</td>
-<td>Prevent the fault from becoming a failure (detect and recover)</td>
-</tr>
-<tr>
-<td>Response Measure</td>
-<td>Time interval when the system must be available, availability percentage, time to detect the fault, time to repair the fault, time interval in which system can be in degraded mode, proportion of class of faults that the system prevents or handles without failing</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Modifiability</strong></p>
-<table>
-<thead>
-<tr>
-<th>Portion of Scenario</th>
-<th>Possible Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source</td>
-<td>End user, developer, system administrator</td>
-</tr>
-<tr>
-<td>Stimulus</td>
-<td>A directive to add/delete/modify functionality, or change a quality attribute, capacity, or technology</td>
-</tr>
-<tr>
-<td>Artifact</td>
-<td>Code, data, interfaces, components, resources, configurations, etc.</td>
-</tr>
-<tr>
-<td>Environment</td>
-<td>Runtime, compile time, build time, initiation time, design time</td>
-</tr>
-<tr>
-<td>Response</td>
-<td>One or more of the following: make modification, test modification, or deploy modification</td>
-</tr>
-<tr>
-<td>Response Measure</td>
-<td>Cost in terms of number, size, complexity of affected artifacts; effort; calendar time; money; extent to which this modification affects other functions or quality attributes; or new defects introduced</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Security</strong></p>
-<table>
-<thead>
-<tr>
-<th>Portion of Scenario</th>
-<th>Possible Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source</td>
-<td>Internal or external human or another system unknown to our system</td>
-</tr>
-<tr>
-<td>Stimulus</td>
-<td>Unauthorised attempt to display/change/delete data, access system services, change system behaviour, reduce availability</td>
-</tr>
-<tr>
-<td>Artifact</td>
-<td>System services, data within system, component/resources of system, data produced/consumed by system</td>
-</tr>
-<tr>
-<td>Environment</td>
-<td>System is online/offline, connected/disconnected from network, behind firewall / open to network, fully/partially/not operational</td>
-</tr>
-<tr>
-<td>Response</td>
-<td>System continues normal operation without disclosing protected info, records sus activity</td>
-</tr>
-<tr>
-<td>Response Measure</td>
-<td>Harms against system in terms of time/services/assets/etc</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Usability</strong></p>
-<table>
-<thead>
-<tr>
-<th>Portion of Scenario</th>
-<th>Possible Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source</td>
-<td>End user, possibly in specialised role</td>
-</tr>
-<tr>
-<td>Stimulus</td>
-<td>Tries to use efficiently, learn to use, minimise impact of errors, adapt the system, configure the system</td>
-</tr>
-<tr>
-<td>Artifact</td>
-<td>System or portion of system being interacted with</td>
-</tr>
-<tr>
-<td>Environment</td>
-<td>Runtime, configuration time</td>
-</tr>
-<tr>
-<td>Response</td>
-<td>System should provide user with features needed or anticipate user’s needs</td>
-</tr>
-<tr>
-<td>Response Measure</td>
-<td>Task time, no. of errors, tasks accomplished, user satisfaction, knowledge gain, successful : total operations, time/data lost when error occurs</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Testability</strong></p>
-<table>
-<thead>
-<tr>
-<th>Portion of Scenario</th>
-<th>Possible Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Source</td>
-<td>Unit/integration/system/acceptance testers, end users (running manually or using automated test tools)</td>
-</tr>
-<tr>
-<td>Stimulus</td>
-<td>Set of tests executed due to completion of coding task / sub-system integration / whole system implementation, delivery of system to customer</td>
-</tr>
-<tr>
-<td>Artifact</td>
-<td>Portion of system being tested</td>
-</tr>
-<tr>
-<td>Environment</td>
-<td>Design/development/compile/integration/deployment/run time</td>
-</tr>
-<tr>
-<td>Response</td>
-<td>Execute test suite and capture results, capture activity resulting in fault, monitor system state</td>
-</tr>
-<tr>
-<td>Response Measure</td>
-<td>Effort to find fault/s, effort to achieve % of state space coverage, probability of fault being revealed in next test, time to prep test environment, time to perform tests, effort to detect faults, length of longest dependency chain in test, reduction in risk exposure</td>
-</tr>
-</tbody>
-</table>
-<h2 id="tactics" tabindex="-1">Tactics</h2>
-<picture><source type="image/avif" srcset="/writing-break/img/UsY5XBfY8S-852.avif 852w"><source type="image/webp" srcset="/writing-break/img/UsY5XBfY8S-852.webp 852w"><img loading="lazy" decoding="async" src="/writing-break/img/UsY5XBfY8S-852.png" alt="ye" width="852" height="484"></picture>
-<picture><source type="image/avif" srcset="/writing-break/img/-33zq5E2zq-1026.avif 1026w"><source type="image/webp" srcset="/writing-break/img/-33zq5E2zq-1026.webp 1026w"><img loading="lazy" decoding="async" src="/writing-break/img/-33zq5E2zq-1026.png" alt="ye" width="1026" height="657"></picture>
-<picture><source type="image/avif" srcset="/writing-break/img/bQYU86qbk4-1135.avif 1135w"><source type="image/webp" srcset="/writing-break/img/bQYU86qbk4-1135.webp 1135w"><img loading="lazy" decoding="async" src="/writing-break/img/bQYU86qbk4-1135.png" alt="ye" width="1135" height="679"></picture>
-<picture><source type="image/avif" srcset="/writing-break/img/eYDJk6IfD_-637.avif 637w"><source type="image/webp" srcset="/writing-break/img/eYDJk6IfD_-637.webp 637w"><img loading="lazy" decoding="async" src="/writing-break/img/eYDJk6IfD_-637.png" alt="ye" width="637" height="769"></picture>
-<picture><source type="image/avif" srcset="/writing-break/img/OaOjLMHtuS-1301.avif 1301w"><source type="image/webp" srcset="/writing-break/img/OaOjLMHtuS-1301.webp 1301w"><img loading="lazy" decoding="async" src="/writing-break/img/OaOjLMHtuS-1301.png" alt="ye" width="1301" height="479"></picture>
-<p>For Usability: support user intiative, support system initiative, separate UI (e.g. MVC pattern)</p>
-<h2 id="architectural-patterns" tabindex="-1">Architectural Patterns</h2>
-<ul>
-<li>Client-server</li>
-<li>Broker pattern</li>
-<li>Layered pattern</li>
-<li>Peer-to-peer pattern</li>
-<li>Pipe and filter pattern</li>
-<li>Pub-sub pattern</li>
-</ul>
-<p>See actual slides for better details.</p>
-<h2 id="structures-and-views" tabindex="-1">Structures and Views</h2>
-<h3 id="module-structures" tabindex="-1">Module Structures</h3>
-<p>Elements are modules representing functional responsibility.</p>
-<ul>
-<li>Decomposition view: larger modules decomposed into smaller ones until it is understandable</li>
-<li>Uses view: software unit uses another if correctness of 1st requires 2nd one</li>
-<li>Class view: A inherits B (OOP)</li>
-<li>Data model view: describes data entities and relationships (like ER diagram)</li>
-</ul>
-<p>See actual slides for diagrams.</p>
-<h3 id="component-and-connector-structures" tabindex="-1">Component and Connector Structures</h3>
-<p>How elements communicate with each other at runtime to function.</p>
-<ul>
-<li>Client-server view: clients/servers are the components, protocols + messages are the connectors</li>
-<li>Concurrency view: logical threads (computation sequence that can be allocated to separate physical processor) are components, communication channels are connectors</li>
-<li>Shared data view (components and connectors create/store/access/persist data, showing how data is produced and consumed by software elements)</li>
-</ul>
-<p>See actual slides for diagrams.</p>
-<h3 id="allocation-structures" tabindex="-1">Allocation Structures</h3>
-<p>Maps software components into external environments; relationships include (execution, testing, deployment).</p>
-<ul>
-<li>Deployment view (how software is assigned to hardware-processing and communication elements)</li>
-<li>Work assignment view (which team does what work)</li>
-</ul>
-<p>See actual slides for diagrams.</p>
+<br>
+<center>
+The moon is burning<br>
+It burns and it bites<br>
+It itches and scritches<br>
+Like minnows and mites
+<p>At dawn, to our riches<br>
+It curses and spits<br>
+By noon, it prevails<br>
+'fore our evils and grits</p>
+<p>It wails like whales<br>
+Mourning a warning<br>
+And it burns up the chair<br>
+While the meet is adjourning</p>
+<p>Lights flash, alarms flare<br>
+Reddening plastic lawns<br>
+Whimpering, limbless, in its plea<br>
+It peals for peddling pawns</p>
+<p>We killed it, don’t you see?<br>
+We killed the great moon<br>
+On its flank it is flaming<br>
+Where we struck our harpoon.</p>
+<p>~ Brandon Chan</p>
+</center>
+<p><picture><source type="image/avif" srcset="/writing-break/poetry/2_the-moon-is-burning/O0TeWuzgd5-840.avif 840w"><source type="image/webp" srcset="/writing-break/poetry/2_the-moon-is-burning/O0TeWuzgd5-840.webp 840w"><img loading="lazy" decoding="async" src="/writing-break/poetry/2_the-moon-is-burning/O0TeWuzgd5-840.png" alt="The Moon" width="840" height="572"></picture>
+<br></p>
 
 
 
@@ -909,27 +656,18 @@ Response body:
 
 	<div class="links-nextprevwrapper">
 		<ul class="links-nextprev">
-				<a class="links-nextprev-prev" href="/writing-break/actual-blog/1_an-email-battle-with-my-18-year-old-self/">
-							<b>← Previous in actual-blog</b>
-							<br>
+					<a class="links-nextprev-prev" href="/writing-break/poetry/1_aphrodite-appears/">
+						<b>← Previous in poetry</b>
+						<br>
+						<span href="/poetry/1_aphrodite-appears/">Aphrodite Appears</span>
+					</a>
+				<a class="links-nextprev-prev" href="/writing-break/song-parodies/7_carlaw-equals-genius/">
 					<b>← Previous</b>
 					<br>
-					<span>An email battle with my 18-year-old self</span>
+					<span>Carlaw = Genius | song parody</span>
 				</a>
 		</ul>
 		<ul class="links-nextprev">
-					<a class="links-nextprev-next" href="/writing-break/actual-blog/3_hey-girl-are-you-into-classical-music-because-you-are-csharp/">
-						<b>Next in actual-blog →</b>
-						<br>
-						<span>Hey girl are you into classical music, because you are C#!</span>
-					</a>
-				
-				<a class="links-nextprev-next" href="/writing-break/watch-later/7_cgp-grey-cute-cats-and-the-fast-talking-guy/">
-					<b>Next →</b>
-					<br>
-					<span>CGP Grey, Cute Cats and The Fast-Talking Guy</span>
-				</a>
-			
 		</ul>
 	</div>
 
@@ -947,7 +685,7 @@ Response body:
 			</p>
 		</footer>
 		
-		<!-- This page `/actual-blog/2_softeng-325-notes/` was built on 2026-08-01T20:58:48.796Z -->
+		<!-- This page `/poetry/2_the-moon-is-burning/` was built on 2026-08-01T20:58:48.797Z -->
 		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>
