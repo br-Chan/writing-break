@@ -24,7 +24,7 @@ While the meet is adjourning
 
 Lights flash, alarms flare<br>
 Reddening plastic lawns<br>
-Limbless in its plea<br>
+And limbless in its plea<br>
 It peals for peddling pawns
 
 We killed it, don't you see?<br>
