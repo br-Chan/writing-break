@@ -23,7 +23,7 @@ Mourning a warning<br>
 And burns up the chair<br>
 While the meet is adjourning
 
-Lights flash --br>
+Lights flash --<br>
 Alarms flare<br>
 Reddening plastic lawns<br>
 Limp and limbless --<br>
