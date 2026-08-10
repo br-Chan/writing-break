@@ -2,7 +2,7 @@
 title: The Moon Is Burning
 description: The moon is burning ~ It blisters and bites ~ It itches and scritches ~ Like minnows and mites
 date: 2026-08-02 09:18:00
-updated: 2026-08-11 12:12:00
+updated: 2026-08-11 09:07:00
 tags:
 noToc: true
 ---
@@ -16,7 +16,7 @@ Like minnows and mites
 
 At dawn, to our riches<br>
 It curses and spits<br>
-By noon, it travails<br>
+By night, it travails<br>
 Our evils and grits
 
 It wails like whales<br>
@@ -24,7 +24,7 @@ Mourning its warning<br>
 And burns up the chair<br>
 While the meet is adjourning
 
-Floodlights flash --<br>
+Stoplights flash --<br>
 Headlights flare<br>
 Reddening plastic lawns<br>
 Limp and limbless --<br>
