@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Writing Break</title>
-		<meta name="description" content="On a writing break.">
+		<title>Taken By Surprise</title>
+		<meta name="description" content="Like how I take a fridge door by surprise ~ When I open it.">
 		<link rel="alternate" href="/writing-break/feed/feed.xml" type="application/atom+xml" title="Writing Break">
 		<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell/nutshell.js"></script>
 		
@@ -384,6 +384,174 @@ header {
 
 .contentstart {
 	display: none;
+}
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #8292a2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function,
+.token.class-name {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+/*
+ * New diff- syntax
+ */
+
+pre[class*="language-diff-"] {
+	--eleventy-code-padding: 1.25em;
+	padding-left: var(--eleventy-code-padding);
+	padding-right: var(--eleventy-code-padding);
+}
+.token.deleted {
+	background-color: hsl(0, 51%, 37%);
+	color: inherit;
+}
+.token.inserted {
+	background-color: hsl(126, 31%, 39%);
+	color: inherit;
+}
+
+/* Make the + and - characters unselectable for copy/paste */
+.token.prefix.unchanged,
+.token.prefix.inserted,
+.token.prefix.deleted {
+	-webkit-user-select: none;
+	user-select: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.token.prefix.inserted,
+.token.prefix.deleted {
+	width: var(--eleventy-code-padding);
+	background-color: rgba(0,0,0,.2);
+}
+
+/* Optional: full-width background color */
+.token.inserted:not(.prefix),
+.token.deleted:not(.prefix) {
+	display: block;
+	margin-left: calc(-1 * var(--eleventy-code-padding));
+	margin-right: calc(-1 * var(--eleventy-code-padding));
+	text-decoration: none; /* override del, ins, mark defaults */
+	color: inherit; /* override del, ins, mark defaults */
 }</style>
 		
 	</head>
@@ -411,7 +579,7 @@ header {
 						<a href="/writing-break/tags/">Tags</a>
 					</li>
 					<li class="nav-item">
-						<a href="/writing-break/about/" aria-current="page">About</a>
+						<a href="/writing-break/about/">About</a>
 					</li>
 				</ul>
 			</nav>
@@ -420,9 +588,85 @@ header {
 		<main id="main">
 			<heading-anchors>
 				
-<h1 id="about" tabindex="-1">About</h1>
-<p>On a writing break.</p>
 
+
+
+<div class="precontent">
+	<h1 id="taken-by-surprise">Taken By Surprise</h1>
+
+	<ul class="post-metadata">
+		<li>
+			<time datetime="2026-08-23">23/08/26</time>
+			 • updated
+			
+				<time datetime="2026-08-23">23/08/26</time>
+			
+		</li>
+		• Tags:
+			<li><a href="/writing-break/tags/poetry/" class="post-tag">poetry</a></li>
+	</ul>
+
+	
+<p>
+    134 words • Reading time: 1 minute
+</p>
+
+	
+
+	<p><i>Like how I take a fridge door by surprise ~ When I open it.</i></p>
+
+	<h3 id="xtable-of-contents">:xTable of Contents</h3>
+	<p></p>
+</div>
+
+<p class="contentstart"><i>content:</i></p>
+
+<br>
+<center>
+I'm not going to find love.<br>
+Love is going to have to find me<br>
+And take me by surprise<br>
+Like how I take a fridge door by surprise<br>
+When I open it.
+<p>I feel when I find love<br>
+I’m a hunter to a bird of paradise.<br>
+I’ll aim my gun, quivering,<br>
+And I’ll realise, why am I trying to shoot<br>
+This pretty, perched bird?</p>
+<p>Is it because I find love<br>
+And place the bird up on a pedestal<br>
+Or behold it a trophy<br>
+Or hope beyond hope that the bird will fly<br>
+Straight here to me?</p>
+<p>So even though I find love<br>
+That bird, once smitten, did sojourn, flies off –<br>
+Paradise lost.<br>
+So perhaps, instead, I should have opened myself up<br>
+Like a fridge door</p>
+<p>Taken by surprise.</p>
+<p>~ Brandon Chan</p>
+</center>
+<br>
+
+
+
+
+
+	<div class="links-bordertop"></div>
+
+	<div class="links-nextprevwrapper">
+		<ul class="links-nextprev">
+				<a class="links-nextprev-prev" href="/writing-break/poetry/2_the-moon-is-burning/">
+							<b>← Previous in poetry</b>
+							<br>
+					<b>← Previous</b>
+					<br>
+					<span>The Moon Is Burning</span>
+				</a>
+		</ul>
+		<ul class="links-nextprev">
+		</ul>
+	</div>
 
 			</heading-anchors>
 		</main>
@@ -438,7 +682,7 @@ header {
 			</p>
 		</footer>
 		
-		<!-- This page `/about/` was built on 2026-08-23T11:19:20.895Z -->
-		<script type="module" src="/writing-break/dist/xbxy_EL6cU.js"></script>
+		<!-- This page `/poetry/3_taken-by-surprise/` was built on 2026-08-23T11:19:20.893Z -->
+		<script type="module" src="/writing-break/dist/mbwoaB79oR.js"></script>
 	</body>
 </html>
