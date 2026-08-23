@@ -1,0 +1,40 @@
+---
+title: Taken By Surprise
+description: Like how I take a fridge door by surprise ~ When I open it.
+date: 2026-08-23 23:11:00
+tags:
+noToc: true
+---
+
+<br>
+<center>
+I'm not going to find love.<br>
+Love is going to have to find me<br>
+And take me by surprise<br>
+Like how I take a fridge door by surprise<br>
+When I open it.
+
+I feel when I find love<br>
+I'm a hunter to a bird of paradise.<br>
+I'll aim my gun, quivering,<br>
+And I'll realise, why am I trying to shoot<br>
+This pretty, perched bird?
+
+Is it because I find love<br>
+And place the bird up on a pedestal<br>
+Or behold it a trophy<br>
+Or hope beyond hope that the bird will fly<br>
+Straight here to me?
+
+So even though I find love<br>
+That bird, once smitten, did sojourn, flies off --<br>
+Paradise lost.<br>
+So perhaps, instead, I should have opened myself up<br>
+Like a fridge door
+
+Taken by surprise.
+
+~ Brandon Chan
+
+</center>
+<br>
