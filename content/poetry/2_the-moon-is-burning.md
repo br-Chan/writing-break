@@ -28,7 +28,7 @@ Stoplights flash --<br>
 Headlights flare<br>
 Reddening plastic lawns<br>
 Limp and limbless --<br>
-In its plea<br>
+In their plea<br>
 To peal for spent-up dawns
 
 We killed it, you see?<br>
