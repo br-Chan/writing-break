@@ -1,6 +1,6 @@
 ---
 title: Taken By Surprise
-description: Like how I take a fridge door by surprise ~ When I open it.
+description: I'm not going to find love. ~ Love is going to have to find me
 date: 2026-08-23 23:11:00
 updated: 2026-08-24 21:19:00
 tags:
