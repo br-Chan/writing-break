@@ -2,6 +2,7 @@
 title: Taken By Surprise
 description: Like how I take a fridge door by surprise ~ When I open it.
 date: 2026-08-23 23:11:00
+updated: 2026-08-24 21:19:00
 tags:
 noToc: true
 ---
@@ -29,7 +30,7 @@ Straight here to me?
 So even though I find love<br>
 That bird, once smitten, did sojourn, flies off --<br>
 Paradise lost.<br>
-So perhaps, instead, I should have opened myself up<br>
+Perhaps, to the bird, I should have opened up<br>
 Like a fridge door
 
 Taken by surprise.
