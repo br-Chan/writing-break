@@ -2,7 +2,7 @@
 title: Taken By Surprise
 description: I'm not going to find love. ~ Love is going to have to find me
 date: 2026-08-23 23:11:00
-updated: 2026-08-24 21:19:00
+updated: 2026-08-26 11:00:00
 tags:
 noToc: true
 ---
