@@ -15,6 +15,8 @@ noToc: true
 ---
 
 <center>
+
+[Verse 1]<br>
 You got two exceptions from codin' too hard<br>
 And a dev team that matches your devilish stride<br>
 I wouldn't change ya, oh<br>
@@ -24,11 +26,13 @@ And the Tailwind in HTML<br>
 Wouldn't change ya, oh yes<br>
 Wouldn't ever try to switch you to JS<br>
 
+[Pre-Chorus]<br>
 Sweaty palms melt your vibe (code)<br>
 Midnight debugging<br>
 
+[Chorus]<br>
 The black magic of Next.js<br>
-READMEs under package jsons<br>
+README files under package jsons<br>
 Using Claude Code in the middle of night<br>
 Just another web dev devotee<br>
 Sunsets on the empty CV<br>
@@ -36,11 +40,13 @@ Invisible to the internship shrine<br>
 Always on the hunt for a hackathon prize<br>
 Just another web dev devotee<br>
 
+[Post-Chorus]<br>
 Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another web dev devotee<br>
 
+[Verse 2]<br>
 You got merge conflicts on your pull request<br>
 And the GitHub Actions keep weeping your name<br>
 Ya couldn't fix it, oh<br>
@@ -50,11 +56,13 @@ And the backend storms with Express warnings<br>
 Couldn't change ya, heads up<br>
 Couldn't ever try to make you get a job<br>
 
+[Pre-Chorus]<br>
 Sweaty palms melt your vibe (code)<br>
 Midnight debugging<br>
 
+[Chorus]<br>
 The black magic of Next.js<br>
-READMEs under package jsons<br>
+README files under package jsons<br>
 Using Claude Code in the middle of night<br>
 Just another web dev devotee<br>
 Sunsets on the empty CV<br>
@@ -62,16 +70,19 @@ Invisible to the internship shrine<br>
 Always on the hunt for a hackathon prize<br>
 Just another web dev devotee<br>
 
+[Post-Chorus]<br>
 Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another web dev devotee<br>
 
+[Bridge]<br>
 Web dev Devotee<br>
 Gets a TypeError...<br>
 Web dev Devotee<br>
 Commits node modules!<br>
 
+[Chorus]<br>
 The black magic of Serato & Visa<br>
 The Sandfield & Atlassian skies<br>
 Never see Canva nor Orion's light<br>
@@ -81,8 +92,10 @@ Invisible to the graduate shrine<br>
 Always in the mode for a little Leetcode<br>
 Just another web dev devotee<br>
 
+[Post-Chorus]<br>
 Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another, just another, uh oh<br>
 Just another web dev devotee<br>
+
 </center>
