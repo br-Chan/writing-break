@@ -15,15 +15,15 @@ And take me by surprise<br>
 Like how I take a fridge door by surprise<br>
 When I open it.
 
-I feel when I find love<br>
+I think when I find love<br>
 I'm a hunter to a bird of paradise.<br>
 I'll aim my gun, quivering,<br>
-And I'll realise, why am I trying to shoot<br>
-This pretty, perched bird?
+Then I'll realise: why am I trying to shoot<br>
+This pretty little sojourner?
 
 Is it because I find love<br>
 And place the bird up on a pedestal<br>
-Or behold it a trophy<br>
+Or behold as a trophy<br>
 Or hope beyond hope that the bird will fly<br>
 Straight here to me?
 
