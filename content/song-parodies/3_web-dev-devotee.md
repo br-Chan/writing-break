@@ -31,7 +31,7 @@ Sweaty palms melt your vibe (code)<br>
 Midnight debugging<br>
 
 [Chorus]<br>
-The black magic of Next.js<br>
+The black magic of your Next.js<br>
 README files under package jsons<br>
 Using Claude Code in the middle of night<br>
 Just another web dev devotee<br>
@@ -61,7 +61,7 @@ Sweaty palms melt your vibe (code)<br>
 Midnight debugging<br>
 
 [Chorus]<br>
-The black magic of Next.js<br>
+The black magic of your Next.js<br>
 README files under package jsons<br>
 Using Claude Code in the middle of night<br>
 Just another web dev devotee<br>
