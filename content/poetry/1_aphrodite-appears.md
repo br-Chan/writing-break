@@ -2,6 +2,7 @@
 title: Aphrodite Appears
 description: In stories they say Aphrodite appears as the one that you are attracted to. But to me I feel as though Aphrodite would appear to me not as a person.
 date: 2026-05-28 09:20:00
+updated: 2026-08-31 09:26:00
 tags:
 noToc: true
 ---
@@ -20,7 +21,7 @@ She would be a smile and a laugh.<br>
 She would be a song or a film.<br>
 She would be a collection of love letters<br>
 or the stars under the sky<br>
-or the scent of flowers in the air.<br>
+or the scent of the flowers in the air.<br>
 
 She would be the withering flash flood<br>
 of all that she says and does and leaves behind.<br>
