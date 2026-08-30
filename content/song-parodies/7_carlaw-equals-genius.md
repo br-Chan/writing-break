@@ -2,6 +2,7 @@
 title: Carlaw = Genius | song parody
 description: She said, "You're just like Dawn Fresh ~ But you wanna be Stu McCutcheon, Stu McCutcheon" ~ Said, "You're just like Dawn Fresh ~ But you'll never be Colin Maiden"
 date: 2026-07-27 18:25:00
+update: 2026-08-31 09:36:00
 tags:
 noToc: true
 ---
