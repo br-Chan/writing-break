@@ -16,24 +16,28 @@ noToc: true
 
 <center>
 
+[Verse 1]<br>
 My four Claude Codes, make four different thoughts<br>
 And none of them point to true<br>
 A tangled mess of code, I confess<br>
 But the intent was there, I swear<br>
 I set my sights on something that I thought was new
 
+[Pre-Chorus]
 So now I sit and stare across<br>
 IDEs spanning the whole screen<br>
 Two spinning fans in my own head<br>
 No words to speak, been here a week<br>
 And still, I haven't got a clue
 
+[Chorus]
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
 (The creative instinct fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
+[Verse 2]
 Each tech a tech stack of its own<br>
 Each page rendered only in Next<br>
 The syntax skips, semantics slips<br>
@@ -46,16 +50,19 @@ It ended up a tiny piece<br>
 Of every code, of every line<br>
 Of every tech, of every debt
 
+[Chorus]
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
 (The creative instinct fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
+[Bridge]
 A tangled mess of code, I confess<br>
 But the intent was there, I swear<br>
 I set my sights on something that I thought was you
 
+[Chorus]
 It falls apart, there's not a code to run there<br>
 And it falls apart if there's not a code to write<br>
 (The creative instinct fluttering away from the mind)<br>
