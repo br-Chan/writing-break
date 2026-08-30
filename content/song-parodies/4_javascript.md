@@ -23,21 +23,21 @@ A tangled mess of code, I confess<br>
 But the intent was there, I swear<br>
 I set my sights on something that I thought was new
 
-[Pre-Chorus]
+[Pre-Chorus]<br>
 So now I sit and stare across<br>
 IDEs spanning the whole screen<br>
 Two spinning fans in my own head<br>
 No words to speak, been here a week<br>
 And still, I haven't got a clue
 
-[Chorus]
+[Chorus]<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
 (The creative instinct fluttering away from the mind)<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
-[Verse 2]
+[Verse 2]<br>
 Each tech a tech stack of its own<br>
 Each page rendered only in Next<br>
 The syntax skips, semantics slips<br>
@@ -50,7 +50,7 @@ It ended up a tiny piece<br>
 Of every code, of every line<br>
 Of every tech, of every debt
 
-[Chorus]
+[Chorus]<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
 (The creative instinct fluttering away from the mind)<br>
@@ -62,7 +62,7 @@ A tangled mess of code, I confess<br>
 But the intent was there, I swear<br>
 I set my sights on something that I thought was you
 
-[Chorus]
+[Chorus]<br>
 It falls apart, there's not a code to run there<br>
 And it falls apart if there's not a code to write<br>
 (The creative instinct fluttering away from the mind)<br>
@@ -75,4 +75,5 @@ It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
+
 </center>
