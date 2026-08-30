@@ -57,8 +57,8 @@ And oh, I seem to believe<br>
 That living here is faster than trains<br>
 Other courses you have taken<br>
 Force you to race in and come last<br>
-But for every class, I waken<br>
-And I burst in at twelve past
+But for every class, I waken late<br>
+I burst in at twelve past"
 
 [Pre-Chorus]<br>
 She said, "You're just like Dawn Fresh<br>
