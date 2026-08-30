@@ -57,7 +57,7 @@ It falls apart if there's not a code to write<br>
 It falls apart, there's not a code to run there<br>
 It falls apart if there's not a code to write
 
-[Bridge]
+[Bridge]<br>
 A tangled mess of code, I confess<br>
 But the intent was there, I swear<br>
 I set my sights on something that I thought was you
