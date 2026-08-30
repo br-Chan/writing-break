@@ -14,6 +14,7 @@ noToc: true
 ---
 
 <center>
+
 Can we hang out sometime?<br>
 I think the whole band's online tonight<br>
 We're playing Minecraft till five<br>
