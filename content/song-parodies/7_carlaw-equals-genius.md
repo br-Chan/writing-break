@@ -2,7 +2,7 @@
 title: Carlaw = Genius | song parody
 description: She said, "You're just like Dawn Fresh ~ But you wanna be Stu McCutcheon, Stu McCutcheon" ~ Said, "You're just like Dawn Fresh ~ But you'll never be Colin Maiden"
 date: 2026-07-27 18:25:00
-update: 2026-08-31 09:36:00
+update: 2026-08-31 09:42:00
 tags:
 noToc: true
 ---
@@ -100,7 +100,7 @@ I'd be at Shads drinkin' a beer (Hey! Hey!)<br>
 You can wait for City Rail Link (Hey! Hey!)<br>
 But you're always gonna wait, wait, wait (Hey! Hey!)<br>
 Should've gone to live in Carlaw (Hey! Hey!)<br>
-But the weekly rents inflate, flate, flate<br>
+I don't care if rents inflate, flate, flate<br>
 (Hey!)
 </center>
 
