@@ -56,7 +56,7 @@ How the hall plays tricks on my brain<br>
 And oh, I seem to believe<br>
 That living here is faster than trains<br>
 Other courses you have taken<br>
-Force you to race in and come last<br>
+Force you to train in and come last<br>
 But for every class, I waken late<br>
 I burst in at twelve past"
 
@@ -99,7 +99,7 @@ I'd be at Shads drinkin' a beer (Hey! Hey!)<br>
 You can wait for City Rail Link (Hey! Hey!)<br>
 But you're always gonna wait, wait, wait (Hey! Hey!)<br>
 Should've gone to live in Carlaw (Hey! Hey!)<br>
-But SMH is overrate, rate, rate<br>
+But the weekly rents inflate, flate, flate<br>
 (Hey!)
 </center>
 
