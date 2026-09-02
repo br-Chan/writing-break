@@ -4,6 +4,7 @@ description: Happy new year.
 date: 2026-01-29 21:28:00
 tags:
 noToc: true
+emoji: 🎊
 ---
 
 Dim and brash was the windswept night.

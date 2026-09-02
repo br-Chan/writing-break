@@ -4,6 +4,7 @@ description: The Habitican Masterclassers' Meeting of February 19th, 3018 AGW wa
 date: 2026-02-01 19:38:00
 tags: atro
 noToc: true
+emoji: 💰
 ---
 
 The Habitican Masterclassers' Meeting of February 19th, 3018 AGW was a short one. Usually it took all day, without a single lunchbreak in between. This one only took an hour, and half of that was spent waiting for the April Fool to arrive.

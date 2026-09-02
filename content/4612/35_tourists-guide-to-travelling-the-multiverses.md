@@ -4,6 +4,7 @@ description: When touring the infinities of a multiverse, you will have to brave
 date: 2026-06-18 20:51:00
 tags:
 noToc: true
+emoji: 📃
 ---
 
 When touring the infinities of a multiverse, you will have to brave gruelling conditions, encounter dangerous denizens or face powerful civilisations that have been around for thousands, if not millions, of years. This quaint guide will help you remember the basics when puttering through on your transversal campervan.

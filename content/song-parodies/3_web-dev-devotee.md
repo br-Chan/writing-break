@@ -5,6 +5,7 @@ date: 2026-07-02 19:53:00
 updated: 2026-08-26 10:12:00
 tags:
 noToc: true
+emoji: 🧑‍💻
 ---
 
 *My doomed love letter to web development.*

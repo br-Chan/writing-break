@@ -4,6 +4,7 @@ description: "Did you ever hear of a peanut butter pie?"
 date: 2026-01-15 22:09:00
 tags: poetry
 noToc: true
+emoji: 🥧
 ---
 
 Did you ever hear--<br>

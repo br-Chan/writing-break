@@ -5,6 +5,7 @@ date: 2025-12-6 19:00:00
 updated: 2026-4-5 13:55:00
 tags:
 noToc: true
+emoji: 👩‍🎓
 ---
 
 You have heard of Jenny Joplin.

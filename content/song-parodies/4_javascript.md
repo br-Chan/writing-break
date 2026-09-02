@@ -5,6 +5,7 @@ date: 2026-07-10 17:38:00
 updated: 2026-07-17 11:14:00
 tags:
 noToc: true
+emoji: 🤖
 ---
 
 *How it feels when I look at the state of generative AI in the software industry.*

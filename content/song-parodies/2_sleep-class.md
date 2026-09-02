@@ -5,6 +5,7 @@ date: 2026-04-18 13:42:00
 updated: 2026-04-18 15:45:00
 tags:
 noToc: true
+emoji: 😴
 ---
 
 *On coming to terms with insomnia.*

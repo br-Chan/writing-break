@@ -4,6 +4,7 @@ description: Can we hang out sometime? ~ I think the whole band's online tonight
 date: 2026-07-10 17:42:00
 tags:
 noToc: true
+emoji: ⛏️
 ---
 
 *How it feels to play Minecraft with friends.*

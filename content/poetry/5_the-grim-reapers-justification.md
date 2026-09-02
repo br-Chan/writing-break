@@ -4,6 +4,7 @@ description: Right?
 date: 2026-08-31 10:03:00
 tags:
 noToc: true
+emoji: ⚰️
 ---
 
 <br>

@@ -4,6 +4,7 @@ description: Frontend devs make me sing and shout ~ That Figma's always on my, m
 date: 2026-07-20 19:36:00
 tags:
 noToc: true
+emoji: 💻
 ---
 
 *How it feels to be a WDCC project member.*

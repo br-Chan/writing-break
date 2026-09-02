@@ -4,6 +4,7 @@ description: You were almost having a good day until you found yourself at the G
 date: 2026-04-05 15:00:00
 tags:
 noToc: true
+emoji: ⏳
 ---
 
 You were almost having a good day until you found yourself at the Grey Lynn Campus.

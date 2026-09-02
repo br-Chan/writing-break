@@ -4,6 +4,7 @@ description: To learn how the Sacabambaspis ended humanity, one must learn how t
 date: 2025-10-07 23:22:00
 tags:
 noToc: false
+emoji: 🐡
 ---
 
 Sacabambaspis are an ancient group of armoured jawless fish in the class Pteraspidomorpha. They are approximately 25 cm in length and are similar in shape to a tadpole. They are particularly notable for their lack of fins, front-facing eyes and plated armour -- which no other fish possesses today.

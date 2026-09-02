@@ -4,6 +4,7 @@ description:
 date: 2026-07-12 18:38:00
 tags: tech-talk
 noToc: false
+emoji: ❓
 ---
 
 ## TanStack Query

@@ -4,6 +4,7 @@ description:
 date: 2025-07-31 11:16:00
 tags:
 noToc: true
+emoji: 🥜
 ---
 
 To eat or not to eat? That is the question.

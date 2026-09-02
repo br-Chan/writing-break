@@ -4,6 +4,7 @@ description: '"You always think you''re the one who''s better than me, living in
 date: 2025-10-25 22:26:00
 tags:
 noToc: true
+emoji: 📆
 ---
 
 <img src="/actual-blog/img/1_future-me.png" alt="A website where you can send an email to your future self." >

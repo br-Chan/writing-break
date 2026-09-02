@@ -5,6 +5,7 @@ date: 2026-05-28 09:20:00
 updated: 2026-08-31 09:26:00
 tags:
 noToc: true
+emoji: 💌
 ---
 <br>
 <center>

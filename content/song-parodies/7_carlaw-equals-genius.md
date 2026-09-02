@@ -5,6 +5,7 @@ date: 2026-07-27 18:25:00
 update: 2026-08-31 09:42:00
 tags:
 noToc: true
+emoji: 🏨
 ---
 
 *On how university life would've be so much better if I'd lived in Carlaw Park Student Village. Or would it?*

@@ -5,6 +5,7 @@ date: 2026-06-13 15:55:00
 updated: 2026-06-18 14:02:00
 tags:
 noToc: true
+emoji: 🏔️
 ---
 
 I am Atlas of the Mountain.

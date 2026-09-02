@@ -4,6 +4,7 @@ description: This is a revised version of a story I wrote for an English test pa
 date: 2025-08-31 18:10:00
 tags:
 noToc: true
+emoji: ⚛️
 ---
 
 There used to be a tall obelisk at the centre of town, but it had toppled over long ago. The stone monument had cracked at the base 4 years after the evacuation; it was only a matter of time. Some of its remains lay in the empty concrete husk that used to be a lake. The King's Lake they'd called it, back when it was filled to the brim with 50 square metres of clear, sparkling water, the obelisk in the centre like a finger pointing to heaven. But the finger was gone now, as was the Lake.

@@ -5,6 +5,7 @@ date: 2026-08-23 23:11:00
 updated: 2026-08-26 11:00:00
 tags:
 noToc: true
+emoji: 🐦
 ---
 
 <br>

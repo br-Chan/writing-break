@@ -5,6 +5,7 @@ date: 2026-02-28 23:29:00
 updated: 2026-07-10 17:53:00
 tags:
 noToc: true
+emoji: 🛬
 ---
 
 *How it feels not to be JAFA.*

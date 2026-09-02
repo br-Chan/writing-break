@@ -4,6 +4,7 @@ description: They say there lies a terrible evil in the caverns of Mt. Habitica.
 date: 2025-12-31 21:21:00
 tags: atro
 noToc: true
+emoji: 🐉
 ---
 
 *The Tallest Tree in Habitica stands in a pit in Taskwood forest.*

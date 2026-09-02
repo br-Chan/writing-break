@@ -4,6 +4,7 @@ description: Someone wants a tinfoil hat ~ They're a feral cat ~ With a baseball
 date: 2026-08-31 00:26:00
 tags:
 noToc: true
+emoji: 🤓
 ---
 
 <br>

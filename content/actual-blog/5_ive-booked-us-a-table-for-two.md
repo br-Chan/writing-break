@@ -4,6 +4,7 @@ description:
 date: 2026-07-25 23:50:00
 tags: tech-talk
 noToc: false
+emoji: 🐧
 ---
 
 So, here's (finally) the context for this side project of mine: I want an aide to help me keep in touch with my friends better!
