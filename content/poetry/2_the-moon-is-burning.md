@@ -42,5 +42,5 @@ Where we struck our harpoon.
 
 </center>
 
-![The Moon](img/2_the-moon.png)
+![The Moon](img/2_the-moon.jpg)
 <br>
