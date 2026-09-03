@@ -4,6 +4,7 @@ description: Something lurks in the Sea of Dirt.
 date: 2025-12-28 11:12:00
 tags:
 noToc: true
+emoji: 🐜
 ---
 
 He was waist deep in it. He waded through the immense, dry weight of it. It poured past him, smooth and slow, around his legs and through his clothes. It made an ungainly sound, like rotten oats rushing down a chute. It filled the air with a rocky, foul, choking smell. It flew up in small flakes, getting into his ears, his mouth, his tearing eyes. It smeared his face with brown flecks and smudges. It eroded his skin with sandy dryness. It chafed his arms and flayed his legs and burned his feet as he heaved his body through the swells and dips. It pained him, disgusted him.

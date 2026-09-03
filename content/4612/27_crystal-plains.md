@@ -4,6 +4,7 @@ description: Beaten, beaten, beaten.
 date: 2025-12-21 22:34:00
 tags:
 noToc: true
+emoji: 🔷
 ---
 
 The Tablet fell away from Alec just as he hit the ground. Instead of an eruption of pain, there was only a muffled *thump*. His readied resolve ate up what pain there was quickly. His head bounced off the ground and his brain shuddered in his skull like a tennis ball. He saw the Tablet hit the ground and fling itself away into the air. The iridescence dissipated and fell away, revealing a landscape far unlike the purple hills just moments ago.

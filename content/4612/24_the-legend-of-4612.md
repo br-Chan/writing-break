@@ -5,6 +5,7 @@ date: 2025-12-14 12:53:00
 updated: 2026-01-29 22:13:00
 tags:
 noToc: true
+emoji: 📜
 ---
 
 After silence filled the cavern the Wizard spoke aloud to the other three. The Tablet in the centre quivered and broke.

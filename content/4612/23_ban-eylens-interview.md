@@ -5,6 +5,7 @@ date: 2025-12-14 12:02:00
 updated: 2025-12-20 10:45:00
 tags:
 noToc: true
+emoji: 🎙️
 ---
 
 I shuffle into the empty room, and I feel it -- a change. The thin air is charged and ready to burn. Tiny weights seem to pull on every atom of my body in different directions. Something seeks to drag me apart into trembling plasma. I almost drop my notes. I steady myself against the wall.

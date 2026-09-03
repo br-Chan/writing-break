@@ -4,6 +4,7 @@ description: Find enclosed the report of this week's recent events of the realm.
 date: 2025-12-19 23:58:00
 tags: atro
 noToc: true
+emoji: 🕵️
 ---
 
 To the High Lord Azalaroth of the Wand,

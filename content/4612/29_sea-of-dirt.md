@@ -4,6 +4,7 @@ description: Water? I hardly know 'er!
 date: 2025-12-27 13:34:00
 tags:
 noToc: true
+emoji: 🌊
 ---
 
 Rain droplets tickled Alec's neck, poked his arms and legs. The sound of crashing waves on a beach deepened his sleepiness. Then his eyelids twitched at a harsh raindrop and he blinked out of his slumber. Squinting eyes peered through the trickling curtain of dark rain; he was flat on his stomach on solid ground. Not [crystal](https://br-chan.github.io/writing-break/4612/27_crystal-plains/). Good.

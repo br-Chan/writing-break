@@ -4,6 +4,7 @@ description: This is a revised version of a story written on 28 Oct 2022. What I
 date: 2025-10-24 23:38:00
 tags:
 noToc: true
+emoji: 🔮
 ---
 
 Would you like to play a game?

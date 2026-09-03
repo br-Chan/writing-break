@@ -4,6 +4,7 @@ description: A world in lofi at the Edge of the Universe.
 date: 2025-12-19 20:38:00
 tags:
 noToc: true
+emoji: 🐈‍⬛
 ---
 
 A rocky impact, a thud to the ground. Everything hurt; Alec's back writhed against rock.

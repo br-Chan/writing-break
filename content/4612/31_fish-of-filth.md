@@ -4,6 +4,7 @@ description: Something waits for the Beast of Bugs.
 date: 2025-12-28 22:26:00
 tags:
 noToc: true
+emoji: 🐟
 ---
 
 Alec's legs struggled to paddle through the dirt. The faster he moved, the more it felt solid. The massive mole monster crashed ever closer. Dirt cascaded over Alec's head and down his neck like it was raining again. A dirty shadow rose over him and an alien, musty smell tickled his nose. *Dirt, dirt, dirt, dirt, dirt,* he kept thinking, but it wasn't dirt that was troubling him now.

@@ -4,6 +4,7 @@ description: "Confounded /kənˈfaʊndɪd/: used to describe the technological d
 date: 2025-12-26 23:19:00
 tags: atro
 noToc: true
+emoji: 🚂
 ---
 
 *Some people called it Future Tech -- a glimpse of the farflung future. The more popular term was Confounded Craft, because its designs were baffling beyond measure -- even to the Confounded Craftors themselves. From steam-powered engines and clockwork creatures to farming machines and flying machines, the ancient art of the Confounded was mystifying and terrifying.*
