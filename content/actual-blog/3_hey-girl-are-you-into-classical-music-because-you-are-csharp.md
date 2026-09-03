@@ -4,7 +4,7 @@ description:
 date: 2026-07-11 17:51:00
 tags: tech-talk
 noToc: false
-emoji: #️⃣
+emoji: 🏗️
 ---
 
 ## What is this?
