@@ -29,7 +29,7 @@ Years from now, I shall cry before my children. For I know we will not have hear
 
 She had got used to falling asleep in their bed.<br>
 Thousands of good mornings, thousands of good nights. So many birthdays, no more to be said.<br>
-I mourn at a funeral, of all the little deaths in their hearts. A human together is dead.
+I mourn at a funeral of all the little deaths in their hearts. A human together is dead.
 
 I am the anchor that must float for the ship that sinks.<br>
 Five. Four.<br>
