@@ -15,7 +15,7 @@ I try to sleep but cannot rest<br>
 I close my eyes and see your eyes<br>
 I weep for spoken love that dies<br>
 I place my hand upon my breast<br>
-I am your best; you are my best<br>
+You are my best; you are my best<br>
 Ferg, my love, you make me blest
 
 ~ Brandon Chan
